@@ -1,4 +1,5 @@
 import GameField from "../src/logic/map"
+import Street from "../src/logic/street"
 
 it(`Empty Map has no occupied Fields`, () => {
   const mapUnderTest = new GameField(10, 10)

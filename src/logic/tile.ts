@@ -1,9 +1,16 @@
+const tileTypes = {
+  street: 3,
+  tower: 6
+}
+
 class Tile {
-  private xPos: number
-  private yPos: number
-  constructor(xPos: number, yPos: number) {
+  public xPos: number
+  public yPos: number
+  public tileType: number
+  protected constructor(xPos: number, yPos: number, tileType: number) {
     this.xPos = xPos
     this.yPos = yPos
+    this.tileType = tileType
   }
   public occupies: (x: number, y: number) => boolean =
   (x: number, y: number) => {
@@ -12,3 +19,4 @@ class Tile {
 }
 
 export default Tile
+export { tileTypes }
