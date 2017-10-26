@@ -1,12 +1,12 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
-import Hello from "./comp"
+import DisplayGame from "./componentsgameField"
 
 document.addEventListener(`DOMContentLoaded`, () => {
     ReactDOM.render(
         (
             <div>
-                <Hello />
+                <DisplayGame />
             </div>
         ),
         document.getElementById("root")
