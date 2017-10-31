@@ -1,4 +1,5 @@
 import { find, union } from "lodash"
+import noOp from "../noOp"
 import Ant from "./ant"
 import Street from "./street"
 import Tile, { tileTypes } from "./tile"
@@ -19,7 +20,7 @@ class GameField {
     this.streetList = []
     this.antList = []
     this.currentTick = 0
-    this.componentUpdateTrigger = () => false
+    this.componentUpdateTrigger = noOp
   }
   /**
    * Check wether a certain position in the map is already occupied by a tile
