@@ -11,10 +11,12 @@ class GameFieldDisplay extends React.Component<{
 }, any> {
   public state: {tickNum: number} = {tickNum: -1}
   public componentWillMount() {
-    this.props.fieldToRender.registerComponentToUpdate(this.setState)
+    this.props.fieldToRender.registerComponentToUpdate(this)
+    this.props.fieldToRender.startTimer()
   }
   public componentWillUnmount() {
-    this.props.fieldToRender.registerComponentToUpdate(noOp)
+    this.props.fieldToRender.registerComponentToUpdate({setState: noOp})
+    this.props.fieldToRender.stopTimer()
   }
   public render() {
     const streets = map(this.props.fieldToRender.streetList,

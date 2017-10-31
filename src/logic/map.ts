@@ -1,5 +1,6 @@
 import { find, union } from "lodash"
 import noOp from "../noOp"
+import randomNum from "../randomNum"
 import Ant from "./ant"
 import Street from "./street"
 import Tile, { tileTypes } from "./tile"
@@ -13,6 +14,9 @@ class GameField {
   public streetList: Street[]
   public componentUpdateTrigger: any
   public currentTick: number
+  public tickSpeed: number
+  public spawnThreshold: number
+  public continueTimer: boolean
   constructor(fieldSizeX: number = 10, fieldSizeY: number = 10) {
     this.fieldSizeX = fieldSizeX
     this.fieldSizeY = fieldSizeY
@@ -20,6 +24,9 @@ class GameField {
     this.streetList = []
     this.antList = []
     this.currentTick = 0
+    this.tickSpeed = 1800
+    this.spawnThreshold = 3
+    this.continueTimer = false
     this.componentUpdateTrigger = noOp
   }
   /**
@@ -69,7 +76,7 @@ class GameField {
       ant.makeNextStep()
     }
     this.currentTick++
-    this.componentUpdateTrigger({tickNum: this.currentTick})
+    this.componentUpdateTrigger.setState({tickNum: this.currentTick})
   }
   public spawnNewAnt: (amount: number) => void = (amount = 1) => {
     const start = this.getStart()
@@ -81,6 +88,21 @@ class GameField {
   }
   public registerComponentToUpdate = (setStateMethod: any) => {
     this.componentUpdateTrigger = setStateMethod
+  }
+
+  public startTimer() {
+    this.continueTimer = true
+    setTimeout(this.processTime, this.tickSpeed)
+  }
+  public stopTimer() {
+    this.continueTimer = false
+  }
+  public processTime = () => {
+    this.spawnNewAnt(randomNum(0, this.spawnThreshold))
+    this.processTick()
+    if (this.continueTimer) {
+      setTimeout(this.processTime, this.tickSpeed)
+    }
   }
 }
 
