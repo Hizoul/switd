@@ -49,6 +49,10 @@ class Street extends Tile {
     }
     return this
   }
+  public addIntersection(intersec: Street) {
+    this.next.push(intersec)
+    intersec.previous.push(this)
+  }
   public enter(ant: Ant) {
     if (findIndex(this.currentVisitors, (e: Ant) => e.uniqueId === ant.uniqueId) !== -1) {
       return false

@@ -17,8 +17,6 @@ it(`Ants can walk a path`, () => {
   matchAntState(ant1, "currently at first pos")
   ant1.makeNextStep()
   matchAntState(ant1, "currently at second pos")
-  ant1.makeNextStep()
-  matchAntState(ant1, "currently at third pos")
 })
 
 it(`Ants can't walk away from target`, () => {

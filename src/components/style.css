@@ -1,0 +1,26 @@
+body, html, .gameField {
+  width: 100vw;
+  height: 100vh;
+  margin: 0pt;
+  padding: 0pt;
+}
+
+.gameField {
+  background-color: grey;
+}
+
+.street {
+  background-color: blue;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  display: flex;
+}
+.street.isTarget {
+  background-color: green;
+}
+.street.isStart {
+  background-color: red;
+}

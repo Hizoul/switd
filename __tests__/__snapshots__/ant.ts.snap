@@ -31,17 +31,8 @@ exports[`currently at target 1`] = `
 Object {
   "isStart": false,
   "isTarget": true,
-  "x": 2,
-  "y": -1,
-}
-`;
-
-exports[`currently at third pos 1`] = `
-Object {
-  "isStart": false,
-  "isTarget": true,
-  "x": 2,
-  "y": -1,
+  "x": 4,
+  "y": -6,
 }
 `;
 
@@ -49,7 +40,7 @@ exports[`still at target after multiple calls 1`] = `
 Object {
   "isStart": false,
   "isTarget": true,
-  "x": 2,
-  "y": -1,
+  "x": 4,
+  "y": -6,
 }
 `;

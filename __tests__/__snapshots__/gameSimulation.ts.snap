@@ -1,0 +1,401 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`five ants at stage 1 5 more newly added 1`] = `
+Object {
+  "ants": Array [
+    Object {
+      "id": 1,
+      "x": 1,
+      "y": 0,
+    },
+    Object {
+      "id": 2,
+      "x": 1,
+      "y": 0,
+    },
+    Object {
+      "id": 3,
+      "x": 1,
+      "y": 0,
+    },
+    Object {
+      "id": 4,
+      "x": 1,
+      "y": 0,
+    },
+    Object {
+      "id": 5,
+      "x": 1,
+      "y": 0,
+    },
+    Object {
+      "id": 6,
+      "x": 0,
+      "y": 0,
+    },
+    Object {
+      "id": 7,
+      "x": 0,
+      "y": 0,
+    },
+    Object {
+      "id": 8,
+      "x": 0,
+      "y": 0,
+    },
+    Object {
+      "id": 9,
+      "x": 0,
+      "y": 0,
+    },
+    Object {
+      "id": 10,
+      "x": 0,
+      "y": 0,
+    },
+  ],
+  "tiles": Array [
+    Object {
+      "x": 0,
+      "y": 0,
+    },
+    Object {
+      "x": 1,
+      "y": 0,
+    },
+    Object {
+      "x": 1,
+      "y": -1,
+    },
+    Object {
+      "x": 1,
+      "y": -2,
+    },
+    Object {
+      "x": 1,
+      "y": -3,
+    },
+    Object {
+      "x": 1,
+      "y": -4,
+    },
+    Object {
+      "x": 2,
+      "y": -4,
+    },
+    Object {
+      "x": 3,
+      "y": -4,
+    },
+    Object {
+      "x": 2,
+      "y": -1,
+    },
+    Object {
+      "x": 3,
+      "y": -1,
+    },
+    Object {
+      "x": 3,
+      "y": -2,
+    },
+    Object {
+      "x": 3,
+      "y": -3,
+    },
+    Object {
+      "x": 3,
+      "y": -5,
+    },
+    Object {
+      "x": 3,
+      "y": -6,
+    },
+    Object {
+      "x": 4,
+      "y": -6,
+    },
+  ],
+}
+`;
+
+exports[`five ants at stage 2 5 more at 1 1`] = `
+Object {
+  "ants": Array [
+    Object {
+      "id": 1,
+      "x": 1,
+      "y": -1,
+    },
+    Object {
+      "id": 2,
+      "x": 1,
+      "y": -1,
+    },
+    Object {
+      "id": 3,
+      "x": 1,
+      "y": -1,
+    },
+    Object {
+      "id": 4,
+      "x": 1,
+      "y": -1,
+    },
+    Object {
+      "id": 5,
+      "x": 1,
+      "y": -1,
+    },
+    Object {
+      "id": 6,
+      "x": 1,
+      "y": 0,
+    },
+    Object {
+      "id": 7,
+      "x": 1,
+      "y": 0,
+    },
+    Object {
+      "id": 8,
+      "x": 1,
+      "y": 0,
+    },
+    Object {
+      "id": 9,
+      "x": 1,
+      "y": 0,
+    },
+    Object {
+      "id": 10,
+      "x": 1,
+      "y": 0,
+    },
+  ],
+  "tiles": Array [
+    Object {
+      "x": 0,
+      "y": 0,
+    },
+    Object {
+      "x": 1,
+      "y": 0,
+    },
+    Object {
+      "x": 1,
+      "y": -1,
+    },
+    Object {
+      "x": 1,
+      "y": -2,
+    },
+    Object {
+      "x": 1,
+      "y": -3,
+    },
+    Object {
+      "x": 1,
+      "y": -4,
+    },
+    Object {
+      "x": 2,
+      "y": -4,
+    },
+    Object {
+      "x": 3,
+      "y": -4,
+    },
+    Object {
+      "x": 2,
+      "y": -1,
+    },
+    Object {
+      "x": 3,
+      "y": -1,
+    },
+    Object {
+      "x": 3,
+      "y": -2,
+    },
+    Object {
+      "x": 3,
+      "y": -3,
+    },
+    Object {
+      "x": 3,
+      "y": -5,
+    },
+    Object {
+      "x": 3,
+      "y": -6,
+    },
+    Object {
+      "x": 4,
+      "y": -6,
+    },
+  ],
+}
+`;
+
+exports[`five unmoved ants 1`] = `
+Object {
+  "ants": Array [
+    Object {
+      "id": 1,
+      "x": 0,
+      "y": 0,
+    },
+    Object {
+      "id": 2,
+      "x": 0,
+      "y": 0,
+    },
+    Object {
+      "id": 3,
+      "x": 0,
+      "y": 0,
+    },
+    Object {
+      "id": 4,
+      "x": 0,
+      "y": 0,
+    },
+    Object {
+      "id": 5,
+      "x": 0,
+      "y": 0,
+    },
+  ],
+  "tiles": Array [
+    Object {
+      "x": 0,
+      "y": 0,
+    },
+    Object {
+      "x": 1,
+      "y": 0,
+    },
+    Object {
+      "x": 1,
+      "y": -1,
+    },
+    Object {
+      "x": 1,
+      "y": -2,
+    },
+    Object {
+      "x": 1,
+      "y": -3,
+    },
+    Object {
+      "x": 1,
+      "y": -4,
+    },
+    Object {
+      "x": 2,
+      "y": -4,
+    },
+    Object {
+      "x": 3,
+      "y": -4,
+    },
+    Object {
+      "x": 2,
+      "y": -1,
+    },
+    Object {
+      "x": 3,
+      "y": -1,
+    },
+    Object {
+      "x": 3,
+      "y": -2,
+    },
+    Object {
+      "x": 3,
+      "y": -3,
+    },
+    Object {
+      "x": 3,
+      "y": -5,
+    },
+    Object {
+      "x": 3,
+      "y": -6,
+    },
+    Object {
+      "x": 4,
+      "y": -6,
+    },
+  ],
+}
+`;
+
+exports[`no ants yet 1`] = `
+Object {
+  "ants": Array [],
+  "tiles": Array [
+    Object {
+      "x": 0,
+      "y": 0,
+    },
+    Object {
+      "x": 1,
+      "y": 0,
+    },
+    Object {
+      "x": 1,
+      "y": -1,
+    },
+    Object {
+      "x": 1,
+      "y": -2,
+    },
+    Object {
+      "x": 1,
+      "y": -3,
+    },
+    Object {
+      "x": 1,
+      "y": -4,
+    },
+    Object {
+      "x": 2,
+      "y": -4,
+    },
+    Object {
+      "x": 3,
+      "y": -4,
+    },
+    Object {
+      "x": 2,
+      "y": -1,
+    },
+    Object {
+      "x": 3,
+      "y": -1,
+    },
+    Object {
+      "x": 3,
+      "y": -2,
+    },
+    Object {
+      "x": 3,
+      "y": -3,
+    },
+    Object {
+      "x": 3,
+      "y": -5,
+    },
+    Object {
+      "x": 3,
+      "y": -6,
+    },
+    Object {
+      "x": 4,
+      "y": -6,
+    },
+  ],
+}
+`;

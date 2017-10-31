@@ -30,8 +30,6 @@ const webpackConfig: webpack.Configuration = {
             loader: `style-loader`
           }, {
             loader: `css-loader`
-          }, {
-            loader: `sass-loader`
           }
         ]
       }, {

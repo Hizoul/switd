@@ -2,7 +2,7 @@
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "editor.tabSize": 2,
-  "editor.detectIndentation": true,
+  "editor.detectIndentation": false,
   "editor.insertSpaces": true,
   "typescript.tsdk": "./ci/node_modules/typescript/lib",
   "typescript.referencesCodeLens.enabled": true,
