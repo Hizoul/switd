@@ -21,10 +21,8 @@ class Street extends Tile {
   public next: Street[]
   public previous: Street[]
   public currentVisitors: Ant[]
-  public gameField: GameField
   constructor(xPos: number, yPos: number, gameField: GameField) {
-    super(xPos, yPos, tileTypes.street)
-    this.gameField = gameField
+    super(xPos, yPos, tileTypes.street, gameField)
     this.next = []
     this.previous = []
     this.currentVisitors = []

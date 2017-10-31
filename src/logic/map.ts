@@ -1,4 +1,4 @@
-import { find, union } from "lodash"
+import { find, isNil, remove, union } from "lodash"
 import noOp from "../noOp"
 import randomNum from "../randomNum"
 import Ant from "./ant"
@@ -38,10 +38,10 @@ class GameField {
     const fullList: Tile[] = union<Tile>(this.towerList, this.streetList)
     for (const tile of fullList) {
       if (tile.occupies(x, y)) {
-        return true
+        return tile
       }
     }
-    return false
+    return null
   }
 
   /**
@@ -49,12 +49,17 @@ class GameField {
    * @param newTile Tile to insert
    */
   public addTile(newTile: Tile) {
-    if (!this.isOccupied(newTile.xPos, newTile.yPos)) {
+    if (isNil(this.isOccupied(newTile.xPos, newTile.yPos))) {
       const addTo: any = newTile.tileType === tileTypes.tower ? this.towerList : this.streetList
       addTo.push(newTile)
       return true
     }
     return false
+  }
+  public getNeighbors: (xPos: number, yPos: number, range: number) => Tile[] = (xPos, yPos, range) => {
+    const tiles: Tile[] = []
+    // TODO find neighbors
+    return tiles
   }
   public getStart: () => Street = () => {
     return this.streetList[0]
@@ -85,6 +90,10 @@ class GameField {
       start.enter(ant)
       this.antList.push(ant)
     }
+  }
+
+  public removeAnt: (ant: Ant) => void = (ant) => {
+    remove(this.antList, (a1) => a1.uniqueId === ant.uniqueId)
   }
   public registerComponentToUpdate = (setStateMethod: any) => {
     this.componentUpdateTrigger = setStateMethod

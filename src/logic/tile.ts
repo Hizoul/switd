@@ -1,3 +1,5 @@
+import GameField from "./map"
+
 const tileTypes = {
   street: 3,
   tower: 6
@@ -7,10 +9,12 @@ class Tile {
   public xPos: number
   public yPos: number
   public tileType: number
-  protected constructor(xPos: number, yPos: number, tileType: number) {
+  public gameField: GameField
+  protected constructor(xPos: number, yPos: number, tileType: number, gameField: GameField) {
     this.xPos = xPos
     this.yPos = yPos
     this.tileType = tileType
+    this.gameField = gameField
   }
   public occupies: (x: number, y: number) => boolean =
   (x: number, y: number) => {
