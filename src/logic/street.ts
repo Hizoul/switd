@@ -1,3 +1,5 @@
+import { findIndex, remove } from "lodash"
+import Ant from "./ant"
 import GameField from "./map"
 import Tile, { tileTypes } from "./tile"
 
@@ -18,12 +20,14 @@ const getDirFromNum: (dir: number) => number[] = (dir) => {
 class Street extends Tile {
   public next: Street[]
   public previous: Street[]
+  public currentVisitors: Ant[]
   public gameField: GameField
   constructor(xPos: number, yPos: number, gameField: GameField) {
     super(xPos, yPos, tileTypes.street)
     this.gameField = gameField
     this.next = []
     this.previous = []
+    this.currentVisitors = []
   }
   public isTarget: () => boolean = () => {
     return this.next.length === 0
@@ -31,7 +35,7 @@ class Street extends Tile {
   public isStart: () => boolean = () => {
     return this.previous.length === 0
   }
-  public extend: (extendToDir: number) => Street | null = (extendToDir) =>  {
+  public extend: (extendToDir: number) => Street = (extendToDir) =>  {
     const directionHelper = getDirFromNum(extendToDir)
     const nextStreet = new Street(
       this.xPos + directionHelper[0],
@@ -43,8 +47,18 @@ class Street extends Tile {
       nextStreet.previous.push(this)
       return nextStreet
     }
-    return null
+    return this
+  }
+  public enter(ant: Ant) {
+    if (findIndex(this.currentVisitors, (e: Ant) => e.uniqueId === ant.uniqueId) !== -1) {
+      return false
+    }
+    return this.currentVisitors.push(ant)
+  }
+  public leave(ant: Ant) {
+    return remove(this.currentVisitors, (e: Ant) => e.uniqueId === ant.uniqueId)
   }
 }
 
 export default Street
+export { direction }

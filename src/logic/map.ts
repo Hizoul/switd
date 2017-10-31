@@ -1,4 +1,4 @@
-import { union } from "lodash"
+import { find, union } from "lodash"
 import Ant from "./ant"
 import Street from "./street"
 import Tile, { tileTypes } from "./tile"
@@ -10,8 +10,7 @@ class GameField {
   private antList: Ant[]
   private towerList: Tower[]
   private streetList: Street[]
-
-  constructor(fieldSizeX: number, fieldSizeY: number) {
+  constructor(fieldSizeX: number = 10, fieldSizeY: number = 10) {
     this.fieldSizeX = fieldSizeX
     this.fieldSizeY = fieldSizeY
     this.towerList = []
@@ -44,7 +43,9 @@ class GameField {
     }
     return false
   }
-
+  public getStart: () => Street = () => {
+    return this.streetList[0]
+  }
 }
 
 export default GameField

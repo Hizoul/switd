@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`currently at first pos 1`] = `
+Object {
+  "isStart": false,
+  "isTarget": false,
+  "x": 1,
+  "y": 0,
+}
+`;
+
+exports[`currently at second pos 1`] = `
+Object {
+  "isStart": false,
+  "isTarget": false,
+  "x": 1,
+  "y": -1,
+}
+`;
+
+exports[`currently at start 1`] = `
+Object {
+  "isStart": true,
+  "isTarget": false,
+  "x": 0,
+  "y": 0,
+}
+`;
+
+exports[`currently at third pos 1`] = `
+Object {
+  "isStart": false,
+  "isTarget": true,
+  "x": 2,
+  "y": -1,
+}
+`;
