@@ -46,6 +46,10 @@ class GameField {
   public getStart: () => Street = () => {
     return this.streetList[0]
   }
+  public getTarget: () => Street = () => {
+    const ret: any = find(this.streetList, (a: Street) => a.isTarget())
+    return ret
+  }
 }
 
 export default GameField

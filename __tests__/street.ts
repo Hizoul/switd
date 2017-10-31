@@ -23,6 +23,10 @@ it(`Streets can be placed in Map and extended`, () => {
       expect(s2.isTarget()).toBe(false)
       expect(s3.isStart()).toBe(false)
       expect(s3.isTarget()).toBe(true)
+      const untypedExtend: any = s3.extend
+      const s4 = untypedExtend()
+      expect(s4.isStart()).toBe(false)
+      expect(s4.isTarget()).toBe(true)
     }
   }
 })
