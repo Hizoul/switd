@@ -1,4 +1,4 @@
-import { find, isNil, remove, union } from "lodash"
+import { filter, find, isNil, remove, union } from "lodash"
 import noOp from "../noOp"
 import randomNum from "../randomNum"
 import Ant from "./ant"
@@ -27,7 +27,7 @@ class GameField {
     this.tickSpeed = 1800
     this.spawnThreshold = 3
     this.continueTimer = false
-    this.componentUpdateTrigger = noOp
+    this.componentUpdateTrigger = {setState: noOp}
   }
   /**
    * Check wether a certain position in the map is already occupied by a tile
@@ -59,7 +59,28 @@ class GameField {
   public getNeighbors: (xPos: number, yPos: number, range: number) => Tile[] = (xPos, yPos, range) => {
     const tiles: Tile[] = []
     // TODO find neighbors
+    const toCheck: Array<{x: number, y: number}> = []
+    for (let i = 1; i <= range; i++) {
+      toCheck.push({x: xPos + i, y: yPos})
+      toCheck.push({x: xPos - i, y: yPos})
+      toCheck.push({x: xPos, y: yPos + i})
+      toCheck.push({x: xPos, y: yPos - i})
+      toCheck.push({x: xPos + i, y: yPos + i})
+      toCheck.push({x: xPos + i, y: yPos - i})
+      toCheck.push({x: xPos - i, y: yPos + i})
+      toCheck.push({x: xPos - i, y: yPos - i})
+    }
+    for (const checkMe of toCheck) {
+      const found = this.isOccupied(checkMe.x, checkMe.y)
+      if (!isNil(found)) {
+        tiles.push(found)
+      }
+    }
     return tiles
+  }
+  public getNeighborStreets: (xPos: number, yPos: number, range: number) => Street[] = (xPos, yPos, range) => {
+    const back: any = filter(this.getNeighbors(xPos, yPos, range), (tile) => tile.tileType === tileTypes.street)
+    return back
   }
   public getStart: () => Street = () => {
     return this.streetList[0]

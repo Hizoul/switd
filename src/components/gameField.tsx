@@ -5,6 +5,7 @@ import Tile from "../logic/tile"
 import noOp from "../noOp"
 import StreetDisplay from "./street"
 import "./style.css"
+import TowerDisplay from "./tower"
 
 class GameFieldDisplay extends React.Component<{
   fieldToRender: Map
@@ -21,9 +22,12 @@ class GameFieldDisplay extends React.Component<{
   public render() {
     const streets = map(this.props.fieldToRender.streetList,
       (street) => <StreetDisplay street={street} gameField={this.props.fieldToRender} />)
+    const towers = map(this.props.fieldToRender.towerList,
+      (tower) => <TowerDisplay tower={tower} gameField={this.props.fieldToRender} />)
     return (
       <div className="gameField">
         {streets}
+        {towers}
       </div>
     )
   }

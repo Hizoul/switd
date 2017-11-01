@@ -12,6 +12,7 @@ class Ant {
     this.currentlyOn = currentTile
     this.uniqueId = currentmaxid
     this.walkedPath = [currentTile]
+    this.hp = 50
     currentmaxid++
   }
   public makeNextStep() {

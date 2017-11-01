@@ -1,18 +1,18 @@
-import { map, union } from "lodash"
+import { map, sortBy, union } from "lodash"
 import Map from "../logic/map"
 import Tile from "../logic/tile"
 
 const prepSnapshotOutput = (gameField: Map) => {
-  const ants = map(gameField.antList, (ant) => {
+  const ants = sortBy(map(gameField.antList, (ant) => {
     return {
-      id: ant.uniqueId, x: ant.currentlyOn.xPos, y: ant.currentlyOn.yPos
+      id: ant.uniqueId, x: ant.currentlyOn.xPos, y: ant.currentlyOn.yPos, hp: ant.hp
     }
-  })
-  const tiles = map(union<Tile>(gameField.streetList, gameField.towerList), (street) => {
+  }), ["hp", "id", "x", "y"])
+  const tiles = sortBy(map(union<Tile>(gameField.streetList, gameField.towerList), (street) => {
     return {
       x: street.xPos, y: street.yPos
     }
-  })
+  }), ["x", "y"])
   return {
     ants, tiles
   }

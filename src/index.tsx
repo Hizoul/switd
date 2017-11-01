@@ -1,7 +1,7 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 import DisplayGame from "./components/gameField"
-import testMap1 from "./maps/testMap1"
+import testMap1 from "./maps/testMapNoSplits"
 
 document.addEventListener(`DOMContentLoaded`, () => {
   ReactDOM.render(

@@ -14,7 +14,7 @@ Object {
   "isStart": false,
   "isTarget": false,
   "x": 1,
-  "y": -1,
+  "y": 1,
 }
 `;
 
@@ -32,7 +32,7 @@ Object {
   "isStart": false,
   "isTarget": true,
   "x": 4,
-  "y": -6,
+  "y": 6,
 }
 `;
 
@@ -41,6 +41,6 @@ Object {
   "isStart": false,
   "isTarget": true,
   "x": 4,
-  "y": -6,
+  "y": 6,
 }
 `;

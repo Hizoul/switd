@@ -3,7 +3,6 @@ import prepSnapshotOutput from "../src/testUtil/mapSnapshot"
 
 it("A gamefield can generate ants and let them walk in a tick", () => {
   const testedMap = createtestMap1()
-  testedMap.componentUpdateTrigger()
   expect(prepSnapshotOutput(testedMap)).toMatchSnapshot("no ants yet")
   testedMap.spawnNewAnt(5)
   expect(prepSnapshotOutput(testedMap)).toMatchSnapshot("five unmoved ants")

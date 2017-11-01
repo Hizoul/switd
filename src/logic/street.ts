@@ -9,8 +9,8 @@ const direction = {
 
 const getDirFromNum: (dir: number) => number[] = (dir) => {
   switch (dir) {
-    case direction.up: return [0, 1]
-    case direction.down: return [0, -1]
+    case direction.up: return [0, -1]
+    case direction.down: return [0, 1]
     case direction.left: return [-1, 0]
     case direction.right: return [1, 0]
     default: return [0, 1]

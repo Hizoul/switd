@@ -9,7 +9,7 @@ body, html, .gameField {
   background-color: grey;
 }
 
-.street {
+.street, .tower {
   background-color: blue;
   position: absolute;
   align-items: center;
@@ -17,6 +17,9 @@ body, html, .gameField {
   text-align: center;
   color: white;
   display: flex;
+}
+.tower {
+  background-color: orange;
 }
 .street.isTarget {
   background-color: green;
