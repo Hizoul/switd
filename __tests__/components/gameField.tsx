@@ -1,7 +1,7 @@
 import * as React from "react"
 import GameFieldDisplay from "../../src/components/gameField"
 import { createtestMap1} from "../../src/maps/testMap1"
-import noOp  from "../../src/noOp"
+import noOp from "../../src/noOp"
 import renderSnapshot from "../../src/testUtil/renderSnapshot"
 it("Expect GameField to be able to render the field", () => {
 
