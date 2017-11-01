@@ -20,10 +20,12 @@ const createtestMapNoSplits = () => {
   const s11 = s10.extend(direction.left)
   const t1 = new Tower(2, 1, testMapNoSplits)
   testMapNoSplits.addTile(t1)
+  t1.towerType = "first"
   const t2 = new Tower(3, 3, testMapNoSplits)
   testMapNoSplits.addTile(t2)
+  t2.towerType = "second"
   const t3 = new Tower(4, 5, testMapNoSplits)
-  t3.towerType = "3"
+  t3.towerType = "third"
   testMapNoSplits.addTile(t3)
   return testMapNoSplits
 }

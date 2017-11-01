@@ -1,5 +1,7 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
+import "velocity-animate"
+import "velocity-animate/velocity.ui"
 import DisplayGame from "./components/gameField"
 import testMap1 from "./maps/testMapNoSplits"
 
