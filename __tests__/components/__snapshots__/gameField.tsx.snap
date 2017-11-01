@@ -10,6 +10,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "0px",
+        "position": "absolute",
         "top": "0px",
         "width": "102.4px",
       }
@@ -25,6 +26,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "0px",
         "width": "102.4px",
       }
@@ -40,6 +42,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "76.8px",
         "width": "102.4px",
       }
@@ -55,6 +58,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -70,6 +74,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "204.8px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -85,6 +90,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -100,6 +106,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "409.6px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -115,6 +122,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "409.6px",
+        "position": "absolute",
         "top": "230.39999999999998px",
         "width": "102.4px",
       }
@@ -130,6 +138,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "409.6px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -145,6 +154,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -160,6 +170,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "204.8px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -175,6 +186,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -185,46 +197,313 @@ exports[`12 ants at 4  3 at 1 1`] = `
     </div>
   </div>
   <div
-    class="tower"
+    class="tower first"
     style={
       Object {
         "height": "76.8px",
         "left": "204.8px",
+        "position": "absolute",
         "top": "76.8px",
         "width": "102.4px",
       }
     }
   >
-    <div />
+    <div>
+      first
+    </div>
   </div>
   <div
-    class="tower"
+    class="tower second"
     style={
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "230.39999999999998px",
         "width": "102.4px",
       }
     }
   >
-    <div />
+    <div>
+      second
+    </div>
   </div>
   <div
-    class="tower 3"
+    class="tower third"
     style={
       Object {
         "height": "76.8px",
         "left": "409.6px",
+        "position": "absolute",
         "top": "384px",
         "width": "102.4px",
       }
     }
   >
     <div>
-      3
+      third
     </div>
   </div>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "204.8px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "153.6px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "204.8px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "153.6px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "204.8px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "153.6px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "204.8px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "153.6px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "204.8px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "153.6px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "204.8px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "153.6px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "204.8px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "153.6px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "102.4px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "102.4px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "102.4px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
 </div>
 `;
 
@@ -238,6 +517,7 @@ exports[`12 ants at start 1`] = `
       Object {
         "height": "76.8px",
         "left": "0px",
+        "position": "absolute",
         "top": "0px",
         "width": "102.4px",
       }
@@ -253,6 +533,7 @@ exports[`12 ants at start 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "0px",
         "width": "102.4px",
       }
@@ -268,6 +549,7 @@ exports[`12 ants at start 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "76.8px",
         "width": "102.4px",
       }
@@ -283,6 +565,7 @@ exports[`12 ants at start 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -298,6 +581,7 @@ exports[`12 ants at start 1`] = `
       Object {
         "height": "76.8px",
         "left": "204.8px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -313,6 +597,7 @@ exports[`12 ants at start 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -328,6 +613,7 @@ exports[`12 ants at start 1`] = `
       Object {
         "height": "76.8px",
         "left": "409.6px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -343,6 +629,7 @@ exports[`12 ants at start 1`] = `
       Object {
         "height": "76.8px",
         "left": "409.6px",
+        "position": "absolute",
         "top": "230.39999999999998px",
         "width": "102.4px",
       }
@@ -358,6 +645,7 @@ exports[`12 ants at start 1`] = `
       Object {
         "height": "76.8px",
         "left": "409.6px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -373,6 +661,7 @@ exports[`12 ants at start 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -388,6 +677,7 @@ exports[`12 ants at start 1`] = `
       Object {
         "height": "76.8px",
         "left": "204.8px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -403,6 +693,7 @@ exports[`12 ants at start 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -413,46 +704,365 @@ exports[`12 ants at start 1`] = `
     </div>
   </div>
   <div
-    class="tower"
+    class="tower first"
     style={
       Object {
         "height": "76.8px",
         "left": "204.8px",
+        "position": "absolute",
         "top": "76.8px",
         "width": "102.4px",
       }
     }
   >
-    <div />
+    <div>
+      first
+    </div>
   </div>
   <div
-    class="tower"
+    class="tower second"
     style={
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "230.39999999999998px",
         "width": "102.4px",
       }
     }
   >
-    <div />
+    <div>
+      second
+    </div>
   </div>
   <div
-    class="tower 3"
+    class="tower third"
     style={
       Object {
         "height": "76.8px",
         "left": "409.6px",
+        "position": "absolute",
         "top": "384px",
         "width": "102.4px",
       }
     }
   >
     <div>
-      3
+      third
     </div>
   </div>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
 </div>
 `;
 
@@ -466,6 +1076,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       Object {
         "height": "76.8px",
         "left": "0px",
+        "position": "absolute",
         "top": "0px",
         "width": "102.4px",
       }
@@ -481,6 +1092,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "0px",
         "width": "102.4px",
       }
@@ -496,6 +1108,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "76.8px",
         "width": "102.4px",
       }
@@ -511,6 +1124,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -526,6 +1140,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "230.39999999999998px",
         "width": "102.4px",
       }
@@ -541,6 +1156,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -556,6 +1172,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       Object {
         "height": "76.8px",
         "left": "204.8px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -571,6 +1188,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -586,6 +1204,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       Object {
         "height": "76.8px",
         "left": "204.8px",
+        "position": "absolute",
         "top": "76.8px",
         "width": "102.4px",
       }
@@ -601,6 +1220,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "76.8px",
         "width": "102.4px",
       }
@@ -616,6 +1236,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -631,6 +1252,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "230.39999999999998px",
         "width": "102.4px",
       }
@@ -646,6 +1268,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "384px",
         "width": "102.4px",
       }
@@ -661,6 +1284,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "460.79999999999995px",
         "width": "102.4px",
       }
@@ -676,6 +1300,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       Object {
         "height": "76.8px",
         "left": "409.6px",
+        "position": "absolute",
         "top": "460.79999999999995px",
         "width": "102.4px",
       }
@@ -685,6 +1310,266 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       0
     </div>
   </div>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "102.4px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "102.4px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "102.4px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "102.4px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "102.4px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
 </div>
 `;
 
@@ -698,6 +1583,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "0px",
+        "position": "absolute",
         "top": "0px",
         "width": "102.4px",
       }
@@ -713,6 +1599,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "0px",
         "width": "102.4px",
       }
@@ -728,6 +1615,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "76.8px",
         "width": "102.4px",
       }
@@ -743,6 +1631,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -758,6 +1647,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "230.39999999999998px",
         "width": "102.4px",
       }
@@ -773,6 +1663,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -788,6 +1679,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "204.8px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -803,6 +1695,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -818,6 +1711,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "204.8px",
+        "position": "absolute",
         "top": "76.8px",
         "width": "102.4px",
       }
@@ -833,6 +1727,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "76.8px",
         "width": "102.4px",
       }
@@ -848,6 +1743,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -863,6 +1759,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "230.39999999999998px",
         "width": "102.4px",
       }
@@ -878,6 +1775,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "384px",
         "width": "102.4px",
       }
@@ -893,6 +1791,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "460.79999999999995px",
         "width": "102.4px",
       }
@@ -908,6 +1807,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       Object {
         "height": "76.8px",
         "left": "409.6px",
+        "position": "absolute",
         "top": "460.79999999999995px",
         "width": "102.4px",
       }
@@ -917,6 +1817,266 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       0
     </div>
   </div>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "102.4px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "76.8px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "102.4px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "76.8px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "102.4px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "76.8px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "102.4px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "76.8px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "102.4px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "76.8px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "102.4px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "102.4px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "102.4px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "102.4px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "102.4px",
+        "opacity": 1,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
 </div>
 `;
 
@@ -930,6 +2090,7 @@ exports[`five unmoved ants 1`] = `
       Object {
         "height": "76.8px",
         "left": "0px",
+        "position": "absolute",
         "top": "0px",
         "width": "102.4px",
       }
@@ -945,6 +2106,7 @@ exports[`five unmoved ants 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "0px",
         "width": "102.4px",
       }
@@ -960,6 +2122,7 @@ exports[`five unmoved ants 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "76.8px",
         "width": "102.4px",
       }
@@ -975,6 +2138,7 @@ exports[`five unmoved ants 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -990,6 +2154,7 @@ exports[`five unmoved ants 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "230.39999999999998px",
         "width": "102.4px",
       }
@@ -1005,6 +2170,7 @@ exports[`five unmoved ants 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -1020,6 +2186,7 @@ exports[`five unmoved ants 1`] = `
       Object {
         "height": "76.8px",
         "left": "204.8px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -1035,6 +2202,7 @@ exports[`five unmoved ants 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -1050,6 +2218,7 @@ exports[`five unmoved ants 1`] = `
       Object {
         "height": "76.8px",
         "left": "204.8px",
+        "position": "absolute",
         "top": "76.8px",
         "width": "102.4px",
       }
@@ -1065,6 +2234,7 @@ exports[`five unmoved ants 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "76.8px",
         "width": "102.4px",
       }
@@ -1080,6 +2250,7 @@ exports[`five unmoved ants 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -1095,6 +2266,7 @@ exports[`five unmoved ants 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "230.39999999999998px",
         "width": "102.4px",
       }
@@ -1110,6 +2282,7 @@ exports[`five unmoved ants 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "384px",
         "width": "102.4px",
       }
@@ -1125,6 +2298,7 @@ exports[`five unmoved ants 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "460.79999999999995px",
         "width": "102.4px",
       }
@@ -1140,6 +2314,7 @@ exports[`five unmoved ants 1`] = `
       Object {
         "height": "76.8px",
         "left": "409.6px",
+        "position": "absolute",
         "top": "460.79999999999995px",
         "width": "102.4px",
       }
@@ -1149,6 +2324,136 @@ exports[`five unmoved ants 1`] = `
       0
     </div>
   </div>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
+  <undefined
+    animation={
+      Object {
+        "height": "10px",
+        "left": "0px",
+        "opacity": 0,
+        "position": "absolute",
+        "top": "0px",
+        "width": "10px",
+      }
+    }
+    children={
+      Array [
+        <div
+          class="ant"
+          className="ant"
+      />,
+      ]
+    }
+    duration={1530}
+  >
+    <div
+      class="ant"
+      className="ant"
+    />
+  </undefined>
 </div>
 `;
 
@@ -1162,6 +2467,7 @@ exports[`no ants yet 1`] = `
       Object {
         "height": "76.8px",
         "left": "0px",
+        "position": "absolute",
         "top": "0px",
         "width": "102.4px",
       }
@@ -1177,6 +2483,7 @@ exports[`no ants yet 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "0px",
         "width": "102.4px",
       }
@@ -1192,6 +2499,7 @@ exports[`no ants yet 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "76.8px",
         "width": "102.4px",
       }
@@ -1207,6 +2515,7 @@ exports[`no ants yet 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -1222,6 +2531,7 @@ exports[`no ants yet 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "230.39999999999998px",
         "width": "102.4px",
       }
@@ -1237,6 +2547,7 @@ exports[`no ants yet 1`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -1252,6 +2563,7 @@ exports[`no ants yet 1`] = `
       Object {
         "height": "76.8px",
         "left": "204.8px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -1267,6 +2579,7 @@ exports[`no ants yet 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -1282,6 +2595,7 @@ exports[`no ants yet 1`] = `
       Object {
         "height": "76.8px",
         "left": "204.8px",
+        "position": "absolute",
         "top": "76.8px",
         "width": "102.4px",
       }
@@ -1297,6 +2611,7 @@ exports[`no ants yet 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "76.8px",
         "width": "102.4px",
       }
@@ -1312,6 +2627,7 @@ exports[`no ants yet 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -1327,6 +2643,7 @@ exports[`no ants yet 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "230.39999999999998px",
         "width": "102.4px",
       }
@@ -1342,6 +2659,7 @@ exports[`no ants yet 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "384px",
         "width": "102.4px",
       }
@@ -1357,6 +2675,7 @@ exports[`no ants yet 1`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "460.79999999999995px",
         "width": "102.4px",
       }
@@ -1372,6 +2691,7 @@ exports[`no ants yet 1`] = `
       Object {
         "height": "76.8px",
         "left": "409.6px",
+        "position": "absolute",
         "top": "460.79999999999995px",
         "width": "102.4px",
       }
@@ -1394,6 +2714,7 @@ exports[`no ants yet 2`] = `
       Object {
         "height": "76.8px",
         "left": "0px",
+        "position": "absolute",
         "top": "0px",
         "width": "102.4px",
       }
@@ -1409,6 +2730,7 @@ exports[`no ants yet 2`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "0px",
         "width": "102.4px",
       }
@@ -1424,6 +2746,7 @@ exports[`no ants yet 2`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "76.8px",
         "width": "102.4px",
       }
@@ -1439,6 +2762,7 @@ exports[`no ants yet 2`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -1454,6 +2778,7 @@ exports[`no ants yet 2`] = `
       Object {
         "height": "76.8px",
         "left": "204.8px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -1469,6 +2794,7 @@ exports[`no ants yet 2`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -1484,6 +2810,7 @@ exports[`no ants yet 2`] = `
       Object {
         "height": "76.8px",
         "left": "409.6px",
+        "position": "absolute",
         "top": "153.6px",
         "width": "102.4px",
       }
@@ -1499,6 +2826,7 @@ exports[`no ants yet 2`] = `
       Object {
         "height": "76.8px",
         "left": "409.6px",
+        "position": "absolute",
         "top": "230.39999999999998px",
         "width": "102.4px",
       }
@@ -1514,6 +2842,7 @@ exports[`no ants yet 2`] = `
       Object {
         "height": "76.8px",
         "left": "409.6px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -1529,6 +2858,7 @@ exports[`no ants yet 2`] = `
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -1544,6 +2874,7 @@ exports[`no ants yet 2`] = `
       Object {
         "height": "76.8px",
         "left": "204.8px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -1559,6 +2890,7 @@ exports[`no ants yet 2`] = `
       Object {
         "height": "76.8px",
         "left": "102.4px",
+        "position": "absolute",
         "top": "307.2px",
         "width": "102.4px",
       }
@@ -1569,44 +2901,51 @@ exports[`no ants yet 2`] = `
     </div>
   </div>
   <div
-    class="tower"
+    class="tower first"
     style={
       Object {
         "height": "76.8px",
         "left": "204.8px",
+        "position": "absolute",
         "top": "76.8px",
         "width": "102.4px",
       }
     }
   >
-    <div />
+    <div>
+      first
+    </div>
   </div>
   <div
-    class="tower"
+    class="tower second"
     style={
       Object {
         "height": "76.8px",
         "left": "307.20000000000005px",
+        "position": "absolute",
         "top": "230.39999999999998px",
         "width": "102.4px",
       }
     }
   >
-    <div />
+    <div>
+      second
+    </div>
   </div>
   <div
-    class="tower 3"
+    class="tower third"
     style={
       Object {
         "height": "76.8px",
         "left": "409.6px",
+        "position": "absolute",
         "top": "384px",
         "width": "102.4px",
       }
     }
   >
     <div>
-      3
+      third
     </div>
   </div>
 </div>

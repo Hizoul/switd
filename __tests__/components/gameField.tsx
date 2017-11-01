@@ -1,9 +1,13 @@
 import * as React from "react"
 import GameFieldDisplay from "../../src/components/gameField"
+import { renderDeterministically } from "../../src/components/positionUtil"
 import { createtestMap1} from "../../src/maps/testMap1"
 import { createtestMapNoSplits } from "../../src/maps/testMapNoSplits"
 import noOp from "../../src/noOp"
 import renderSnapshot from "../../src/testUtil/renderSnapshot"
+
+renderDeterministically.bool = true
+
 it("Expect GameField to be able to render the field", () => {
 
   const testedMap = createtestMap1()

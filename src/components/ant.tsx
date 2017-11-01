@@ -18,6 +18,7 @@ class TowerDisplay extends React.Component<{
     return (
       <VelocityComponent
         animation={antStyle}
+        duration={this.props.gameField.tickSpeed * 0.85}
       >
         <div className={classes} />
       </VelocityComponent>

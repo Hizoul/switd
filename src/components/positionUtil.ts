@@ -3,6 +3,10 @@ import Map from "../logic/map"
 import Tile from "../logic/tile"
 import randomNum from "../randomNum"
 
+const renderDeterministically = {
+  bool: false
+}
+
 export interface IWindowDimensions {
   width: number
   height: number
@@ -24,8 +28,8 @@ const getPositionForTile = (t: Tile, field: Map, sizeChange?: number) => {
   const blockHeight = h / hm
   const actualWidth = gotNum ? numSize : blockWidth
   const actualHeight = gotNum ? numSize : blockHeight
-  const posInfluenceX = gotNum ? randomNum(0, blockWidth - actualWidth) : 0
-  const posInfluenceY = gotNum ? randomNum(0, blockHeight - actualHeight) : 0
+  const posInfluenceX = !renderDeterministically.bool && gotNum ? randomNum(0, blockWidth - actualWidth) : 0
+  const posInfluenceY = !renderDeterministically.bool && gotNum ? randomNum(0, blockHeight - actualHeight) : 0
   return {
     position: "absolute" as "absolute",
     width: `${actualWidth}px`,
@@ -36,5 +40,5 @@ const getPositionForTile = (t: Tile, field: Map, sizeChange?: number) => {
 }
 
 export {
-  getPositionForTile
+  getPositionForTile, renderDeterministically
 }
