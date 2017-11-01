@@ -30,3 +30,27 @@ body, html, .gameField {
 .street.isStart {
   background-color: red;
 }
+
+.gameFieldController {
+  width: 200pt;
+  height: 300pt;
+  position: absolute;
+  top: 20pt;
+  right: 0pt;
+  background-color: white;
+}
+
+.inputLabelCombo {
+  display: flex;
+  flex-direction: row;
+  align-items: center
+}
+
+.inputLabelCombo span, .inputLabelCombo input {
+  display: flex;
+  width: 100%;
+}
+
+.inputLabelCombo input {
+  text-align: center;
+}
