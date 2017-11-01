@@ -23,6 +23,7 @@ const createtestMapNoSplits = () => {
   const t2 = new Tower(3, 3, testMapNoSplits)
   testMapNoSplits.addTile(t2)
   const t3 = new Tower(4, 5, testMapNoSplits)
+  t3.towerType = "3"
   testMapNoSplits.addTile(t3)
   return testMapNoSplits
 }

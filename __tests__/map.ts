@@ -8,4 +8,9 @@ it(`Empty Map has no occupied Fields`, () => {
       expect(mapUnderTest.isOccupied(x, y)).toBe(null)
     }
   }
+  const s1 = new Street(2, 4, mapUnderTest)
+  mapUnderTest.addTile(s1)
+  mapUnderTest.continueTimer = true
+  mapUnderTest.processTime()
+  mapUnderTest.stopTimer()
 })

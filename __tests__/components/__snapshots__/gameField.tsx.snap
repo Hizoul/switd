@@ -1,5 +1,461 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`12 ants at 4  3 at 1 1`] = `
+<div
+  class="gameField"
+>
+  <div
+    class="street isStart"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "0px",
+        "top": "0px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "102.4px",
+        "top": "0px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      3
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "102.4px",
+        "top": "76.8px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "102.4px",
+        "top": "153.6px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "204.8px",
+        "top": "153.6px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      7
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "307.20000000000005px",
+        "top": "153.6px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "409.6px",
+        "top": "153.6px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "409.6px",
+        "top": "230.39999999999998px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "409.6px",
+        "top": "307.2px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "307.20000000000005px",
+        "top": "307.2px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "204.8px",
+        "top": "307.2px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street isTarget"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "102.4px",
+        "top": "307.2px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="tower"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "204.8px",
+        "top": "76.8px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div />
+  </div>
+  <div
+    class="tower"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "307.20000000000005px",
+        "top": "230.39999999999998px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div />
+  </div>
+  <div
+    class="tower 3"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "409.6px",
+        "top": "384px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      3
+    </div>
+  </div>
+</div>
+`;
+
+exports[`12 ants at start 1`] = `
+<div
+  class="gameField"
+>
+  <div
+    class="street isStart"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "0px",
+        "top": "0px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      12
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "102.4px",
+        "top": "0px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "102.4px",
+        "top": "76.8px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "102.4px",
+        "top": "153.6px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "204.8px",
+        "top": "153.6px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "307.20000000000005px",
+        "top": "153.6px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "409.6px",
+        "top": "153.6px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "409.6px",
+        "top": "230.39999999999998px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "409.6px",
+        "top": "307.2px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "307.20000000000005px",
+        "top": "307.2px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "204.8px",
+        "top": "307.2px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street isTarget"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "102.4px",
+        "top": "307.2px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="tower"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "204.8px",
+        "top": "76.8px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div />
+  </div>
+  <div
+    class="tower"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "307.20000000000005px",
+        "top": "230.39999999999998px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div />
+  </div>
+  <div
+    class="tower 3"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "409.6px",
+        "top": "384px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      3
+    </div>
+  </div>
+</div>
+`;
+
 exports[`five ants at stage 2 5 more newly added 1`] = `
 <div
   class="gameField"
@@ -923,6 +1379,234 @@ exports[`no ants yet 1`] = `
   >
     <div>
       0
+    </div>
+  </div>
+</div>
+`;
+
+exports[`no ants yet 2`] = `
+<div
+  class="gameField"
+>
+  <div
+    class="street isStart"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "0px",
+        "top": "0px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "102.4px",
+        "top": "0px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "102.4px",
+        "top": "76.8px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "102.4px",
+        "top": "153.6px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "204.8px",
+        "top": "153.6px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "307.20000000000005px",
+        "top": "153.6px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "409.6px",
+        "top": "153.6px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "409.6px",
+        "top": "230.39999999999998px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "409.6px",
+        "top": "307.2px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "307.20000000000005px",
+        "top": "307.2px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "204.8px",
+        "top": "307.2px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="street isTarget"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "102.4px",
+        "top": "307.2px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      0
+    </div>
+  </div>
+  <div
+    class="tower"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "204.8px",
+        "top": "76.8px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div />
+  </div>
+  <div
+    class="tower"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "307.20000000000005px",
+        "top": "230.39999999999998px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div />
+  </div>
+  <div
+    class="tower 3"
+    style={
+      Object {
+        "height": "76.8px",
+        "left": "409.6px",
+        "top": "384px",
+        "width": "102.4px",
+      }
+    }
+  >
+    <div>
+      3
     </div>
   </div>
 </div>
