@@ -13,6 +13,10 @@ const componentWillUnmount = (thisRef: any) => {
   thisRef.props.fieldToRender.stopTimer()
 }
 
+const keyFromTile = (tile: Tile) => {
+  return `${tile.xPos}.${tile.yPos}`
+}
+
 class GameFieldDisplay extends React.Component<{
   fieldToRender: Map
 }, any> {
@@ -27,11 +31,11 @@ class GameFieldDisplay extends React.Component<{
   }
   public render() {
     const streets = map(this.props.fieldToRender.streetList,
-      (street) => <StreetDisplay street={street} gameField={this.props.fieldToRender} />)
+      (street) => <StreetDisplay street={street} key={keyFromTile(street)} gameField={this.props.fieldToRender} />)
     const towers = map(this.props.fieldToRender.towerList,
-      (tower) => <TowerDisplay tower={tower} gameField={this.props.fieldToRender} />)
+      (tower) => <TowerDisplay tower={tower} key={keyFromTile(tower)} gameField={this.props.fieldToRender} />)
     const ants = map(this.props.fieldToRender.antList,
-      (ant) => <AntDisplay ant={ant} gameField={this.props.fieldToRender} />)
+      (ant) => <AntDisplay ant={ant} key={ant.uniqueId} gameField={this.props.fieldToRender} />)
     return (
       <div className="gameField">
         {streets}
