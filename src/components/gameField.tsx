@@ -8,17 +8,22 @@ import StreetDisplay from "./street"
 import "./style.css"
 import TowerDisplay from "./tower"
 
+const componentWillUnmount = (thisRef: any) => {
+  thisRef.props.fieldToRender.registerComponentToUpdate({setState: noOp})
+  thisRef.props.fieldToRender.stopTimer()
+}
+
 class GameFieldDisplay extends React.Component<{
   fieldToRender: Map
 }, any> {
   public state: {tickNum: number} = {tickNum: -1}
+  constructor(props: any) {
+    super(props)
+    this.componentWillUnmount = componentWillUnmount.bind(this, this)
+  }
   public componentWillMount() {
     this.props.fieldToRender.registerComponentToUpdate(this)
     this.props.fieldToRender.startTimer()
-  }
-  public componentWillUnmount() {
-    this.props.fieldToRender.registerComponentToUpdate({setState: noOp})
-    this.props.fieldToRender.stopTimer()
   }
   public render() {
     const streets = map(this.props.fieldToRender.streetList,
@@ -38,3 +43,6 @@ class GameFieldDisplay extends React.Component<{
 }
 
 export default GameFieldDisplay
+export {
+  componentWillUnmount
+}

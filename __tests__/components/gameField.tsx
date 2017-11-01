@@ -1,5 +1,5 @@
 import * as React from "react"
-import GameFieldDisplay from "../../src/components/gameField"
+import GameFieldDisplay, { componentWillUnmount } from "../../src/components/gameField"
 import { renderDeterministically } from "../../src/components/positionUtil"
 import { createtestMap1} from "../../src/maps/testMap1"
 import { createtestMapNoSplits } from "../../src/maps/testMapNoSplits"
@@ -11,6 +11,7 @@ renderDeterministically.bool = true
 it("Expect GameField to be able to render the field", () => {
 
   const testedMap = createtestMap1()
+  componentWillUnmount({props: {fieldToRender: testedMap}})
   renderSnapshot(<GameFieldDisplay fieldToRender={testedMap} />, "no ants yet")
   testedMap.spawnNewAnt(5)
   renderSnapshot(<GameFieldDisplay fieldToRender={testedMap} />, "five unmoved ants")
