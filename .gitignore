@@ -57,4 +57,4 @@ typings/
 # dotenv environment variables file
 .env
 webpackDist
-
+.DS_Store
