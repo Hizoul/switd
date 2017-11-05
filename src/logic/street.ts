@@ -35,6 +35,13 @@ class Street extends Tile {
   public isStart: () => boolean = () => {
     return this.previous.length === 0
   }
+  public multiExtend: (extendToDir: number, amountOfTimes: number) => Street = (extendToDir, amountOfTimes) => {
+    let endOfAdding: any = this
+    for (let i = 0; i < amountOfTimes; i++) {
+      endOfAdding = endOfAdding.extend(extendToDir)
+    }
+    return endOfAdding
+  }
   public extend: (extendToDir: number) => Street = (extendToDir) =>  {
     const directionHelper = getDirFromNum(extendToDir)
     const nextStreet = new Street(

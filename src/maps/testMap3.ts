@@ -1,10 +1,11 @@
-import Map from "../logic/map"
+import Map, { experimentChoices } from "../logic/map"
 import Street, { direction } from "../logic/street"
 import Tower from "../logic/tower"
 
 const createtestMap3 = () => {
   const testMap2 = new Map()
   testMap2.spawnThreshold = 14
+  testMap2.experimentType = experimentChoices.shortestPathWithDeathInfluence
   const start = new Street(0, 0, testMap2)
   testMap2.addTile(start)
   const s1 = start.extend(direction.right)
