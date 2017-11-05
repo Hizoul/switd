@@ -10,7 +10,7 @@ class Tile {
   public yPos: number
   public tileType: number
   public gameField: GameField
-  protected constructor(xPos: number, yPos: number, tileType: number, gameField: GameField) {
+  public constructor(xPos: number, yPos: number, tileType: number, gameField: GameField) {
     this.xPos = xPos
     this.yPos = yPos
     this.tileType = tileType

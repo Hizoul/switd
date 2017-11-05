@@ -10,7 +10,8 @@ const experimentChoices = {
   deadAntAmount: 4,
   onlyOnSuccess: 6,
   onlyShortestPath: 8,
-  shortestPathWithDeathInfluence: 9
+  shortestPathWithDeathInfluence: 9,
+  newExperimentWay: 643
 }
 
 class GameField {
@@ -73,9 +74,7 @@ class GameField {
     }
     return false
   }
-  public getNeighbors: (xPos: number, yPos: number, range: number) => Tile[] = (xPos, yPos, range) => {
-    const tiles: Tile[] = []
-    // TODO find neighbors
+  public getNeighborPositions(xPos: number, yPos: number, range: number) {
     const toCheck: Array<{x: number, y: number}> = []
     for (let i = 1; i <= range; i++) {
       toCheck.push({x: xPos + i, y: yPos})
@@ -87,6 +86,12 @@ class GameField {
       toCheck.push({x: xPos - i, y: yPos + i})
       toCheck.push({x: xPos - i, y: yPos - i})
     }
+    return toCheck
+  }
+  public getNeighbors: (xPos: number, yPos: number, range: number) => Tile[] = (xPos, yPos, range) => {
+    const tiles: Tile[] = []
+    // TODO find neighbors
+    const toCheck = this.getNeighborPositions(xPos, yPos, range)
     for (const checkMe of toCheck) {
       const found = this.isOccupied(checkMe.x, checkMe.y)
       if (!isNil(found)) {

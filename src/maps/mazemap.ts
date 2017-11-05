@@ -37,6 +37,12 @@ const createtestMapNoSplits = () => {
 
   w5.addIntersection(s2d)
 
+  const t1 = new Tower(4, 6, testMapNoSplits)
+  t1.damagableAnts = 4
+  t1.damageAmount = 60
+  t1.towerRange = 2
+  testMapNoSplits.addTile(t1)
+
   return testMapNoSplits
 
 }

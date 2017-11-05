@@ -9,7 +9,7 @@ body, html, .gameField {
   background-color: grey;
 }
 
-.street, .tower, .ant {
+.street, .tower, .ant, .towerRangeIndicator {
   background-color: blue;
   position: absolute;
   align-items: center;
@@ -20,6 +20,10 @@ body, html, .gameField {
 }
 .tower {
   background-color: orange;
+}
+.towerRangeIndicator {
+  background-color: red;
+  opacity: 0.1;
 }
 .ant {
   background-color: black; 

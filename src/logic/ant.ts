@@ -63,6 +63,10 @@ class Ant {
               street.adjustPheromoneLevel(1.5)
             }
           }
+        } else if (nextTile.gameField.experimentType === experimentChoices.newExperimentWay) {
+          for (const street of this.walkedPath) {
+            street.adjustPheromoneLevel(5)
+          }
         }
       }
     }
