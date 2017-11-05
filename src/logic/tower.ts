@@ -29,6 +29,7 @@ class Tower extends Tile {
       hittableAnts = sortBy(hittableAnts, ["hp", "uniqueId"])
       const ant = hittableAnts[0]
       ant.hurt(this.damageAmount)
+      this.gameField.totalDamageDealt += this.damageAmount
       antsHit++
       if (ant.hp <= 0) {
         remove(hittableAnts, (antToCheck) => antToCheck.uniqueId === ant.uniqueId)

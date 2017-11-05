@@ -6,28 +6,41 @@ import Street from "./street"
 import Tile, { tileTypes } from "./tile"
 import Tower from "./tower"
 
+const experimentChoices = {
+  deadAntAmount: 4,
+  onlyOnSuccess: 6
+}
+
 class GameField {
   public fieldSizeX: number
   public fieldSizeY: number
   public antList: Ant[]
   public towerList: Tower[]
   public streetList: Street[]
+  public intersectionList: Array<{beginning: Street, target: Street}>
   public componentUpdateTrigger: any
   public currentTick: number
   public tickSpeed: number
   public spawnThreshold: number
   public continueTimer: boolean
+  public experimentType: number
+  public decayStrength: number
+  public totalDamageDealt: number
   constructor(fieldSizeX: number = 10, fieldSizeY: number = 10) {
     this.fieldSizeX = fieldSizeX
     this.fieldSizeY = fieldSizeY
     this.towerList = []
     this.streetList = []
     this.antList = []
+    this.intersectionList = []
     this.currentTick = 0
     this.tickSpeed = 1800
     this.spawnThreshold = 3
     this.continueTimer = false
     this.componentUpdateTrigger = {setState: noOp}
+    this.experimentType = experimentChoices.onlyOnSuccess
+    this.decayStrength = -0.2
+    this.totalDamageDealt = 0
   }
   /**
    * Check wether a certain position in the map is already occupied by a tile
@@ -101,6 +114,9 @@ class GameField {
     for (const ant of this.antList) {
       ant.makeNextStep()
     }
+    for (const street of this.streetList) {
+      street.adjustPheromoneLevel(this.decayStrength)
+    }
     this.currentTick++
     this.componentUpdateTrigger.setState({tickNum: this.currentTick})
   }
@@ -137,3 +153,4 @@ class GameField {
 }
 
 export default GameField
+export { experimentChoices }

@@ -15,8 +15,10 @@ class StreetDisplay extends React.Component<{
     if (this.props.street.isStart()) {
       classes += " isStart"
     }
+    const cssStyle: any = getPositionForTile(this.props.street, this.props.gameField)
+    cssStyle.backgroundColor = `rgba(0, 0, 0, ${this.props.street.pheromoneLevel / 40})`
     return (
-      <div className={classes} style={getPositionForTile(this.props.street, this.props.gameField)}>
+      <div className={classes} style={cssStyle}>
         <div>{this.props.street.currentVisitors.length}</div>
       </div>
     )

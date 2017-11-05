@@ -1,8 +1,22 @@
-import { isArray } from "lodash"
+import { find, isArray, map } from "lodash"
 import randomNum from "../randomNum"
+import { experimentChoices } from "./map"
 import Street from "./street"
-
 let currentmaxid = 1
+
+const makeWeightedChoice = (inputArr: Array<{choiceIndex: number, choiceWeight: number}>) => {
+  let sumOfWeights = 0
+  const validRanges: Array<{min: number, max: number, index: number}> = []
+  for (const item of inputArr) {
+    validRanges.push({index: item.choiceIndex, min: sumOfWeights, max: sumOfWeights + item.choiceWeight})
+    sumOfWeights += item.choiceWeight
+  }
+  const findInRange = randomNum(0, sumOfWeights)
+  const foundRange: any = find(validRanges,
+    (toCheck) => findInRange >= toCheck.min && findInRange <= Math.ceil(toCheck.max))
+  return foundRange.index
+}
+
 class Ant {
   public currentlyOn: Street
   public walkedPath: Street[]
@@ -22,12 +36,25 @@ class Ant {
     }
     const nextOptions = this.currentlyOn.next
     if (isArray(nextOptions) && nextOptions.length > 0) {
-      // TODO: add sophisticated choice based on ACO
-      const nextTile = nextOptions[randomNum(0, nextOptions.length - 1)]
+
+      let i = 0
+      const weightedOpts = map(nextOptions, (street) => {
+        const obj = {choiceIndex: i, choiceWeight: street.pheromoneLevel}
+        i++
+        return obj
+      })
+      const nextTileIndex = makeWeightedChoice(weightedOpts)
+
+      const nextTile = nextOptions[nextTileIndex]
       this.walkedPath.push(nextTile)
       this.currentlyOn.leave(this)
       nextTile.enter(this)
       this.currentlyOn = nextTile
+      if (nextTile.isTarget() && nextTile.gameField.experimentType === experimentChoices.onlyOnSuccess) {
+        for (const targetCrossed of this.walkedPath) {
+          targetCrossed.adjustPheromoneLevel(1) // TOOD: figure out value of pheromonelevel
+        }
+      }
     }
   }
   public hurt(damageDealt: number) {
@@ -35,7 +62,9 @@ class Ant {
     if (this.hp <= 0) {
       this.currentlyOn.gameField.removeAnt(this)
       this.currentlyOn.leave(this)
-      // TODO: influence scent strength on paths
+      for (const targetCrossed of this.walkedPath) {
+        targetCrossed.adjustPheromoneLevel(-0.5) // TOOD: figure out value of pheromonelevel
+      }
     }
   }
 }

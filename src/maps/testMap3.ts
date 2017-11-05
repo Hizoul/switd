@@ -2,7 +2,7 @@ import Map from "../logic/map"
 import Street, { direction } from "../logic/street"
 import Tower from "../logic/tower"
 
-const createtestMap2 = () => {
+const createtestMap3 = () => {
   const testMap2 = new Map()
   testMap2.spawnThreshold = 14
   const start = new Street(0, 0, testMap2)
@@ -32,9 +32,7 @@ const createtestMap2 = () => {
   const s5 = s4.extend(direction.down)
   const s6 = s5.extend(direction.right)
 
-  const t1 = new Tower(2, 2, testMap2)
-  testMap2.addTile(t1)
-  const t2 = new Tower(3, 3, testMap2)
+  const t2 = new Tower(2, 3, testMap2)
   testMap2.addTile(t2)
   const t3 = new Tower(5, 5, testMap2)
   testMap2.addTile(t3)
@@ -42,5 +40,5 @@ const createtestMap2 = () => {
   return testMap2
 }
 
-export default createtestMap2()
-export { createtestMap2 }
+export default createtestMap3()
+export { createtestMap3 }

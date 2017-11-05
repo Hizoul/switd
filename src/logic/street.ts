@@ -21,11 +21,13 @@ class Street extends Tile {
   public next: Street[]
   public previous: Street[]
   public currentVisitors: Ant[]
+  public pheromoneLevel: number
   constructor(xPos: number, yPos: number, gameField: GameField) {
     super(xPos, yPos, tileTypes.street, gameField)
     this.next = []
     this.previous = []
     this.currentVisitors = []
+    this.pheromoneLevel = 0
   }
   public isTarget: () => boolean = () => {
     return this.next.length === 0
@@ -59,6 +61,12 @@ class Street extends Tile {
   }
   public leave(ant: Ant) {
     return remove(this.currentVisitors, (e: Ant) => e.uniqueId === ant.uniqueId)
+  }
+  public adjustPheromoneLevel(by: number) {
+    this.pheromoneLevel += by
+    if (this.pheromoneLevel < 1) {
+      this.pheromoneLevel = 1
+    }
   }
 }
 
