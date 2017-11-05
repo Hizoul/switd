@@ -8,7 +8,9 @@ import Tower from "./tower"
 
 const experimentChoices = {
   deadAntAmount: 4,
-  onlyOnSuccess: 6
+  onlyOnSuccess: 6,
+  onlyShortestPath: 8,
+  shortestPathWithDeathInfluence: 9
 }
 
 class GameField {
@@ -26,6 +28,7 @@ class GameField {
   public experimentType: number
   public decayStrength: number
   public totalDamageDealt: number
+  public shortestPathLength: number
   constructor(fieldSizeX: number = 10, fieldSizeY: number = 10) {
     this.fieldSizeX = fieldSizeX
     this.fieldSizeY = fieldSizeY
@@ -41,6 +44,7 @@ class GameField {
     this.experimentType = experimentChoices.onlyOnSuccess
     this.decayStrength = -0.2
     this.totalDamageDealt = 0
+    this.shortestPathLength = 99999999999999
   }
   /**
    * Check wether a certain position in the map is already occupied by a tile

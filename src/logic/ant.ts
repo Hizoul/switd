@@ -50,9 +50,19 @@ class Ant {
       this.currentlyOn.leave(this)
       nextTile.enter(this)
       this.currentlyOn = nextTile
-      if (nextTile.isTarget() && nextTile.gameField.experimentType === experimentChoices.onlyOnSuccess) {
-        for (const targetCrossed of this.walkedPath) {
-          targetCrossed.adjustPheromoneLevel(1) // TOOD: figure out value of pheromonelevel
+      if (nextTile.isTarget()) {
+        if (nextTile.gameField.experimentType === experimentChoices.onlyOnSuccess) {
+          for (const targetCrossed of this.walkedPath) {
+            targetCrossed.adjustPheromoneLevel(1) // TOOD: figure out value of pheromonelevel
+          }
+        } else if (nextTile.gameField.experimentType === experimentChoices.onlyShortestPath ||
+            nextTile.gameField.experimentType === experimentChoices.shortestPathWithDeathInfluence) {
+          if (nextTile.gameField.shortestPathLength >= this.walkedPath.length) {
+            nextTile.gameField.shortestPathLength = this.walkedPath.length
+            for (const street of this.walkedPath) {
+              street.adjustPheromoneLevel(1.5)
+            }
+          }
         }
       }
     }
@@ -62,8 +72,10 @@ class Ant {
     if (this.hp <= 0) {
       this.currentlyOn.gameField.removeAnt(this)
       this.currentlyOn.leave(this)
-      for (const targetCrossed of this.walkedPath) {
-        targetCrossed.adjustPheromoneLevel(-0.5) // TOOD: figure out value of pheromonelevel
+      if (this.currentlyOn.gameField.experimentType !== experimentChoices.onlyShortestPath) {
+        for (const targetCrossed of this.walkedPath) {
+          targetCrossed.adjustPheromoneLevel(-2) // TOOD: figure out value of pheromonelevel
+        }
       }
     }
   }
