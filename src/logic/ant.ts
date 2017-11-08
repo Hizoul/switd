@@ -1,4 +1,4 @@
-import { find, isArray, map } from "lodash"
+import { filter, find, isArray, isEqual, map, union, uniq } from "lodash"
 import randomNum from "../randomNum"
 import { experimentChoices } from "./map"
 import Street from "./street"
@@ -34,9 +34,13 @@ class Ant {
       // Already done
       return
     }
-    const nextOptions = this.currentlyOn.next
+    // also consider going backwards at a crossing by unionizing next and previous and
+    // then filtering out the tile that would mean going backwards
+    const nextOptions = filter(union(this.currentlyOn.next, this.currentlyOn.previous), (street) => {
+      return !this.currentlyOn.sameTile(street) &&
+        !street.sameTile(this.walkedPath[Math.max(0, this.walkedPath.length - 1)])
+    })
     if (isArray(nextOptions) && nextOptions.length > 0) {
-
       let i = 0
       const weightedOpts = map(nextOptions, (street) => {
         const obj = {choiceIndex: i, choiceWeight: street.pheromoneLevel}
@@ -46,11 +50,14 @@ class Ant {
       const nextTileIndex = makeWeightedChoice(weightedOpts)
 
       const nextTile = nextOptions[nextTileIndex]
-      this.walkedPath.push(nextTile)
+      this.walkedPath.push(this.currentlyOn)
       this.currentlyOn.leave(this)
       nextTile.enter(this)
       this.currentlyOn = nextTile
       if (nextTile.isTarget()) {
+        this.walkedPath.push(nextTile)
+        // Use uniq here so each crossed street tile only gets evaluated once
+        const streetsToEvaluate = uniq(this.walkedPath)
         if (nextTile.gameField.experimentType === experimentChoices.onlyOnSuccess) {
           for (const targetCrossed of this.walkedPath) {
             targetCrossed.adjustPheromoneLevel(1) // TOOD: figure out value of pheromonelevel

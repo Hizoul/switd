@@ -24,6 +24,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -40,6 +41,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -56,6 +58,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -72,6 +75,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "204.8px",
         "position": "absolute",
@@ -88,6 +92,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -104,6 +109,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "409.6px",
         "position": "absolute",
@@ -120,6 +126,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "409.6px",
         "position": "absolute",
@@ -136,6 +143,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "409.6px",
         "position": "absolute",
@@ -152,6 +160,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -168,6 +177,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "204.8px",
         "position": "absolute",
@@ -196,53 +206,347 @@ exports[`12 ants at 4  3 at 1 1`] = `
       0
     </div>
   </div>
-  <div
-    class="tower first"
-    style={
-      Object {
-        "height": "76.8px",
-        "left": "204.8px",
-        "position": "absolute",
-        "top": "76.8px",
-        "width": "102.4px",
+  <div>
+    <div
+      class="tower first"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "204.8px",
+          "position": "absolute",
+          "top": "76.8px",
+          "width": "102.4px",
+        }
       }
-    }
-  >
-    <div>
-      first
+    >
+      <div>
+        first
+      </div>
     </div>
-  </div>
-  <div
-    class="tower second"
-    style={
-      Object {
-        "height": "76.8px",
-        "left": "307.20000000000005px",
-        "position": "absolute",
-        "top": "230.39999999999998px",
-        "width": "102.4px",
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "76.8px",
+          "width": "102.4px",
+        }
       }
-    }
-  >
-    <div>
-      second
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "102.4px",
+          "position": "absolute",
+          "top": "76.8px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "204.8px",
+          "position": "absolute",
+          "top": "153.6px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "204.8px",
+          "position": "absolute",
+          "top": "0px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "153.6px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "0px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "102.4px",
+          "position": "absolute",
+          "top": "153.6px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "102.4px",
+          "position": "absolute",
+          "top": "0px",
+          "width": "102.4px",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      class="tower second"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "230.39999999999998px",
+          "width": "102.4px",
+        }
+      }
+    >
+      <div>
+        second
+      </div>
     </div>
-  </div>
-  <div
-    class="tower third"
-    style={
-      Object {
-        "height": "76.8px",
-        "left": "409.6px",
-        "position": "absolute",
-        "top": "384px",
-        "width": "102.4px",
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "409.6px",
+          "position": "absolute",
+          "top": "230.39999999999998px",
+          "width": "102.4px",
+        }
       }
-    }
-  >
-    <div>
-      third
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "204.8px",
+          "position": "absolute",
+          "top": "230.39999999999998px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "307.2px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "153.6px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "409.6px",
+          "position": "absolute",
+          "top": "307.2px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "409.6px",
+          "position": "absolute",
+          "top": "153.6px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "204.8px",
+          "position": "absolute",
+          "top": "307.2px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "204.8px",
+          "position": "absolute",
+          "top": "153.6px",
+          "width": "102.4px",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      class="tower third"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "409.6px",
+          "position": "absolute",
+          "top": "384px",
+          "width": "102.4px",
+        }
+      }
+    >
+      <div>
+        third
+      </div>
     </div>
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "512px",
+          "position": "absolute",
+          "top": "384px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "384px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "409.6px",
+          "position": "absolute",
+          "top": "460.79999999999995px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "409.6px",
+          "position": "absolute",
+          "top": "307.2px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "512px",
+          "position": "absolute",
+          "top": "460.79999999999995px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "512px",
+          "position": "absolute",
+          "top": "307.2px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "460.79999999999995px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "307.2px",
+          "width": "102.4px",
+        }
+      }
+    />
   </div>
   <undefined
     animation={
@@ -263,7 +567,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -289,7 +593,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -315,7 +619,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -341,7 +645,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -367,7 +671,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -393,7 +697,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -419,7 +723,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -445,7 +749,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -471,7 +775,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -497,7 +801,7 @@ exports[`12 ants at 4  3 at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -531,6 +835,7 @@ exports[`12 ants at start 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -547,6 +852,7 @@ exports[`12 ants at start 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -563,6 +869,7 @@ exports[`12 ants at start 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -579,6 +886,7 @@ exports[`12 ants at start 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "204.8px",
         "position": "absolute",
@@ -595,6 +903,7 @@ exports[`12 ants at start 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -611,6 +920,7 @@ exports[`12 ants at start 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "409.6px",
         "position": "absolute",
@@ -627,6 +937,7 @@ exports[`12 ants at start 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "409.6px",
         "position": "absolute",
@@ -643,6 +954,7 @@ exports[`12 ants at start 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "409.6px",
         "position": "absolute",
@@ -659,6 +971,7 @@ exports[`12 ants at start 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -675,6 +988,7 @@ exports[`12 ants at start 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "204.8px",
         "position": "absolute",
@@ -703,53 +1017,347 @@ exports[`12 ants at start 1`] = `
       0
     </div>
   </div>
-  <div
-    class="tower first"
-    style={
-      Object {
-        "height": "76.8px",
-        "left": "204.8px",
-        "position": "absolute",
-        "top": "76.8px",
-        "width": "102.4px",
+  <div>
+    <div
+      class="tower first"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "204.8px",
+          "position": "absolute",
+          "top": "76.8px",
+          "width": "102.4px",
+        }
       }
-    }
-  >
-    <div>
-      first
+    >
+      <div>
+        first
+      </div>
     </div>
-  </div>
-  <div
-    class="tower second"
-    style={
-      Object {
-        "height": "76.8px",
-        "left": "307.20000000000005px",
-        "position": "absolute",
-        "top": "230.39999999999998px",
-        "width": "102.4px",
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "76.8px",
+          "width": "102.4px",
+        }
       }
-    }
-  >
-    <div>
-      second
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "102.4px",
+          "position": "absolute",
+          "top": "76.8px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "204.8px",
+          "position": "absolute",
+          "top": "153.6px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "204.8px",
+          "position": "absolute",
+          "top": "0px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "153.6px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "0px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "102.4px",
+          "position": "absolute",
+          "top": "153.6px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "102.4px",
+          "position": "absolute",
+          "top": "0px",
+          "width": "102.4px",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      class="tower second"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "230.39999999999998px",
+          "width": "102.4px",
+        }
+      }
+    >
+      <div>
+        second
+      </div>
     </div>
-  </div>
-  <div
-    class="tower third"
-    style={
-      Object {
-        "height": "76.8px",
-        "left": "409.6px",
-        "position": "absolute",
-        "top": "384px",
-        "width": "102.4px",
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "409.6px",
+          "position": "absolute",
+          "top": "230.39999999999998px",
+          "width": "102.4px",
+        }
       }
-    }
-  >
-    <div>
-      third
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "204.8px",
+          "position": "absolute",
+          "top": "230.39999999999998px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "307.2px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "153.6px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "409.6px",
+          "position": "absolute",
+          "top": "307.2px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "409.6px",
+          "position": "absolute",
+          "top": "153.6px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "204.8px",
+          "position": "absolute",
+          "top": "307.2px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "204.8px",
+          "position": "absolute",
+          "top": "153.6px",
+          "width": "102.4px",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      class="tower third"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "409.6px",
+          "position": "absolute",
+          "top": "384px",
+          "width": "102.4px",
+        }
+      }
+    >
+      <div>
+        third
+      </div>
     </div>
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "512px",
+          "position": "absolute",
+          "top": "384px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "384px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "409.6px",
+          "position": "absolute",
+          "top": "460.79999999999995px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "409.6px",
+          "position": "absolute",
+          "top": "307.2px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "512px",
+          "position": "absolute",
+          "top": "460.79999999999995px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "512px",
+          "position": "absolute",
+          "top": "307.2px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "460.79999999999995px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "307.2px",
+          "width": "102.4px",
+        }
+      }
+    />
   </div>
   <undefined
     animation={
@@ -770,7 +1378,7 @@ exports[`12 ants at start 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -796,7 +1404,7 @@ exports[`12 ants at start 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -822,7 +1430,7 @@ exports[`12 ants at start 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -848,7 +1456,7 @@ exports[`12 ants at start 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -874,7 +1482,7 @@ exports[`12 ants at start 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -900,7 +1508,7 @@ exports[`12 ants at start 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -926,7 +1534,7 @@ exports[`12 ants at start 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -952,7 +1560,7 @@ exports[`12 ants at start 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -978,7 +1586,7 @@ exports[`12 ants at start 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1004,7 +1612,7 @@ exports[`12 ants at start 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1030,7 +1638,7 @@ exports[`12 ants at start 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1056,7 +1664,7 @@ exports[`12 ants at start 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1090,6 +1698,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -1106,6 +1715,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -1122,6 +1732,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -1138,6 +1749,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -1154,6 +1766,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -1170,6 +1783,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "204.8px",
         "position": "absolute",
@@ -1186,6 +1800,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -1202,6 +1817,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "204.8px",
         "position": "absolute",
@@ -1218,6 +1834,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -1234,6 +1851,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -1250,6 +1868,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -1266,6 +1885,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -1282,6 +1902,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -1329,7 +1950,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1355,7 +1976,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1381,7 +2002,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1407,7 +2028,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1433,7 +2054,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1459,7 +2080,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1485,7 +2106,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1511,7 +2132,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1537,7 +2158,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1563,7 +2184,7 @@ exports[`five ants at stage 2 5 more newly added 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1597,6 +2218,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -1613,6 +2235,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -1629,6 +2252,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -1645,6 +2269,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -1661,6 +2286,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -1677,6 +2303,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "204.8px",
         "position": "absolute",
@@ -1693,6 +2320,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -1709,6 +2337,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "204.8px",
         "position": "absolute",
@@ -1725,6 +2354,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -1741,6 +2371,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -1757,6 +2388,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -1773,6 +2405,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -1789,6 +2422,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0.025)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -1836,7 +2470,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1862,7 +2496,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1888,7 +2522,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1914,7 +2548,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1940,7 +2574,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1966,7 +2600,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -1992,7 +2626,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -2018,7 +2652,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -2044,7 +2678,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -2070,7 +2704,7 @@ exports[`five ants at stage 3 5 more at 1 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -2104,6 +2738,7 @@ exports[`five unmoved ants 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -2120,6 +2755,7 @@ exports[`five unmoved ants 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -2136,6 +2772,7 @@ exports[`five unmoved ants 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -2152,6 +2789,7 @@ exports[`five unmoved ants 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -2168,6 +2806,7 @@ exports[`five unmoved ants 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -2184,6 +2823,7 @@ exports[`five unmoved ants 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "204.8px",
         "position": "absolute",
@@ -2200,6 +2840,7 @@ exports[`five unmoved ants 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -2216,6 +2857,7 @@ exports[`five unmoved ants 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "204.8px",
         "position": "absolute",
@@ -2232,6 +2874,7 @@ exports[`five unmoved ants 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -2248,6 +2891,7 @@ exports[`five unmoved ants 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -2264,6 +2908,7 @@ exports[`five unmoved ants 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -2280,6 +2925,7 @@ exports[`five unmoved ants 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -2296,6 +2942,7 @@ exports[`five unmoved ants 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -2343,7 +2990,7 @@ exports[`five unmoved ants 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -2369,7 +3016,7 @@ exports[`five unmoved ants 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -2395,7 +3042,7 @@ exports[`five unmoved ants 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -2421,7 +3068,7 @@ exports[`five unmoved ants 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -2447,7 +3094,7 @@ exports[`five unmoved ants 1`] = `
       />,
       ]
     }
-    duration={1530}
+    duration={2340}
   >
     <div
       class="ant"
@@ -2481,6 +3128,7 @@ exports[`no ants yet 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -2497,6 +3145,7 @@ exports[`no ants yet 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -2513,6 +3162,7 @@ exports[`no ants yet 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -2529,6 +3179,7 @@ exports[`no ants yet 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -2545,6 +3196,7 @@ exports[`no ants yet 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -2561,6 +3213,7 @@ exports[`no ants yet 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "204.8px",
         "position": "absolute",
@@ -2577,6 +3230,7 @@ exports[`no ants yet 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -2593,6 +3247,7 @@ exports[`no ants yet 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "204.8px",
         "position": "absolute",
@@ -2609,6 +3264,7 @@ exports[`no ants yet 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -2625,6 +3281,7 @@ exports[`no ants yet 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -2641,6 +3298,7 @@ exports[`no ants yet 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -2657,6 +3315,7 @@ exports[`no ants yet 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -2673,6 +3332,7 @@ exports[`no ants yet 1`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -2728,6 +3388,7 @@ exports[`no ants yet 2`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -2744,6 +3405,7 @@ exports[`no ants yet 2`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -2760,6 +3422,7 @@ exports[`no ants yet 2`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "102.4px",
         "position": "absolute",
@@ -2776,6 +3439,7 @@ exports[`no ants yet 2`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "204.8px",
         "position": "absolute",
@@ -2792,6 +3456,7 @@ exports[`no ants yet 2`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -2808,6 +3473,7 @@ exports[`no ants yet 2`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "409.6px",
         "position": "absolute",
@@ -2824,6 +3490,7 @@ exports[`no ants yet 2`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "409.6px",
         "position": "absolute",
@@ -2840,6 +3507,7 @@ exports[`no ants yet 2`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "409.6px",
         "position": "absolute",
@@ -2856,6 +3524,7 @@ exports[`no ants yet 2`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "307.20000000000005px",
         "position": "absolute",
@@ -2872,6 +3541,7 @@ exports[`no ants yet 2`] = `
     class="street"
     style={
       Object {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
         "height": "76.8px",
         "left": "204.8px",
         "position": "absolute",
@@ -2900,53 +3570,347 @@ exports[`no ants yet 2`] = `
       0
     </div>
   </div>
-  <div
-    class="tower first"
-    style={
-      Object {
-        "height": "76.8px",
-        "left": "204.8px",
-        "position": "absolute",
-        "top": "76.8px",
-        "width": "102.4px",
+  <div>
+    <div
+      class="tower first"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "204.8px",
+          "position": "absolute",
+          "top": "76.8px",
+          "width": "102.4px",
+        }
       }
-    }
-  >
-    <div>
-      first
+    >
+      <div>
+        first
+      </div>
     </div>
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "76.8px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "102.4px",
+          "position": "absolute",
+          "top": "76.8px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "204.8px",
+          "position": "absolute",
+          "top": "153.6px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "204.8px",
+          "position": "absolute",
+          "top": "0px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "153.6px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "0px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "102.4px",
+          "position": "absolute",
+          "top": "153.6px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "102.4px",
+          "position": "absolute",
+          "top": "0px",
+          "width": "102.4px",
+        }
+      }
+    />
   </div>
-  <div
-    class="tower second"
-    style={
-      Object {
-        "height": "76.8px",
-        "left": "307.20000000000005px",
-        "position": "absolute",
-        "top": "230.39999999999998px",
-        "width": "102.4px",
+  <div>
+    <div
+      class="tower second"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "230.39999999999998px",
+          "width": "102.4px",
+        }
       }
-    }
-  >
-    <div>
-      second
+    >
+      <div>
+        second
+      </div>
     </div>
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "409.6px",
+          "position": "absolute",
+          "top": "230.39999999999998px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "204.8px",
+          "position": "absolute",
+          "top": "230.39999999999998px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "307.2px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "153.6px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "409.6px",
+          "position": "absolute",
+          "top": "307.2px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "409.6px",
+          "position": "absolute",
+          "top": "153.6px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "204.8px",
+          "position": "absolute",
+          "top": "307.2px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "204.8px",
+          "position": "absolute",
+          "top": "153.6px",
+          "width": "102.4px",
+        }
+      }
+    />
   </div>
-  <div
-    class="tower third"
-    style={
-      Object {
-        "height": "76.8px",
-        "left": "409.6px",
-        "position": "absolute",
-        "top": "384px",
-        "width": "102.4px",
+  <div>
+    <div
+      class="tower third"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "409.6px",
+          "position": "absolute",
+          "top": "384px",
+          "width": "102.4px",
+        }
       }
-    }
-  >
-    <div>
-      third
+    >
+      <div>
+        third
+      </div>
     </div>
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "512px",
+          "position": "absolute",
+          "top": "384px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "384px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "409.6px",
+          "position": "absolute",
+          "top": "460.79999999999995px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "409.6px",
+          "position": "absolute",
+          "top": "307.2px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "512px",
+          "position": "absolute",
+          "top": "460.79999999999995px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "512px",
+          "position": "absolute",
+          "top": "307.2px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "460.79999999999995px",
+          "width": "102.4px",
+        }
+      }
+    />
+    <div
+      class="towerRangeIndicator"
+      style={
+        Object {
+          "height": "76.8px",
+          "left": "307.20000000000005px",
+          "position": "absolute",
+          "top": "307.2px",
+          "width": "102.4px",
+        }
+      }
+    />
   </div>
 </div>
 `;

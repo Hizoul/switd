@@ -1,3 +1,4 @@
+import { isNil, isObject } from "lodash"
 import GameField from "./map"
 
 const tileTypes = {
@@ -19,6 +20,12 @@ class Tile {
   public occupies: (x: number, y: number) => boolean =
   (x: number, y: number) => {
     return x === this.xPos && y === this.yPos
+  }
+  public sameTile: (compare?: Tile) => boolean = (compare) => {
+    if (isNil(compare) || !isObject(compare)) {
+      return false
+    }
+    return this.xPos === compare.xPos && this.yPos === compare.yPos
   }
 }
 
