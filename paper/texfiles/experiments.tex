@@ -18,4 +18,17 @@ Because we have a tick-based implementation we know the amount of ticks needed u
 
 \subsection{Ant Behaviour Algorithms}
 We can set various behaviours / target searching algorithms for the ants.
-The following sums them up
+
+The first behavioral pattern tries to use the shortest possible path and is hence inspired by the $AS_{rank}$ Algorithm\cite{zecchin2007ant}.
+For this we have two alternatives: The first only updates the pheromone-level retrospectively when the path was actually the shortest path. The second one always adjusts the pheromone-level but weights the adjustment depending on how short the path was.
+
+The second behavioral pattern we try is a simple Ant Colony System (todo find citation), where each step increases the pheromone level on the tile we just walked on.
+
+\subsection{Other Parameters}
+We also can configure the following variables that impact the result as well:
+\begin{itemize}
+\item Towers enabled or disabled
+\item Amount of Ants spawned per tick
+\item Damage dealt by Towers if enabled
+\item Strength of Pheromone Increase
+\end{itemize}
