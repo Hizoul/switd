@@ -71,7 +71,10 @@ class Street extends Tile {
   }
   public adjustPheromoneLevel(by: number) {
     this.pheromoneLevel += by
-    if (this.pheromoneLevel < 1) {
+    if (this.pheromoneLevel < 0) {
+      this.pheromoneLevel = 0
+    }
+    if (this.pheromoneLevel > 1) {
       this.pheromoneLevel = 1
     }
   }

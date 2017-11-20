@@ -9,9 +9,15 @@ import Tower from "./tower"
 const experimentChoices = {
   deadAntAmount: 4,
   onlyOnSuccess: 6,
-  onlyShortestPath: 8,
-  shortestPathWithDeathInfluence: 9,
-  newExperimentWay: 643
+  /**
+   * Rank-based ant system (ASrank) = shortest path
+   */
+  shortestPathWeight: 8,
+  shortestPathOnly: 9,
+  /**
+   * also called Ant colony system Algorithm
+   */
+  continousVapor: 11
 }
 
 class GameField {
@@ -30,6 +36,8 @@ class GameField {
   public decayStrength: number
   public totalDamageDealt: number
   public shortestPathLength: number
+  public pheromoneIncreaseStrength: number = 0.001
+  public towersEnabled: boolean = true
   constructor(fieldSizeX: number = 10, fieldSizeY: number = 10) {
     this.fieldSizeX = fieldSizeX
     this.fieldSizeY = fieldSizeY
