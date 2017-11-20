@@ -5,7 +5,7 @@ import Tower from "../logic/tower"
 const createtestMap3 = () => {
   const testMap2 = new Map()
   testMap2.spawnThreshold = 14
-  testMap2.experimentType = experimentChoices.shortestPathWithDeathInfluence
+  testMap2.experimentType = experimentChoices.shortestPathOnly
   const start = new Street(0, 0, testMap2)
   testMap2.addTile(start)
   const s1 = start.extend(direction.right)
@@ -32,6 +32,8 @@ const createtestMap3 = () => {
   const s4 = s315intersection.extend(direction.down)
   const s5 = s4.extend(direction.down)
   const s6 = s5.extend(direction.right)
+
+  s5.relevantEvaluationTarget = true
 
   const t2 = new Tower(2, 3, testMap2)
   testMap2.addTile(t2)

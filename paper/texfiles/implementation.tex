@@ -29,6 +29,6 @@ Bringing all this domain-logic to a visually interpretable is also pretty simple
 
 Each Game Instance also holds a variable that determines what algorithm the Ant's use to determine which node to walk to next, and how strongly pheromones are influenced and how they decay. Through that we will be able to run different kinds of experiments on different maps.
 
-The Game itself is Tick-Based. In each tick we first let the tower's deal all their damage. After that has happened new ants are spawned. The amount of that is always variable between 0 and a configurable maximum. Then all alive and spawned ants decide where they walk to next. After that has happened the general decay of pheromones is processed if wanted.
+The Game itself is Tick-Based. In each tick we first spawn our new ants. The amount of that is always variable between 0 and a configurable maximum. Aft all tower's deal all their damage. After that all alive ants decide where they walk to next. After that has happened the general decay of pheromones is processed if enabled.
 
 This is already all the implementation. To sum it all up: We have an isolated GameField-Class that can instantiate a whole test-setup including map, ants and tick-progression, so in theory it is possible to use this code to run multiple expirements at the same time.

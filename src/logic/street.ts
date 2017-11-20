@@ -22,6 +22,7 @@ class Street extends Tile {
   public previous: Street[]
   public currentVisitors: Ant[]
   public pheromoneLevel: number
+  public relevantEvaluationTarget: boolean = false
   constructor(xPos: number, yPos: number, gameField: GameField) {
     super(xPos, yPos, tileTypes.street, gameField)
     this.next = []

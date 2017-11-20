@@ -38,6 +38,8 @@ class GameField {
   public shortestPathLength: number
   public pheromoneIncreaseStrength: number = 0.001
   public towersEnabled: boolean = true
+  public amountOfDeadAnts: number
+  public amountOfSpawnedAnts: number
   constructor(fieldSizeX: number = 10, fieldSizeY: number = 10) {
     this.fieldSizeX = fieldSizeX
     this.fieldSizeY = fieldSizeY
@@ -51,9 +53,11 @@ class GameField {
     this.continueTimer = false
     this.componentUpdateTrigger = {setState: noOp}
     this.experimentType = experimentChoices.onlyOnSuccess
-    this.decayStrength = -0.2
+    this.decayStrength = -0.003
     this.totalDamageDealt = 0
     this.shortestPathLength = 99999999999999
+    this.amountOfDeadAnts = 0
+    this.amountOfSpawnedAnts = 0
   }
   /**
    * Check wether a certain position in the map is already occupied by a tile
