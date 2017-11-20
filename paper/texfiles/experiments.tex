@@ -1,1 +1,21 @@
-Ant Colony Optimization is \cite[P. xy]{dorigo2006ant}
+
+In this Section we will cover what kind of experiments we run as well as which data we collect and evaluate for these.
+
+\subsection{Setup}
+
+Because our Implementation can run headless we can collect much of the wanted data described in Section \ref{sec:experimentevdata} automatically. 
+
+We chose the following Map-Setups 
+
+\subsection{Evaluated Data}
+\label{sec:experimentevdata}
+
+In order to evaluate how well the experiment worked, we need to think about what the actual target of our algorithm is. Revisiting the Introduction in Section \ref{sec:introduction}, reminds us that the target is that the ants find an ideal way to our target.
+
+Since it has been proven that the distribution quickly converges\cite[P. 15]{maniezzo2002ant.pdf}, which is quite logical since stronger reinforced paths are more likely to attract new ants and get reinforced even more, we can say that one of our targets is that the pheromone-level on specific Street-Segments has reached at least a value of x.
+Because we have a tick-based implementation we know the amount of ticks needed until the target pheromone value was reached. Additionally we can also involve the percentage of dead ants into the evaluation because on some maps it gives us an indication about how strongly the ants have wandered  the wrong hurtful paths. It is important to use the percentage of dead ants here, since the amount of ants spawned per tick is random for each tick!
+
+
+\subsection{Ant Behaviour Algorithms}
+We can set various behaviours / target searching algorithms for the ants.
+The following sums them up
