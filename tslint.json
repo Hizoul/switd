@@ -6,6 +6,7 @@
     "object-literal-sort-keys": [false, "never"],
     "no-submodule-imports": false,
     "jsx-no-lambda": false,
-    "jsx-no-multiline-js": false
+    "jsx-no-multiline-js": false,
+    "forin": false
   }
 }
