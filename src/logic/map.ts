@@ -36,10 +36,11 @@ class GameField {
   public decayStrength: number
   public totalDamageDealt: number
   public shortestPathLength: number
-  public pheromoneIncreaseStrength: number = 0.001
+  public pheromoneIncreaseStrength: number = 0.01
   public towersEnabled: boolean = true
   public amountOfDeadAnts: number
   public amountOfSpawnedAnts: number
+  public substractForDeath: boolean = false
   constructor(fieldSizeX: number = 10, fieldSizeY: number = 10) {
     this.fieldSizeX = fieldSizeX
     this.fieldSizeY = fieldSizeY
@@ -53,7 +54,7 @@ class GameField {
     this.continueTimer = false
     this.componentUpdateTrigger = {setState: noOp}
     this.experimentType = experimentChoices.onlyOnSuccess
-    this.decayStrength = -0.003
+    this.decayStrength = -0.007
     this.totalDamageDealt = 0
     this.shortestPathLength = 99999999999999
     this.amountOfDeadAnts = 0
@@ -148,6 +149,7 @@ class GameField {
       start.enter(ant)
       this.antList.push(ant)
     }
+    this.amountOfSpawnedAnts += amount
   }
 
   public removeAnt: (ant: Ant) => void = (ant) => {

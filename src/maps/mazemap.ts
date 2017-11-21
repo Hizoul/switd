@@ -5,7 +5,7 @@ import Tower from "../logic/tower"
 const createtestMapNoSplits = () => {
   const testMapNoSplits = new Map(15, 15)
   testMapNoSplits.spawnThreshold = 14
-  testMapNoSplits.experimentType = experimentChoices.shortestPathOnly
+  testMapNoSplits.experimentType = experimentChoices.continousVapor
   const start = new Street(0, 0, testMapNoSplits)
   testMapNoSplits.addTile(start)
   const s1 = start.extend(direction.right)

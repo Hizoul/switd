@@ -6,7 +6,6 @@ import randomNum from "../randomNum"
 const testSatisified = (target: number, relevantStreets: Street[]) => {
   let satisifed = true
   for (const street of relevantStreets) {
-    console.log(`comparing ${target} ${street.pheromoneLevel}`)
     if (target > street.pheromoneLevel) {
       satisifed = false
     }

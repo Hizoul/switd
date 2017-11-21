@@ -43,7 +43,7 @@ class Ant {
     if (isArray(nextOptions) && nextOptions.length > 0) {
       let i = 0
       const weightedOpts = map(nextOptions, (street) => {
-        const obj = {choiceIndex: i, choiceWeight: street.pheromoneLevel}
+        const obj = {choiceIndex: i, choiceWeight: Math.max(1, street.pheromoneLevel * 100)}
         i++
         return obj
       })
@@ -88,10 +88,11 @@ class Ant {
     this.hp -= damageDealt
     if (this.hp <= 0) {
       this.currentlyOn.gameField.removeAnt(this)
+      this.currentlyOn.gameField.amountOfDeadAnts++
       this.currentlyOn.leave(this)
-      if (this.currentlyOn.gameField.towersEnabled) {
+      if (this.currentlyOn.gameField.towersEnabled && this.currentlyOn.gameField.substractForDeath) {
         for (const targetCrossed of this.walkedPath) {
-          targetCrossed.adjustPheromoneLevel(-this.currentlyOn.gameField.pheromoneIncreaseStrength * 3)
+          targetCrossed.adjustPheromoneLevel(-this.currentlyOn.gameField.pheromoneIncreaseStrength)
         }
       }
     }
