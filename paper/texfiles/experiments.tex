@@ -12,8 +12,9 @@ We chose the following Map-Setups
 
 In order to evaluate how well the experiment worked, we need to think about what the actual target of our algorithm is. Revisiting the Introduction in Section \ref{sec:introduction}, reminds us that the target is that the ants find an ideal way to our target.
 
-Since it has been proven that the distribution quickly converges\cite[P. 15]{maniezzo2002ant.pdf}, which is quite logical since stronger reinforced paths are more likely to attract new ants and get reinforced even more, we can say that one of our targets is that the pheromone-level on specific Street-Segments has reached at least a value of x.
+Since it has been proven that the distribution quickly converges\cite[P. 15]{maniezzo2002ant}, which is quite logical since stronger reinforced paths are more likely to attract new ants and get reinforced even more, we can say that one of our targets is that the pheromone-level on specific Street-Segments has reached at least a value of \textit{x}.
 Because we have a tick-based implementation we know the amount of ticks needed until the target pheromone value was reached. Additionally we can also involve the percentage of dead ants into the evaluation because on some maps it gives us an indication about how strongly the ants have wandered  the wrong hurtful paths. It is important to use the percentage of dead ants here, since the amount of ants spawned per tick is random for each tick!
+Because we cannot always guarantee that we reach the wanted pheromone-target, and might be calculating endlessly, we will also declare an abort criteria that after z ticks we stop the test of this setup. Given that we can process an average of 6.6 ticks per second we opted for a value of 6000 because that means approximately a maximum of 15 minutes\footnote{15 minutes = 900 sec => $900 * 6.6 = 5940$}. That runtime of course does vary heavily depending on amount of towers towers on the map and the amount of ants currently on the map since for each ant we have to do the next step decision. The amount of ants depends on the amount of ants spawned per tick described in Section \ref{sec:otherparamas}.
 
 
 \subsection{Ant Behaviour Algorithms}
@@ -25,10 +26,11 @@ For this we have two alternatives: The first only updates the pheromone-level re
 The second behavioural pattern we try is a simple Ant Colony System (todo find citation), where each step increases the pheromone level on the tile we just walked on.
 
 \subsection{Other Parameters}
+\label{sec:otherparamas}
 We also can configure the following variables that impact the result as well:
 \begin{itemize}
-\item Towers enabled or disabled
+\item  Whether the death of an ant lowers the pheromone level of the streets it walked on or not
 \item Amount of Ants spawned per tick
-\item Damage dealt by Towers if enabled
 \item Strength of Pheromone Increase
+\item Strength of pheromone decay
 \end{itemize}
