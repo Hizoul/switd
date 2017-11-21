@@ -7,7 +7,6 @@ import Tile, { tileTypes } from "./tile"
 import Tower from "./tower"
 
 const experimentChoices = {
-  deadAntAmount: 4,
   onlyOnSuccess: 6,
   /**
    * Rank-based ant system (ASrank) = shortest path

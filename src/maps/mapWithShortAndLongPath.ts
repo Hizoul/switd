@@ -22,6 +22,7 @@ const createtestMapNoSplits = () => {
   const s12 = s11.extend(direction.down)
 
   const ls = s3.extend(direction.right)
+  ls.relevantEvaluationTarget = true
   const ls1 = ls.extend(direction.right)
   const ls2 = ls1.extend(direction.down)
   const ls3 = ls2.extend(direction.down)
