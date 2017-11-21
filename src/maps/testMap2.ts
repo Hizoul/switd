@@ -2,7 +2,7 @@ import Map from "../logic/map"
 import Street, { direction } from "../logic/street"
 import Tower from "../logic/tower"
 
-const createtestMap2 = () => {
+const createMap = () => {
   const testMap2 = new Map()
   testMap2.spawnThreshold = 14
   const start = new Street(0, 0, testMap2)
@@ -42,5 +42,5 @@ const createtestMap2 = () => {
   return testMap2
 }
 
-export default createtestMap2()
-export { createtestMap2 }
+export default createMap()
+export { createMap }

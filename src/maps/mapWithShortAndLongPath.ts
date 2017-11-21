@@ -2,7 +2,7 @@ import Map, { experimentChoices } from "../logic/map"
 import Street, { direction } from "../logic/street"
 import Tower from "../logic/tower"
 
-const createtestMapNoSplits = () => {
+const createMap = () => {
   const testMapNoSplits = new Map(12, 12)
   testMapNoSplits.spawnThreshold = 14
   testMapNoSplits.experimentType = experimentChoices.onlyOnSuccess
@@ -48,5 +48,5 @@ const createtestMapNoSplits = () => {
   return testMapNoSplits
 }
 
-export default createtestMapNoSplits()
-export { createtestMapNoSplits }
+export default createMap()
+export { createMap }

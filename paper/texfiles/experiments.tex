@@ -23,7 +23,7 @@ We can set various behaviours / target searching algorithms for the ants.
 The first behavioral pattern tries to use the shortest possible path and is hence inspired by the $AS_{rank}$ Algorithm\cite{zecchin2007ant}.
 For this we have two alternatives: The first only updates the pheromone-level retrospectively when the path was actually the shortest path. The second one always adjusts the pheromone-level but weights the adjustment depending on how short the path was.
 
-The second behavioural pattern we try is a simple Ant Colony System (todo find citation), where each step increases the pheromone level on the tile we just walked on.
+The second behavioural pattern we try is the original Ant Colony System\cite{maniezzo2002ant}, where each step increases the pheromone level on the tile we just walked on.
 
 \subsection{Other Parameters}
 \label{sec:otherparamas}
@@ -32,5 +32,5 @@ We also can configure the following variables that impact the result as well:
 \item  Whether the death of an ant lowers the pheromone level of the streets it walked on or not
 \item Amount of Ants spawned per tick
 \item Strength of Pheromone Increase
-\item Strength of pheromone decay
+\item Evaporation Coefficient / Strength of pheromone decay
 \end{itemize}

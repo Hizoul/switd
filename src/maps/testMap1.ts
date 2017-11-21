@@ -1,7 +1,7 @@
 import Map from "../logic/map"
 import Street, { direction } from "../logic/street"
 
-const createtestMap1 = () => {
+const createMap = () => {
   const testMap1 = new Map()
   const start = new Street(0, 0, testMap1)
   testMap1.addTile(start)
@@ -25,5 +25,5 @@ const createtestMap1 = () => {
   return testMap1
 }
 
-export default createtestMap1()
-export { createtestMap1 }
+export default createMap()
+export { createMap }

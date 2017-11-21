@@ -21,7 +21,7 @@ export interface IMapEvaluationResults {
   deadAnts: number
 }
 
-const evaluateMap = (mapInstance: GameField, pheromoneTarget: number, maxTicks: number = 7000) => {
+const evaluateMap = (mapInstance: GameField, pheromoneTarget: number, maxTicks: number = 1000) => {
   const targetStreets = filter(mapInstance.streetList, (street) => street.relevantEvaluationTarget)
 
   const start = Date.now()

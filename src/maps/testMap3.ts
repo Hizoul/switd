@@ -2,7 +2,7 @@ import Map, { experimentChoices } from "../logic/map"
 import Street, { direction } from "../logic/street"
 import Tower from "../logic/tower"
 
-const createtestMap3 = () => {
+const createMap = () => {
   const testMap2 = new Map()
   testMap2.spawnThreshold = 14
   testMap2.experimentType = experimentChoices.shortestPathOnly
@@ -43,5 +43,5 @@ const createtestMap3 = () => {
   return testMap2
 }
 
-export default createtestMap3()
-export { createtestMap3 }
+export default createMap()
+export { createMap }

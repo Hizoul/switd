@@ -1,24 +1,16 @@
-import { filter } from "lodash"
-import GameField, { experimentChoices } from "../logic/map"
-import Street from "../logic/street"
-import randomNum from "../randomNum"
-import evaluateMap, { IMapEvaluationResults } from "./map"
+import * as fs from "fs"
+import { createMap } from "../maps/mapWithShortAndLongPath"
+import { GamefieldCreator } from "./experiment"
+import tryoutAllSettings from "./tryoutAllSettings"
 
-export interface IExperimentResult {
-  experimentType: number
-  results: IMapEvaluationResults
+const makeExperiment = async (name: string, mapCreator: GamefieldCreator, target: number) => {
+  const res = await tryoutAllSettings(mapCreator, target, 30)
+  fs.writeFileSync(`results/${name}.json`, JSON.stringify(res, null, 2))
 }
 
-const makeExperimentForMap = (mapCreator: () => GameField, target: number) => {
-  const untypedChoices: any = experimentChoices
-  const results: IExperimentResult[] = []
-  for (const choiceIndex in experimentChoices) {
-    const choice = untypedChoices[choiceIndex]
-    const mapInstance = mapCreator()
-    mapInstance.experimentType = choice
-    results.push({experimentType: choice, results: evaluateMap(mapInstance, target)})
-  }
-  return results
+const runAllExperiments = async () => {
+  await makeExperiment("shortandlong", createMap, 0.3)
+  return true
 }
 
-export default makeExperimentForMap
+export default runAllExperiments

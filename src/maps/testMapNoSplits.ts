@@ -2,7 +2,7 @@ import Map from "../logic/map"
 import Street, { direction } from "../logic/street"
 import Tower from "../logic/tower"
 
-const createtestMapNoSplits = () => {
+const createMap = () => {
   const testMapNoSplits = new Map()
   testMapNoSplits.spawnThreshold = 14
   const start = new Street(0, 0, testMapNoSplits)
@@ -30,5 +30,5 @@ const createtestMapNoSplits = () => {
   return testMapNoSplits
 }
 
-export default createtestMapNoSplits()
-export { createtestMapNoSplits }
+export default createMap()
+export { createMap }
