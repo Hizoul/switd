@@ -1,8 +1,8 @@
 import * as React from "react"
 import GameFieldDisplay, { componentWillUnmount } from "../../src/components/gameField"
 import { renderDeterministically } from "../../src/components/positionUtil"
-import { createtestMap1} from "../../src/maps/testMap1"
-import { createtestMapNoSplits } from "../../src/maps/testMapNoSplits"
+import { createMap as createtestMap1} from "../../src/maps/testMap1"
+import { createMap as createtestMapNoSplits } from "../../src/maps/testMapNoSplits"
 import noOp from "../../src/noOp"
 import renderSnapshot from "../../src/testUtil/renderSnapshot"
 

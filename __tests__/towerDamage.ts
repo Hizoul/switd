@@ -1,4 +1,4 @@
-import { createtestMapNoSplits } from "../src/maps/testMapNoSplits"
+import { createMap as createtestMapNoSplits } from "../src/maps/testMapNoSplits"
 import noOp from "../src/noOp"
 import prepSnapshotOutput from "../src/testUtil/mapSnapshot"
 

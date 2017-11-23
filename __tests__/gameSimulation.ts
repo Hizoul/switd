@@ -1,4 +1,4 @@
-import { createtestMap1 } from "../src/maps/testMap1"
+import { createMap as createtestMap1 } from "../src/maps/testMap1"
 import prepSnapshotOutput from "../src/testUtil/mapSnapshot"
 
 it("A gamefield can generate ants and let them walk in a tick", () => {

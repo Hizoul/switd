@@ -1,5 +1,5 @@
 import evaluate from "../src/evaluate/map"
-import { createtestMap3 } from "../src/maps/testMap3"
+import { createMap as createtestMap3 } from "../src/maps/testMap3"
 
 it("results of evaluation ", () => {
   const res = evaluate(createtestMap3(), 0.5)

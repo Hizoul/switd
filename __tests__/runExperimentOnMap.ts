@@ -1,7 +1,7 @@
 import { keys } from "lodash"
 import runExperiment from "../src/evaluate/experiment"
 import { experimentChoices } from "../src/logic/map"
-import { createtestMap3 } from "../src/maps/testMap3"
+import { createMap as createtestMap3 } from "../src/maps/testMap3"
 
 it("results of evaluation ", async () => {
   const resa = await runExperiment(createtestMap3, 0.5)
