@@ -76,7 +76,7 @@ class Ant {
           if (nextTile.gameField.shortestPathLength >= this.walkedPath.length) {
             nextTile.gameField.shortestPathLength = this.walkedPath.length
           }
-          const modifier = 1 + this.walkedPath.length / nextTile.gameField.shortestPathLength
+          const modifier =  nextTile.gameField.shortestPathLength / this.walkedPath.length
           for (const street of this.walkedPath) {
             street.adjustPheromoneLevel(nextTile.gameField.pheromoneIncreaseStrength * modifier)
           }
