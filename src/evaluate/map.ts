@@ -22,11 +22,9 @@ export interface IMapEvaluationResults {
 }
 
 const evaluateMap = (mapInstance: GameField, pheromoneTarget: number, maxTicks: number = 1000) => {
-  const targetStreets = filter(mapInstance.streetList, (street) => street.relevantEvaluationTarget)
-
   const start = Date.now()
   outOfWhile:
-  while (!testSatisified(pheromoneTarget, targetStreets)) {
+  while (!testSatisified(pheromoneTarget, mapInstance.streetList)) {
     mapInstance.spawnNewAnt(randomNum(5, mapInstance.spawnThreshold))
     mapInstance.processTick()
     if (mapInstance.currentTick > maxTicks) {
