@@ -4,7 +4,7 @@ import "velocity-animate"
 import "velocity-animate/velocity.ui"
 import GameFieldController from "./components/controller"
 import DisplayGame from "./components/gameField"
-import testMap1 from "./maps/mapWithShortAndLongPath"
+import testMap1 from "./maps/experiment/shortTowersAndLong"
 
 const mapToRender = testMap1
 // TODO: SYNC number update with ant movage

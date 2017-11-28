@@ -37,6 +37,17 @@ class GameFieldController extends React.Component<{
           />
         </div>
         <div className="inputLabelCombo">
+          <span>Pheromone Target Threshold</span>
+          <input
+            id="spawn"
+            min={0}
+            value={gf.pheromoneTarget}
+            onChange={((newVal) => {
+              gf.pheromoneTarget = get(newVal, "nativeEvent.currentTarget.value")
+            })}
+          />
+        </div>
+        <div className="inputLabelCombo">
           <span>Run Simulation</span>
           <input
             id="run"
@@ -47,6 +58,8 @@ class GameFieldController extends React.Component<{
               gf.continueTimer = val
               if (val) {
                 gf.startTimer()
+              } else {
+                gf.stopTimer()
               }
             })}
           />

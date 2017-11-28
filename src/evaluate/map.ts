@@ -19,9 +19,10 @@ export interface IMapEvaluationResults {
   deadAntPercentage: number
   spawnedAnts: number
   deadAnts: number
+  antsThatReachedTarget: number
 }
 
-const evaluateMap = (mapInstance: GameField, pheromoneTarget: number, maxTicks: number = 1000) => {
+const evaluateMap = (mapInstance: GameField, pheromoneTarget: number, maxTicks: number = 50) => {
   const start = Date.now()
   outOfWhile:
   while (!testSatisified(pheromoneTarget, mapInstance.streetList)) {
@@ -37,7 +38,8 @@ const evaluateMap = (mapInstance: GameField, pheromoneTarget: number, maxTicks: 
     tickAmount: mapInstance.currentTick,
     deadAntPercentage,
     spawnedAnts: mapInstance.amountOfSpawnedAnts,
-    deadAnts: mapInstance.amountOfDeadAnts
+    deadAnts: mapInstance.amountOfDeadAnts,
+    antsThatReachedTarget: mapInstance.getTarget().currentVisitors.length
   }
   return res
 }

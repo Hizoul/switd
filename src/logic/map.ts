@@ -40,6 +40,8 @@ class GameField {
   public amountOfDeadAnts: number
   public amountOfSpawnedAnts: number
   public substractForDeath: boolean = false
+  public pheromoneTarget: number = 0.8
+  public targetIsAmountOfAnts: boolean = false
   constructor(fieldSizeX: number = 10, fieldSizeY: number = 10) {
     this.fieldSizeX = fieldSizeX
     this.fieldSizeY = fieldSizeY
@@ -139,6 +141,9 @@ class GameField {
       street.adjustPheromoneLevel(this.decayStrength)
     }
     this.currentTick++
+    if (this.reachedExperimentGoal()) {
+      this.stopTimer()
+    }
     this.componentUpdateTrigger.setState({tickNum: this.currentTick})
   }
   public spawnNewAnt: (amount: number) => void = (amount = 1) => {
@@ -170,6 +175,20 @@ class GameField {
     this.processTick()
     if (this.continueTimer) {
       setTimeout(this.processTime, this.tickSpeed)
+    }
+  }
+  public reachedExperimentGoal() {
+    if (this.targetIsAmountOfAnts) {
+      return this.getTarget().currentVisitors.length >= this.pheromoneTarget
+    } else {
+      const relevantStreets = filter(this.streetList, ["relevantEvaluationTarget", true])
+      let satisifed = false
+      for (const street of relevantStreets) {
+        if (this.pheromoneTarget <= street.pheromoneLevel) {
+          satisifed = true
+        }
+      }
+      return satisifed
     }
   }
 }

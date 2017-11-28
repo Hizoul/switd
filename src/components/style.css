@@ -35,13 +35,17 @@ body, html, .gameField {
   background-color: red;
 }
 
-.gameFieldController {
+.gameFieldController, .info {
   width: 200pt;
-  height: 300pt;
+  height: 100pt;
   position: absolute;
   top: 20pt;
   right: 0pt;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.info {
+  top: 120pt;
 }
 
 .inputLabelCombo {

@@ -1,5 +1,8 @@
 import * as fs from "fs"
-import { createMap } from "../maps/mapWithShortAndLongPath"
+import { createMap as mirroredwithtower } from "../maps/experiment/mirroredWithTower"
+import { createMap } from "../maps/experiment/shortAndLong"
+import { createMap as shortTowersAndLongMap } from "../maps/experiment/shortTowersAndLong"
+import { createMap as squareMazeMap } from "../maps/experiment/squareMaze"
 import { GamefieldCreator } from "./experiment"
 import tryoutAllSettings from "./tryoutAllSettings"
 
@@ -10,6 +13,9 @@ const makeExperiment = async (name: string, mapCreator: GamefieldCreator, target
 
 const runAllExperiments = async () => {
   await makeExperiment("shortandlong", createMap, 0.3)
+  await makeExperiment("shortandlongwithtowers", shortTowersAndLongMap, 0.3)
+  await makeExperiment("mirroredwithtower", mirroredwithtower, 0.3)
+  await makeExperiment("squaremaze", squareMazeMap, 0.3)
   return true
 }
 

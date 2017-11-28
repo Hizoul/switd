@@ -5,13 +5,14 @@ import Tower from "../../logic/tower"
 const createMap = () => {
   const testMapNoSplits = new Map(12, 12)
   testMapNoSplits.spawnThreshold = 14
-  testMapNoSplits.experimentType = experimentChoices.shortestPathOnly
+  testMapNoSplits.experimentType = experimentChoices.shortestPathWeight
   const start = new Street(0, 0, testMapNoSplits)
   testMapNoSplits.addTile(start)
   const s1 = start.extend(direction.right)
   const s2 = s1.extend(direction.down)
   const s3 = s2.extend(direction.down)
   const s4 = s3.extend(direction.down)
+  s4.relevantEvaluationTarget = true
   const s5 = s4.extend(direction.down)
   const s6 = s5.extend(direction.down)
   const s7 = s6.extend(direction.down)
@@ -22,7 +23,6 @@ const createMap = () => {
   const s12 = s11.extend(direction.down)
 
   const ls = s3.extend(direction.right)
-  ls.relevantEvaluationTarget = true
   const ls1 = ls.extend(direction.right)
   const ls2 = ls1.extend(direction.down)
   const ls3 = ls2.extend(direction.down)
@@ -35,10 +35,6 @@ const createMap = () => {
 
   ls9.addIntersection(s10)
 
-  const t2 = new Tower(0, 5 , testMapNoSplits)
-  testMapNoSplits.addTile(t2)
-  const t5 = new Tower(4, 4, testMapNoSplits)
-  testMapNoSplits.addTile(t5)
   return testMapNoSplits
 }
 

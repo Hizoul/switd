@@ -1,7 +1,8 @@
-import { filter, find, isArray, isEqual, map, union, uniq } from "lodash"
+import { each, filter, find, isArray, isEqual, map, union, uniq } from "lodash"
 import randomNum from "../randomNum"
 import { experimentChoices } from "./map"
 import Street from "./street"
+import Tile from "./tile"
 let currentmaxid = 1
 
 const makeWeightedChoice = (inputArr: Array<{choiceIndex: number, choiceWeight: number}>) => {
@@ -15,6 +16,18 @@ const makeWeightedChoice = (inputArr: Array<{choiceIndex: number, choiceWeight: 
   const foundRange: any = find(validRanges,
     (toCheck) => findInRange >= toCheck.min && findInRange <= Math.ceil(toCheck.max))
   return foundRange.index
+}
+
+const containsStreet = (streetList: Tile[], street: Tile) => {
+  let contains = false
+  each(streetList,  (inspect) => {
+    if (street.sameTile(inspect)) {
+      contains = true
+      return false
+    }
+    return true
+  })
+  return contains
 }
 
 class Ant {
@@ -50,10 +63,12 @@ class Ant {
       const nextTileIndex = makeWeightedChoice(weightedOpts)
 
       const nextTile = nextOptions[nextTileIndex]
-      this.walkedPath.push(this.currentlyOn)
       if (this.currentlyOn.gameField.experimentType === experimentChoices.continousVapor) {
-        this.currentlyOn.adjustPheromoneLevel(this.currentlyOn.gameField.pheromoneIncreaseStrength)
+        if (!containsStreet(this.walkedPath, this.currentlyOn)) {
+          this.currentlyOn.adjustPheromoneLevel(this.currentlyOn.gameField.pheromoneIncreaseStrength)
+        }
       }
+      this.walkedPath.push(this.currentlyOn)
       this.currentlyOn.leave(this)
       nextTile.enter(this)
       this.currentlyOn = nextTile

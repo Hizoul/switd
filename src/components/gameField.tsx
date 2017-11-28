@@ -30,6 +30,7 @@ class GameFieldDisplay extends React.Component<{
     this.props.fieldToRender.startTimer()
   }
   public render() {
+    const gf = this.props.fieldToRender
     const streets = map(this.props.fieldToRender.streetList,
       (street) => <StreetDisplay street={street} key={keyFromTile(street)} gameField={this.props.fieldToRender} />)
     const towers = map(this.props.fieldToRender.towerList,
@@ -41,6 +42,14 @@ class GameFieldDisplay extends React.Component<{
         {streets}
         {towers}
         {ants}
+        <div className="info">
+          <div>Tick #: {gf.currentTick}</div>
+          <div>Spawned Ant #: {gf.amountOfSpawnedAnts}</div>
+          <div>Dead Ant #: {gf.amountOfDeadAnts}</div>
+          <div>Ants that reached the Target #: {gf.getTarget().currentVisitors.length}</div>
+          <div>Current Shortest Path length: {gf.shortestPathLength}</div>
+          <div>Dead Ant Percentage {(gf.amountOfDeadAnts / gf.amountOfSpawnedAnts) * 100}</div>
+        </div>
       </div>
     )
   }

@@ -5,7 +5,10 @@ import Tower from "../../logic/tower"
 const createMap = () => {
   const testMapNoSplits = new Map(12, 12)
   testMapNoSplits.spawnThreshold = 14
-  testMapNoSplits.experimentType = experimentChoices.shortestPathOnly
+  testMapNoSplits.experimentType = experimentChoices.continousVapor
+  testMapNoSplits.pheromoneTarget = 200
+  testMapNoSplits.targetIsAmountOfAnts = true
+
   const start = new Street(0, 0, testMapNoSplits)
   testMapNoSplits.addTile(start)
   const s1 = start.extend(direction.right)
@@ -37,10 +40,6 @@ const createMap = () => {
 
   const t1 = new Tower(0, 4, testMapNoSplits)
   testMapNoSplits.addTile(t1)
-  const t2 = new Tower(0, 5 , testMapNoSplits)
-  testMapNoSplits.addTile(t2)
-  const t3 = new Tower(0, 6 , testMapNoSplits)
-  testMapNoSplits.addTile(t3)
   const t4 = new Tower(0, 7 , testMapNoSplits)
   testMapNoSplits.addTile(t4)
   const t5 = new Tower(4, 4, testMapNoSplits)

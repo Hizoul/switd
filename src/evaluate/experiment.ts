@@ -7,6 +7,7 @@ import evaluateMap, { IMapEvaluationResults } from "./map"
 export interface IExperimentResult {
   experimentType: number
   results: IMapEvaluationResults
+  otherSettings?: any
 }
 
 export interface IExperimentSettings {
@@ -15,6 +16,12 @@ export interface IExperimentSettings {
   decayStrength?: number
   increaseStrength?: number
 }
+
+/**
+ * Finish condition can be amount of ants that reach target
+ * plot tick amount vs dead ants
+ * experimentparams: vaporincrease and vapor decrease on death
+ */
 
 export type GamefieldCreator = () => GameField
 
@@ -30,7 +37,7 @@ const makeExperimentForMap = (mapCreator: GamefieldCreator, target: number, othe
         mapInstance[key] = otherSettings[key]
       }
     }
-    results.push({experimentType: choice, results: evaluateMap(mapInstance, target)})
+    results.push({experimentType: choice, results: evaluateMap(mapInstance, target), otherSettings})
   }
   return results
 }
