@@ -22,11 +22,11 @@ export interface IMapEvaluationResults {
   antsThatReachedTarget: number
 }
 
-const evaluateMap = (mapInstance: GameField, pheromoneTarget: number, maxTicks: number = 50) => {
+const evaluateMap = (mapInstance: GameField, maxTicks: number = 50) => {
   const start = Date.now()
   outOfWhile:
-  while (!testSatisified(pheromoneTarget, mapInstance.streetList)) {
-    mapInstance.spawnNewAnt(randomNum(5, mapInstance.spawnThreshold))
+  while (!mapInstance.reachedExperimentGoal()) {
+    mapInstance.spawnNewAnt(randomNum(0, mapInstance.spawnThreshold))
     mapInstance.processTick()
     if (mapInstance.currentTick > maxTicks) {
       break outOfWhile

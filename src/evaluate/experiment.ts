@@ -25,28 +25,31 @@ export interface IExperimentSettings {
 
 export type GamefieldCreator = () => GameField
 
-const makeExperimentForMap = (mapCreator: GamefieldCreator, target: number, otherSettings?: any) => {
+const makeExperimentForMap = (mapCreator: GamefieldCreator, otherSettings?: any) => {
   const untypedChoices: any = experimentChoices
   const results: IExperimentResult[] = []
-  for (const choiceIndex in experimentChoices) {
-    const choice = untypedChoices[choiceIndex]
-    const mapInstance: any = mapCreator()
-    mapInstance.experimentType = choice
-    if (!isNil(otherSettings)) {
-      for (const key in otherSettings) {
-        mapInstance[key] = otherSettings[key]
-      }
+  // for (const choiceIndex in experimentChoices) {
+  //   const choice = untypedChoices[choiceIndex]
+  const mapInstance: any = mapCreator()
+  if (!isNil(otherSettings)) {
+    for (const key in otherSettings) {
+      mapInstance[key] = otherSettings[key]
     }
-    results.push({experimentType: choice, results: evaluateMap(mapInstance, target), otherSettings})
   }
+  results.push({
+    experimentType: otherSettings.experimentType,
+    results: evaluateMap(mapInstance),
+    otherSettings
+  })
+  // }
   return results
 }
 
 const runExperimentMultipleTimes =
-  (mapCreator: GamefieldCreator, target: number, otherSettings?: any, amountOfRuns: number = 1) => {
+  (mapCreator: GamefieldCreator, otherSettings?: any, amountOfRuns: number = 1) => {
   const finalResults: IExperimentResult[] = []
   for (let i = 0; i < amountOfRuns; i++) {
-    const res = makeExperimentForMap(mapCreator, target, otherSettings)
+    const res = makeExperimentForMap(mapCreator, otherSettings)
     for (const a of res) {
       finalResults.push(a)
     }

@@ -42,6 +42,7 @@ class GameField {
   public substractForDeath: boolean = false
   public pheromoneTarget: number = 0.8
   public targetIsAmountOfAnts: boolean = false
+  public maxTicks: number = -1
   constructor(fieldSizeX: number = 10, fieldSizeY: number = 10) {
     this.fieldSizeX = fieldSizeX
     this.fieldSizeY = fieldSizeY
@@ -178,6 +179,9 @@ class GameField {
     }
   }
   public reachedExperimentGoal() {
+    if (this.maxTicks > 0 && this.currentTick >= this.maxTicks) {
+      return true
+    }
     if (this.targetIsAmountOfAnts) {
       return this.getTarget().currentVisitors.length >= this.pheromoneTarget
     } else {

@@ -5,7 +5,7 @@ import Tower from "../../logic/tower"
 const createMap = () => {
   const testMapNoSplits = new Map(12, 12)
   testMapNoSplits.spawnThreshold = 14
-  testMapNoSplits.experimentType = experimentChoices.continousVapor
+  testMapNoSplits.experimentType = experimentChoices.shortestPathWeight
   testMapNoSplits.pheromoneTarget = 200
   testMapNoSplits.targetIsAmountOfAnts = true
 

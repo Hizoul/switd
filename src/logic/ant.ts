@@ -107,7 +107,7 @@ class Ant {
       this.currentlyOn.leave(this)
       if (this.currentlyOn.gameField.towersEnabled && this.currentlyOn.gameField.substractForDeath) {
         for (const targetCrossed of this.walkedPath) {
-          targetCrossed.adjustPheromoneLevel(-this.currentlyOn.gameField.pheromoneIncreaseStrength)
+          targetCrossed.adjustPheromoneLevel(this.currentlyOn.gameField.decayStrength)
         }
       }
     }
