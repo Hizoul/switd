@@ -18,7 +18,12 @@ const makeExperiment = async (name: string, mapCreator: GamefieldCreator,
 }
 
 const runAllExperiments = async () => {
-  await makeExperiment("shortandlong", shortTowersAndLongMap, true, [
+  const baseSettings = {
+    maxTicks: 1000,
+    pheromoneTarget: 400,
+    targetIsAmountOfAnts: true
+  }
+  await makeExperiment("shortandlong", shortTowersAndLongMap, false, [
     {
       name: "Continous Vapor",
       maxTicks: 300,

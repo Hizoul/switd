@@ -29,6 +29,10 @@ class GameFieldDisplay extends React.Component<{
     this.props.fieldToRender.registerComponentToUpdate(this)
     this.props.fieldToRender.startTimer()
   }
+  public componentDidUpdate() {
+    this.props.fieldToRender.registerComponentToUpdate(this)
+    this.props.fieldToRender.startTimer()
+  }
   public render() {
     const gf = this.props.fieldToRender
     const streets = map(this.props.fieldToRender.streetList,

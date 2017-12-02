@@ -36,8 +36,8 @@ body, html, .gameField {
 }
 
 .gameFieldController, .info {
-  width: 200pt;
-  height: 100pt;
+  width: 300pt;
+  height: 230pt;
   position: absolute;
   top: 20pt;
   right: 0pt;
@@ -45,7 +45,7 @@ body, html, .gameField {
 }
 
 .info {
-  top: 120pt;
+  top: 250pt;
 }
 
 .inputLabelCombo {

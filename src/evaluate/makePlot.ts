@@ -2,27 +2,38 @@ import * as ChartjsNode from "chartjs-node"
 import { IExperimentResult } from "./experiment"
 import { cloneDeep } from "lodash"
 
+const bgColors = [
+
+]
+
 const drawChart = async (name: string, type: string, labels: string[], datasets: any[]) => {
   try {
   console.log("about t o make new", datasets)
-  for (const i in datasets) {
-    datasets[i].backgroundColor = [
-        "rgba(255, 99, 132, 0.2)",
-        "rgba(54, 162, 235, 0.2)",
-        "rgba(255, 206, 86, 0.2)",
-        "rgba(75, 192, 192, 0.2)",
-        "rgba(153, 102, 255, 0.2)",
-        "rgba(255, 159, 64, 0.2)"
-    ]
-    datasets[i].borderColor = [
-        "rgba(255,99,132,1)",
-        "rgba(54, 162, 235, 1)",
-        "rgba(255, 206, 86, 1)",
-        "rgba(75, 192, 192, 1)",
-        "rgba(153, 102, 255, 1)",
-        "rgba(255, 159, 64, 1)"
-    ]
-    datasets[i].borderWidth = 1
+  if (datasets.length > 1) {
+    datasets[0].backgroundColor = "rgba(255, 99, 132, 0.4)"
+    datasets[0].borderColor = "rgba(54, 162, 235, 1)"
+    datasets[1].backgroundColor = "rgba(75, 192, 192, 0.4)"
+    datasets[1].borderColor = "rgba(75, 192, 192, 1)"
+  } else {
+    for (const i in datasets) {
+      datasets[i].backgroundColor = [
+          "rgba(255, 99, 132, 0.2)",
+          "rgba(54, 162, 235, 0.2)",
+          "rgba(255, 206, 86, 0.2)",
+          "rgba(75, 192, 192, 0.2)",
+          "rgba(153, 102, 255, 0.2)",
+          "rgba(255, 159, 64, 0.2)"
+      ]
+      datasets[i].borderColor = [
+          "rgba(255,99,132,1)",
+          "rgba(54, 162, 235, 1)",
+          "rgba(255, 206, 86, 1)",
+          "rgba(75, 192, 192, 1)",
+          "rgba(153, 102, 255, 1)",
+          "rgba(255, 159, 64, 1)"
+      ]
+      datasets[i].borderWidth = 1
+    }
   }
   const chartNode = new ChartjsNode(600, 300)
   const chartJsOptions = {

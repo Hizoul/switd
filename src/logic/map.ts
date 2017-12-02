@@ -20,6 +20,7 @@ const experimentChoices = {
 }
 
 class GameField {
+  public timerId: any
   public fieldSizeX: number
   public fieldSizeY: number
   public antList: Ant[]
@@ -166,10 +167,17 @@ class GameField {
 
   public startTimer() {
     this.continueTimer = true
-    setTimeout(this.processTime, this.tickSpeed)
+    if (isNil(this.timerId)) {
+      console.log("timerid is null starting timer")
+      this.timerId = setTimeout(this.processTime, this.tickSpeed)
+    }
   }
   public stopTimer() {
     this.continueTimer = false
+    if (!isNil(this.timerId)) {
+      clearTimeout(this.timerId)
+      this.timerId = null
+    }
   }
   public processTime = () => {
     this.spawnNewAnt(randomNum(0, this.spawnThreshold))

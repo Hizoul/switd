@@ -3,6 +3,9 @@ import * as React from "react"
 import { VelocityComponent } from "velocity-react"
 import Ant from "../logic/ant"
 import Map from "../logic/map"
+import ExperimentSelection from "./experimentSelection"
+import GameFieldInput from "./gameFieldInput"
+import MapSelection from "./mapSelect"
 import { getPositionForTile } from "./positionUtil"
 
 class GameFieldController extends React.Component<{
@@ -26,28 +29,6 @@ class GameFieldController extends React.Component<{
           />
         </div>
         <div className="inputLabelCombo">
-          <span>Spawn Threshold</span>
-          <input
-            id="spawn"
-            min={0}
-            value={gf.spawnThreshold}
-            onChange={((newVal) => {
-              gf.spawnThreshold = get(newVal, "nativeEvent.currentTarget.value")
-            })}
-          />
-        </div>
-        <div className="inputLabelCombo">
-          <span>Pheromone Target Threshold</span>
-          <input
-            id="spawn"
-            min={0}
-            value={gf.pheromoneTarget}
-            onChange={((newVal) => {
-              gf.pheromoneTarget = get(newVal, "nativeEvent.currentTarget.value")
-            })}
-          />
-        </div>
-        <div className="inputLabelCombo">
           <span>Run Simulation</span>
           <input
             id="run"
@@ -64,6 +45,42 @@ class GameFieldController extends React.Component<{
             })}
           />
         </div>
+        <h3>Experiment Parameters</h3>
+        <GameFieldInput
+          label="Stop when (checked = ants, unchecked = pheromonelevel)"
+          propKey="targetIsAmountOfAnts"
+          type="checkbox"
+          gameField={this.props.gameField}
+        />
+        <GameFieldInput
+          label="Stop when reach this number"
+          propKey="pheromoneTarget"
+          type="number"
+          gameField={this.props.gameField}
+        />
+        <GameFieldInput
+          label="Substract pheromone for deaths"
+          propKey="deathInfluencesDecay"
+          type="checkbox"
+          gameField={this.props.gameField}
+        />
+        <GameFieldInput
+          label="Increase Strength"
+          propKey="pheromoneIncreaseStrength"
+          type="number"
+          step="0.001"
+          gameField={this.props.gameField}
+        />
+        <GameFieldInput
+          label="Decay Strength"
+          propKey="decayStrength"
+          step="0.001"
+          type="number"
+          gameField={this.props.gameField}
+        />
+        <GameFieldInput label="Spawn threshold" propKey="spawnThreshold" gameField={this.props.gameField} />
+        <ExperimentSelection gameField={this.props.gameField} />
+        <MapSelection />
       </div>
     )
   }
