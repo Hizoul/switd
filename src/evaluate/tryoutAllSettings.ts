@@ -6,7 +6,7 @@ import runExperimentMultipleTimes, { GamefieldCreator, IExperimentResult } from 
 import evaluateMap, { IMapEvaluationResults } from "./map"
 
 const tryoutAllSettings =
-  async (mapCreator: GamefieldCreator, settingsToTry: any, amountOfRuns: number = 1) => {
+  async (mapCreator: GamefieldCreator, settingsToTry: any, amountOfRuns: number = 1, dontMakeMean?: boolean) => {
   const finalResults: IExperimentResult[] = []
   const includeDeath = [false, true]
   const totalAmount = 2 * settingsToTry.length
@@ -16,32 +16,38 @@ const tryoutAllSettings =
       const settingToUse = cloneDeep(setting)
       settingToUse.deathInfluencesDecay = deathInfluencesDecay
       const res = await runExperimentMultipleTimes(mapCreator, settingToUse, amountOfRuns)
-      let tickAmount = 0
-      let deadAntPercentage = 0
-      let spawnedAnts = 0
-      let deadAnts = 0
-      let antsThatReachedTarget = 0
-      let runtime = 0
-      for (const a of res) {
-        runtime += a.results.runtime
-        tickAmount += a.results.tickAmount
-        deadAntPercentage += a.results.deadAntPercentage
-        spawnedAnts += a.results.spawnedAnts
-        deadAnts += a.results.deadAnts
-        antsThatReachedTarget += a.results.antsThatReachedTarget
-      }
-      tickAmount = tickAmount / res.length
-      deadAntPercentage = deadAntPercentage / res.length
-      spawnedAnts = spawnedAnts / res.length
-      deadAnts = deadAnts / res.length
-      antsThatReachedTarget = antsThatReachedTarget / res.length
-      finalResults.push({
-        experimentType: res[0].experimentType,
-        otherSettings: settingToUse,
-        results: {
-          tickAmount, deadAntPercentage, deadAnts, antsThatReachedTarget, spawnedAnts, runtime
+      if (dontMakeMean) {
+        for (const a of res) {
+          finalResults.push(a)
         }
-      })
+      } else {
+        let tickAmount = 0
+        let deadAntPercentage = 0
+        let spawnedAnts = 0
+        let deadAnts = 0
+        let antsThatReachedTarget = 0
+        let runtime = 0
+        for (const a of res) {
+          runtime += a.results.runtime
+          tickAmount += a.results.tickAmount
+          deadAntPercentage += a.results.deadAntPercentage
+          spawnedAnts += a.results.spawnedAnts
+          deadAnts += a.results.deadAnts
+          antsThatReachedTarget += a.results.antsThatReachedTarget
+        }
+        tickAmount = tickAmount / res.length
+        deadAntPercentage = deadAntPercentage / res.length
+        spawnedAnts = spawnedAnts / res.length
+        deadAnts = deadAnts / res.length
+        antsThatReachedTarget = antsThatReachedTarget / res.length
+        finalResults.push({
+          experimentType: res[0].experimentType,
+          otherSettings: settingToUse,
+          results: {
+            tickAmount, deadAntPercentage, deadAnts, antsThatReachedTarget, spawnedAnts, runtime
+          }
+        })
+      }
       currentlyAt++
       console.log(`tried out ${(currentlyAt / totalAmount) * 100}%`)
 

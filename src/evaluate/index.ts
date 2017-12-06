@@ -1,4 +1,5 @@
 import * as fs from "fs"
+import { map, merge } from "lodash"
 import { mkdir } from "shelljs"
 import { experimentChoices } from "../logic/map"
 import { createMap as mirroredwithtower } from "../maps/experiment/mirroredWithTower"
@@ -7,60 +8,82 @@ import { createMap as shortTowersAndLongMap } from "../maps/experiment/shortTowe
 import { createMap as squareMazeMap } from "../maps/experiment/squareMaze"
 import { GamefieldCreator } from "./experiment"
 import makePlot from "./makePlot"
+import makePlotScatter, { iterationTargets } from "./makePlotScatter"
 import tryoutAllSettings from "./tryoutAllSettings"
 
 const makeExperiment = async (name: string, mapCreator: GamefieldCreator,
                               testWithAndWithoutDeath: boolean, settings: any) => {
-  const res = await tryoutAllSettings(mapCreator, settings, 30)
+const res = await tryoutAllSettings(mapCreator, settings, 30)
+mkdir("results")
+fs.writeFileSync(`results/${name}.json`, JSON.stringify(res, null, 2))
+await makePlot(name, res, testWithAndWithoutDeath)
+}
+
+const makeExperimentScatter =
+async (name: string, mapCreator: GamefieldCreator, testWithAndWithoutDeath: boolean, settings: any) => {
+  const fullRes: any[] = []
+  for (const setting of settings) {
+    const settingsToUse = map(
+      iterationTargets, (pheromoneTarget: any) => {
+      return merge({}, setting, {pheromoneTarget})
+    })
+    console.log("got settings", settingsToUse)
+    const res = await tryoutAllSettings(mapCreator, settingsToUse, 10, false)
+    for (const a of res) {
+      fullRes.push(a)
+    }
+  }
   mkdir("results")
-  fs.writeFileSync(`results/${name}.json`, JSON.stringify(res, null, 2))
-  await makePlot(name, res, testWithAndWithoutDeath)
+  fs.writeFileSync(`results/${name}.json`, JSON.stringify(fullRes, null, 2))
+  await makePlotScatter(name, fullRes, testWithAndWithoutDeath)
 }
 
 const runAllExperiments = async () => {
   const baseSettings = {
-    maxTicks: 1000,
+    maxTicks: 9999,
     pheromoneTarget: 400,
-    targetIsAmountOfAnts: true
+    targetIsAmountOfAnts: true,
+    decayStrength: -0.007,
+    spawnThreshold: 10
   }
-  await makeExperiment("shortandlong", shortTowersAndLongMap, false, [
-    {
+
+  await makeExperimentScatter("shortandlong", shortTowersAndLongMap, true, [
+    merge({
       name: "Continous Vapor",
-      maxTicks: 300,
-      decayStrength: -0.007,
-      spawnThreshold: 10,
-      experimentType: experimentChoices.continousVapor,
-      targetIsAmountOfAnts: true,
-      pheromoneTarget: 200
-    },
-    {
+      experimentType: experimentChoices.continousVapor
+    }, baseSettings),
+    merge({
       name: "Success only",
-      maxTicks: 300,
-      decayStrength: -0.007,
-      spawnThreshold: 10,
-      experimentType: experimentChoices.onlyOnSuccess,
-      targetIsAmountOfAnts: true,
-      pheromoneTarget: 200
-    },
-    {
+      experimentType: experimentChoices.onlyOnSuccess
+    }, baseSettings),
+    merge({
       name: "SP Only",
-      maxTicks: 300,
-      decayStrength: -0.007,
-      spawnThreshold: 10,
-      experimentType: experimentChoices.shortestPathOnly,
-      targetIsAmountOfAnts: true,
-      pheromoneTarget: 200
-    },
-    {
+      experimentType: experimentChoices.shortestPathOnly
+    }, baseSettings),
+    merge({
       name: "SP Weight",
-      maxTicks: 300,
-      decayStrength: -0.007,
-      spawnThreshold: 10,
-      experimentType: experimentChoices.shortestPathWeight,
-      targetIsAmountOfAnts: true,
-      pheromoneTarget: 200
-    }
+      experimentType: experimentChoices.shortestPathWeight
+    }, baseSettings)
   ])
+
+  // await makeExperiment("shortandlong", shortTowersAndLongMap, true, [
+  //   merge({
+  //     name: "Continous Vapor",
+  //     experimentType: experimentChoices.continousVapor
+  //   }, baseSettings),
+  //   merge({
+  //     name: "Success only",
+  //     experimentType: experimentChoices.onlyOnSuccess
+  //   }, baseSettings),
+  //   merge({
+  //     name: "SP Only",
+  //     experimentType: experimentChoices.shortestPathOnly
+  //   }, baseSettings),
+  //   merge({
+  //     name: "SP Weight",
+  //     experimentType: experimentChoices.shortestPathWeight
+  //   }, baseSettings)
+  // ])
   // await makeExperiment("shortandlongwithtowers", shortTowersAndLongMap, [], 0.3)
   // await makeExperiment("mirroredwithtower", mirroredwithtower, [], 0.3)
   // await makeExperiment("squaremaze", squareMazeMap, [], 0.3)
