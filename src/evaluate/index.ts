@@ -11,9 +11,11 @@ import makePlot from "./makePlot"
 import makePlotScatter, { iterationTargets } from "./makePlotScatter"
 import tryoutAllSettings from "./tryoutAllSettings"
 
+const start = Date.now()
+
 const makeExperiment = async (name: string, mapCreator: GamefieldCreator,
                               testWithAndWithoutDeath: boolean, settings: any) => {
-const res = await tryoutAllSettings(mapCreator, settings, 60)
+const res = await tryoutAllSettings(mapCreator, settings, 50)
 mkdir("results")
 fs.writeFileSync(`results/${name}.json`, JSON.stringify(res, null, 2))
 await makePlot(name, res, testWithAndWithoutDeath)
@@ -63,6 +65,7 @@ const varyWithAllExperimentTypes = (baseSettings: any, nameAddon: string = "") =
 }
 
 const runSettingOnAllMaps = async (settings: any, name: string, testWithAndWithoutDeath: boolean) => {
+  const experimentStart = Date.now()
   await makeExperimentScatter(name + "shortandlong", createMap, testWithAndWithoutDeath,
   varyWithAllExperimentTypes(settings))
   await makeExperimentScatter(name + "shortandlongwithtowers",
@@ -71,10 +74,12 @@ const runSettingOnAllMaps = async (settings: any, name: string, testWithAndWitho
     mirroredwithtower, testWithAndWithoutDeath, varyWithAllExperimentTypes(settings))
   await makeExperimentScatter(name + "squaremaze",
     squareMazeMap, testWithAndWithoutDeath, varyWithAllExperimentTypes(settings))
+  console.log("finished running experiment after " + (Date.now() - experimentStart) + " ms")
+  console.log("current total runtime " + (Date.now() - start) + " ms")
 }
 
 const runAllExperiments = async () => {
-  runSettingOnAllMaps({
+  await runSettingOnAllMaps({
     maxTicks: 9999,
     pheromoneTarget: 400,
     targetIsAmountOfAnts: true,
@@ -82,7 +87,7 @@ const runAllExperiments = async () => {
     spawnThreshold: 14
   }, "normal", true)
 
-  runSettingOnAllMaps({
+  await runSettingOnAllMaps({
     maxTicks: 9999,
     pheromoneTarget: 400,
     targetIsAmountOfAnts: true,
@@ -90,7 +95,7 @@ const runAllExperiments = async () => {
     spawnThreshold: 30
   }, "high spawn normal decay", true)
 
-  runSettingOnAllMaps({
+  await runSettingOnAllMaps({
     maxTicks: 9999,
     pheromoneTarget: 400,
     targetIsAmountOfAnts: true,
@@ -98,7 +103,7 @@ const runAllExperiments = async () => {
     spawnThreshold: 30
   }, "high spawn high decay", true)
 
-  runSettingOnAllMaps({
+  await runSettingOnAllMaps({
     maxTicks: 9999,
     pheromoneTarget: 400,
     targetIsAmountOfAnts: true,
@@ -106,7 +111,7 @@ const runAllExperiments = async () => {
     spawnThreshold: 4
   }, "low spawn high decay", true)
 
-  runSettingOnAllMaps({
+  await runSettingOnAllMaps({
     maxTicks: 9999,
     pheromoneTarget: 400,
     targetIsAmountOfAnts: true,
@@ -114,7 +119,7 @@ const runAllExperiments = async () => {
     spawnThreshold: 4
   }, "low spawn low decay", true)
 
-  runSettingOnAllMaps({
+  await runSettingOnAllMaps({
     maxTicks: 9999,
     pheromoneTarget: 400,
     targetIsAmountOfAnts: true,
@@ -122,6 +127,7 @@ const runAllExperiments = async () => {
     spawnThreshold: 4
   }, "low spawn no decay", true)
 
+  console.log("total runtime " + (Date.now() - start) + " ms")
   return true
 }
 

@@ -22,15 +22,11 @@ export interface IMapEvaluationResults {
   antsThatReachedTarget: number
 }
 
-const evaluateMap = (mapInstance: GameField, maxTicks: number = 50) => {
+const evaluateMap = (mapInstance: GameField) => {
   const start = Date.now()
-  outOfWhile:
   while (!mapInstance.reachedExperimentGoal()) {
     mapInstance.spawnNewAnt(randomNum(0, mapInstance.spawnThreshold))
     mapInstance.processTick()
-    if (mapInstance.currentTick > maxTicks) {
-      break outOfWhile
-    }
   }
   const deadAntPercentage = mapInstance.amountOfDeadAnts / mapInstance.amountOfSpawnedAnts
   const res: IMapEvaluationResults = {

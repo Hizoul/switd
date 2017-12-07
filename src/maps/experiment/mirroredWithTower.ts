@@ -76,10 +76,10 @@ const createMap = () => {
   const ls6 = ls5.extend(direction.right)
   ls6.addIntersection(rs7)
 
-  // const t1 = new Tower(6, 6, testMapNoSplits)
-  // testMapNoSplits.addTile(t1)
-  // const t2 = new Tower(9, 6, testMapNoSplits)
-  // testMapNoSplits.addTile(t2)
+  const t1 = new Tower(6, 6, testMapNoSplits)
+  testMapNoSplits.addTile(t1)
+  const t2 = new Tower(9, 6, testMapNoSplits)
+  testMapNoSplits.addTile(t2)
 
   return testMapNoSplits
 }

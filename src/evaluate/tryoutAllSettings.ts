@@ -11,10 +11,12 @@ const tryoutAllSettings =
   const includeDeath = [false, true]
   const totalAmount = 2 * settingsToTry.length
   let currentlyAt = 0
+  console.log(`starting to try out ${totalAmount} experiments`)
   for (const deathInfluencesDecay of includeDeath) {
     for (const setting of settingsToTry) {
       const settingToUse = cloneDeep(setting)
       settingToUse.deathInfluencesDecay = deathInfluencesDecay
+      console.log("about to try out", setting)
       const res = await runExperimentMultipleTimes(mapCreator, settingToUse, amountOfRuns)
       if (dontMakeMean) {
         for (const a of res) {
@@ -48,9 +50,9 @@ const tryoutAllSettings =
           }
         })
       }
+      currentlyAt++
+      console.log(`tried out ${(currentlyAt / totalAmount) * 100}%`)
     }
-    currentlyAt++
-    console.log(`tried out ${(currentlyAt / totalAmount) * 100}%`)
   }
   return finalResults
 }

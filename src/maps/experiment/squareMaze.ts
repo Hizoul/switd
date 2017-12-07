@@ -82,6 +82,9 @@ const createMap = () => {
   secondEndWay2.addIntersection(endWay2)
   endWay3.relevantEvaluationTarget = true
 
+  const t1 = new Tower(8, 7, testMapNoSplits)
+  testMapNoSplits.addTile(t1)
+
   return testMapNoSplits
 }
 
