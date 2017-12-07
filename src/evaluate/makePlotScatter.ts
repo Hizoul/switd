@@ -2,7 +2,7 @@ import * as ChartjsNode from "chartjs-node"
 import { cloneDeep, find, findIndex, isNil, map } from "lodash"
 import { IExperimentResult } from "./experiment"
 
-const iterationTargets = [10, 20] // [10, 20, 50, 100, 200, 500, 1000,  2000, 5000, 10000, 20000, 50000]
+const iterationTargets = [10, 20, 50, 100, 200, 500, 1000,  2000, 5000, 10000, 20000, 50000]
 
 const colors: string[] = [
   "rgba(255, 99, 132, 0.8)",

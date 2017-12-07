@@ -13,7 +13,7 @@ import tryoutAllSettings from "./tryoutAllSettings"
 
 const makeExperiment = async (name: string, mapCreator: GamefieldCreator,
                               testWithAndWithoutDeath: boolean, settings: any) => {
-const res = await tryoutAllSettings(mapCreator, settings, 30)
+const res = await tryoutAllSettings(mapCreator, settings, 60)
 mkdir("results")
 fs.writeFileSync(`results/${name}.json`, JSON.stringify(res, null, 2))
 await makePlot(name, res, testWithAndWithoutDeath)
@@ -25,7 +25,7 @@ async (name: string, mapCreator: GamefieldCreator, testWithAndWithoutDeath: bool
   for (const setting of settings) {
     const settingsToUse = map(
       iterationTargets, (pheromoneTarget: any) => {
-      return merge({}, setting, {pheromoneTarget})
+      return merge({}, setting, {pheromoneTarget, maxTicks: pheromoneTarget * 10})
     })
     console.log("got settings", settingsToUse)
     const res = await tryoutAllSettings(mapCreator, settingsToUse, 10, false)
@@ -34,59 +34,94 @@ async (name: string, mapCreator: GamefieldCreator, testWithAndWithoutDeath: bool
     }
   }
   mkdir("results")
-  fs.writeFileSync(`results/${name}.json`, JSON.stringify(fullRes, null, 2))
+  fs.writeFileSync(`results/${name}-scatter.json`, JSON.stringify(fullRes, null, 2))
   await makePlotScatter(name, fullRes, testWithAndWithoutDeath)
+  const res = await tryoutAllSettings(mapCreator, settings, 30)
+  fs.writeFileSync(`results/${name}.json`, JSON.stringify(res, null, 2))
+  await makePlot(name, res, testWithAndWithoutDeath)
+}
+
+const varyWithAllExperimentTypes = (baseSettings: any, nameAddon: string = "") => {
+  return [
+    merge({
+      name: nameAddon + "Continous Vapor",
+      experimentType: experimentChoices.continousVapor
+    }, baseSettings),
+    merge({
+      name: nameAddon + "Success only",
+      experimentType: experimentChoices.onlyOnSuccess
+    }, baseSettings),
+    merge({
+      name: nameAddon + "SP Only",
+      experimentType: experimentChoices.shortestPathOnly
+    }, baseSettings),
+    merge({
+      name: nameAddon + "SP Weight",
+      experimentType: experimentChoices.shortestPathWeight
+    }, baseSettings)
+  ]
+}
+
+const runSettingOnAllMaps = async (settings: any, name: string, testWithAndWithoutDeath: boolean) => {
+  await makeExperimentScatter(name + "shortandlong", createMap, testWithAndWithoutDeath,
+  varyWithAllExperimentTypes(settings))
+  await makeExperimentScatter(name + "shortandlongwithtowers",
+    shortTowersAndLongMap, testWithAndWithoutDeath, varyWithAllExperimentTypes(settings))
+  await makeExperimentScatter(name + "mirroredwithtower",
+    mirroredwithtower, testWithAndWithoutDeath, varyWithAllExperimentTypes(settings))
+  await makeExperimentScatter(name + "squaremaze",
+    squareMazeMap, testWithAndWithoutDeath, varyWithAllExperimentTypes(settings))
 }
 
 const runAllExperiments = async () => {
-  const baseSettings = {
+  runSettingOnAllMaps({
     maxTicks: 9999,
     pheromoneTarget: 400,
     targetIsAmountOfAnts: true,
     decayStrength: -0.007,
-    spawnThreshold: 10
-  }
+    spawnThreshold: 14
+  }, "normal", true)
 
-  await makeExperimentScatter("shortandlong", shortTowersAndLongMap, true, [
-    merge({
-      name: "Continous Vapor",
-      experimentType: experimentChoices.continousVapor
-    }, baseSettings),
-    merge({
-      name: "Success only",
-      experimentType: experimentChoices.onlyOnSuccess
-    }, baseSettings),
-    merge({
-      name: "SP Only",
-      experimentType: experimentChoices.shortestPathOnly
-    }, baseSettings),
-    merge({
-      name: "SP Weight",
-      experimentType: experimentChoices.shortestPathWeight
-    }, baseSettings)
-  ])
+  runSettingOnAllMaps({
+    maxTicks: 9999,
+    pheromoneTarget: 400,
+    targetIsAmountOfAnts: true,
+    decayStrength: -0.007,
+    spawnThreshold: 30
+  }, "high spawn normal decay", true)
 
-  // await makeExperiment("shortandlong", shortTowersAndLongMap, true, [
-  //   merge({
-  //     name: "Continous Vapor",
-  //     experimentType: experimentChoices.continousVapor
-  //   }, baseSettings),
-  //   merge({
-  //     name: "Success only",
-  //     experimentType: experimentChoices.onlyOnSuccess
-  //   }, baseSettings),
-  //   merge({
-  //     name: "SP Only",
-  //     experimentType: experimentChoices.shortestPathOnly
-  //   }, baseSettings),
-  //   merge({
-  //     name: "SP Weight",
-  //     experimentType: experimentChoices.shortestPathWeight
-  //   }, baseSettings)
-  // ])
-  // await makeExperiment("shortandlongwithtowers", shortTowersAndLongMap, [], 0.3)
-  // await makeExperiment("mirroredwithtower", mirroredwithtower, [], 0.3)
-  // await makeExperiment("squaremaze", squareMazeMap, [], 0.3)
+  runSettingOnAllMaps({
+    maxTicks: 9999,
+    pheromoneTarget: 400,
+    targetIsAmountOfAnts: true,
+    decayStrength: -0.02,
+    spawnThreshold: 30
+  }, "high spawn high decay", true)
+
+  runSettingOnAllMaps({
+    maxTicks: 9999,
+    pheromoneTarget: 400,
+    targetIsAmountOfAnts: true,
+    decayStrength: -0.02,
+    spawnThreshold: 4
+  }, "low spawn high decay", true)
+
+  runSettingOnAllMaps({
+    maxTicks: 9999,
+    pheromoneTarget: 400,
+    targetIsAmountOfAnts: true,
+    decayStrength: -0.0001,
+    spawnThreshold: 4
+  }, "low spawn low decay", true)
+
+  runSettingOnAllMaps({
+    maxTicks: 9999,
+    pheromoneTarget: 400,
+    targetIsAmountOfAnts: true,
+    decayStrength: -0,
+    spawnThreshold: 4
+  }, "low spawn no decay", true)
+
   return true
 }
 

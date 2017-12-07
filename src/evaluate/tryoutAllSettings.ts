@@ -48,10 +48,9 @@ const tryoutAllSettings =
           }
         })
       }
-      currentlyAt++
-      console.log(`tried out ${(currentlyAt / totalAmount) * 100}%`)
-
     }
+    currentlyAt++
+    console.log(`tried out ${(currentlyAt / totalAmount) * 100}%`)
   }
   return finalResults
 }
