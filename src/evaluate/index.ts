@@ -131,4 +131,62 @@ const runAllExperiments = async () => {
   return true
 }
 
-export default runAllExperiments
+const makestuff = async () => {
+  const baseSettings = {
+    maxTicks: 9999,
+    pheromoneTarget: 400,
+    targetIsAmountOfAnts: true,
+    decayStrength: -0.007,
+    spawnThreshold: 14
+  }
+  await makeExperimentScatter("mirroredwithtower", mirroredwithtower, true,
+  [
+    merge({
+      name: "Normal",
+      experimentType: experimentChoices.shortestPathWeight
+    }, baseSettings),
+    merge({
+      name: "High Decay & Spawn",
+      experimentType: experimentChoices.shortestPathWeight
+    }, baseSettings, {
+      decayStrength: -0.02,
+      spawnThreshold: 30
+    }),
+    merge({
+      name: "Low Decay High Spawn",
+      experimentType: experimentChoices.shortestPathWeight
+    }, baseSettings, {
+      decayStrength: -0.0007,
+      spawnThreshold: 30
+    }),
+    merge({
+      name: "Normal Decay High Spawn",
+      experimentType: experimentChoices.shortestPathWeight
+    }, baseSettings, {
+      spawnThreshold: 30
+    }),
+    merge({
+      name: "Low Spawn Low Decay",
+      experimentType: experimentChoices.shortestPathWeight
+    }, baseSettings, {
+      spawnThreshold: 4,
+      decayStrength: -0.0007
+    }),
+    merge({
+      name: "Low Spawn No Decay",
+      experimentType: experimentChoices.shortestPathWeight
+    }, baseSettings, {
+      spawnThreshold: 4,
+      decayStrength: 0
+    }),
+    merge({
+      name: "High Spawn No Decay",
+      experimentType: experimentChoices.shortestPathWeight
+    }, baseSettings, {
+      spawnThreshold: 30,
+      decayStrength: 0
+    })
+  ])
+}
+
+export default makestuff

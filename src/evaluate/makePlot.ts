@@ -45,7 +45,7 @@ const drawChart = async (name: string, type: string, labels: string[], datasets:
           yAxes: [{
             scaleLabel: {
               display: true,
-              labelString: "Test Constellation Name"
+              labelString: xLabel
             },
             ticks: {
                 beginAtZero: true
@@ -54,7 +54,7 @@ const drawChart = async (name: string, type: string, labels: string[], datasets:
           xAxes: [{
             scaleLabel: {
               display: true,
-              labelString: xLabel
+              labelString: "Test Constellation Name"
             }
           }]
         }

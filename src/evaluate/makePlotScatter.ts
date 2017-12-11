@@ -2,7 +2,7 @@ import * as ChartjsNode from "chartjs-node"
 import { cloneDeep, find, findIndex, isNil, map } from "lodash"
 import { IExperimentResult } from "./experiment"
 
-const iterationTargets = [10, 20, 50, 75, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
+const iterationTargets = [5, 10, 25, 50, 100, 150, 200, 250, 300, 400, 500, 750, 1000, 1500]
 
 const colors: string[] = [
   "rgba(255, 99, 132, 0.8)",
@@ -32,7 +32,7 @@ async (name: string, type: string, labels: string[], datasets: any[],
           yAxes: [{
             scaleLabel: {
               display: true,
-              labelString: yLabel
+              labelString: xLabel
             },
             ticks: {
                 beginAtZero: true
@@ -41,7 +41,7 @@ async (name: string, type: string, labels: string[], datasets: any[],
           xAxes: [{
             scaleLabel: {
               display: true,
-              labelString: xLabel
+              labelString: yLabel
             }
           }]
         }
@@ -84,9 +84,9 @@ const makePlotScatter = async (name: string, res: IExperimentResult[], distingui
     baseEntryRatios.data[indexToInsert] = result.results.tickAmount / result.results.deadAnts
   }
   const yLabel = "Ants that need to reach Target"
-  await drawChart(`${name}-ticks-line`, "line", labels, datasetsTicks, yLabel, "Ticks")
-  await drawChart(`${name}-deaths-line`, "line", labels, datasetsDeadAnts, yLabel, "Deaths")
-  await drawChart(`${name}-ticksvsDeadAnts-line`, "line", labels, datasetsRatio, yLabel, "Tick / Death Ratio")
+  await drawChart(`${name}-ticks-line`, "line", labels, datasetsTicks, "Ticks", yLabel)
+  await drawChart(`${name}-deaths-line`, "line", labels, datasetsDeadAnts, "Deaths", yLabel)
+  await drawChart(`${name}-ticksvsDeadAnts-line`, "line", labels, datasetsRatio, "Tick / Death Ratio", yLabel)
 }
 
 export default makePlotScatter

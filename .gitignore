@@ -83,3 +83,5 @@ webpackDist
 *.synctex.gz
 report.pdf
 results
+reswithout
+reswith
