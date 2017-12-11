@@ -41,7 +41,7 @@ const mapChanger: any = {
 class RenderMapChoice extends React.Component<{
 }, any> {
   public state = {
-    mapToRender: mirroredwithtower()
+    mapToRender: squareMazeMap()
   }
   constructor(props: any) {
     super(props)
@@ -51,7 +51,6 @@ class RenderMapChoice extends React.Component<{
     return (
       <div>
         <DisplayGame fieldToRender={this.state.mapToRender} />
-        <GameFieldController gameField={this.state.mapToRender} />
       </div>
     )
   }

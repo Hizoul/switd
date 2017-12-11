@@ -146,45 +146,42 @@ const makestuff = async () => {
       experimentType: experimentChoices.shortestPathWeight
     }, baseSettings),
     merge({
-      name: "High Decay & Spawn",
+      name: "High Decay",
       experimentType: experimentChoices.shortestPathWeight
     }, baseSettings, {
-      decayStrength: -0.02,
-      spawnThreshold: 30
+      decayStrength: -0.02
     }),
     merge({
-      name: "Low Decay High Spawn",
+      name: "Low Decay",
       experimentType: experimentChoices.shortestPathWeight
     }, baseSettings, {
-      decayStrength: -0.0007,
-      spawnThreshold: 30
-    }),
-    merge({
-      name: "Normal Decay High Spawn",
-      experimentType: experimentChoices.shortestPathWeight
-    }, baseSettings, {
-      spawnThreshold: 30
-    }),
-    merge({
-      name: "Low Spawn Low Decay",
-      experimentType: experimentChoices.shortestPathWeight
-    }, baseSettings, {
-      spawnThreshold: 4,
       decayStrength: -0.0007
     }),
     merge({
-      name: "Low Spawn No Decay",
+      name: "High Increase",
       experimentType: experimentChoices.shortestPathWeight
     }, baseSettings, {
-      spawnThreshold: 4,
-      decayStrength: 0
+      pheromoneIncreaseStrength: 0.02
     }),
     merge({
-      name: "High Spawn No Decay",
+      name: "Low Increase",
       experimentType: experimentChoices.shortestPathWeight
     }, baseSettings, {
-      spawnThreshold: 30,
-      decayStrength: 0
+      pheromoneIncreaseStrength: 0.0007
+    }),
+    merge({
+      name: "High Increase & Decay",
+      experimentType: experimentChoices.shortestPathWeight
+    }, baseSettings, {
+      pheromoneIncreaseStrength: 0.03,
+      decayStrength: -0.02
+    }),
+    merge({
+      name: "Low Increase & Decay",
+      experimentType: experimentChoices.shortestPathWeight
+    }, baseSettings, {
+      pheromoneIncreaseStrength: 0.001,
+      decayStrength: -0.0007
     })
   ])
 }
