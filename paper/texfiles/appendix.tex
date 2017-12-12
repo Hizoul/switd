@@ -1,27 +1,748 @@
+Appended are only Files that were referenced in the description in section \ref{sec:implementationactual}.
+
 \section{Source Code for GameField-Class}
 \label{src:logicgame}
-UI-Ant-Code
+
+\begin{lstlisting}
+import { filter, find, isNil, remove, union } from "lodash"
+import noOp from "../noOp"
+import randomNum from "../randomNum"
+import Ant from "./ant"
+import Street from "./street"
+import Tile, { tileTypes } from "./tile"
+import Tower from "./tower"
+
+const experimentChoices = {
+  onlyOnSuccess: 6,
+  /**
+   * Rank-based ant system (ASrank) = shortest path
+   */
+  shortestPathWeight: 8,
+  shortestPathOnly: 9,
+  /**
+   * also called Ant colony system Algorithm
+   */
+  continousVapor: 11
+}
+
+class GameField {
+  public timerId: any
+  public fieldSizeX: number
+  public fieldSizeY: number
+  public antList: Ant[]
+  public towerList: Tower[]
+  public streetList: Street[]
+  public intersectionList: Array<{beginning: Street, target: Street}>
+  public componentUpdateTrigger: any
+  public currentTick: number
+  public tickSpeed: number
+  public spawnThreshold: number
+  public continueTimer: boolean
+  public experimentType: number
+  public decayStrength: number
+  public totalDamageDealt: number
+  public shortestPathLength: number
+  public pheromoneIncreaseStrength: number = 0.01
+  public towersEnabled: boolean = true
+  public amountOfDeadAnts: number
+  public amountOfSpawnedAnts: number
+  public substractForDeath: boolean = false
+  public pheromoneTarget: number = 0.8
+  public targetIsAmountOfAnts: boolean = false
+  public maxTicks: number = -1
+  constructor(fieldSizeX: number = 10, fieldSizeY: number = 10) {
+    this.fieldSizeX = fieldSizeX
+    this.fieldSizeY = fieldSizeY
+    this.towerList = []
+    this.streetList = []
+    this.antList = []
+    this.intersectionList = []
+    this.currentTick = 0
+    this.tickSpeed = 1800
+    this.spawnThreshold = 3
+    this.continueTimer = false
+    this.componentUpdateTrigger = {setState: noOp}
+    this.experimentType = experimentChoices.onlyOnSuccess
+    this.decayStrength = -0.007
+    this.totalDamageDealt = 0
+    this.shortestPathLength = 99999999999999
+    this.amountOfDeadAnts = 0
+    this.amountOfSpawnedAnts = 0
+  }
+  /**
+   * Check wether a certain position in the map is already occupied by a tile
+   * @param x Position
+   * @param y Position
+   */
+  public isOccupied(x: number, y: number) {
+    const fullList: Tile[] = union<Tile>(this.towerList, this.streetList)
+    for (const tile of fullList) {
+      if (tile.occupies(x, y)) {
+        return tile
+      }
+    }
+    return null
+  }
+
+  /**
+   * Returns true if successfull false otherwise
+   * @param newTile Tile to insert
+   */
+  public addTile(newTile: Tile) {
+    if (isNil(this.isOccupied(newTile.xPos, newTile.yPos))) {
+      const addTo: any = newTile.tileType === tileTypes.tower ? this.towerList : this.streetList
+      addTo.push(newTile)
+      return true
+    }
+    return false
+  }
+  public getNeighborPositions(xPos: number, yPos: number, range: number) {
+    const toCheck: Array<{x: number, y: number}> = []
+    for (let i = 1; i <= range; i++) {
+      toCheck.push({x: xPos + i, y: yPos})
+      toCheck.push({x: xPos - i, y: yPos})
+      toCheck.push({x: xPos, y: yPos + i})
+      toCheck.push({x: xPos, y: yPos - i})
+      toCheck.push({x: xPos + i, y: yPos + i})
+      toCheck.push({x: xPos + i, y: yPos - i})
+      toCheck.push({x: xPos - i, y: yPos + i})
+      toCheck.push({x: xPos - i, y: yPos - i})
+    }
+    return toCheck
+  }
+  public getNeighbors: (xPos: number, yPos: number, range: number) => Tile[] = (xPos, yPos, range) => {
+    const tiles: Tile[] = []
+    // TODO find neighbors
+    const toCheck = this.getNeighborPositions(xPos, yPos, range)
+    for (const checkMe of toCheck) {
+      const found = this.isOccupied(checkMe.x, checkMe.y)
+      if (!isNil(found)) {
+        tiles.push(found)
+      }
+    }
+    return tiles
+  }
+  public getNeighborStreets: (xPos: number, yPos: number, range: number) => Street[] = (xPos, yPos, range) => {
+    const back: any = filter(this.getNeighbors(xPos, yPos, range), (tile) => tile.tileType === tileTypes.street)
+    return back
+  }
+  public getStart: () => Street = () => {
+    return this.streetList[0]
+  }
+  public getTarget: () => Street = () => {
+    const ret: any = find(this.streetList, (a: Street) => a.isTarget())
+    return ret
+  }
+  /**
+   * Process ticks for a game
+   * at first towers deal damage and kill ants
+   * then ants can make their move
+   */
+  public processTick: () => void = () => {
+    for (const tower of this.towerList) {
+      tower.makeRoundDamage()
+    }
+    for (const ant of this.antList) {
+      ant.makeNextStep()
+    }
+    for (const street of this.streetList) {
+      street.adjustPheromoneLevel(this.decayStrength)
+    }
+    this.currentTick++
+    if (this.reachedExperimentGoal()) {
+      this.stopTimer()
+    }
+    this.componentUpdateTrigger.setState({tickNum: this.currentTick})
+  }
+  public spawnNewAnt: (amount: number) => void = (amount = 1) => {
+    const start = this.getStart()
+    for (let i = 0; i < amount; i++) {
+      const ant = new Ant(start)
+      start.enter(ant)
+      this.antList.push(ant)
+    }
+    this.amountOfSpawnedAnts += amount
+  }
+
+  public removeAnt: (ant: Ant) => void = (ant) => {
+    remove(this.antList, (a1) => a1.uniqueId === ant.uniqueId)
+  }
+  public registerComponentToUpdate = (setStateMethod: any) => {
+    this.componentUpdateTrigger = setStateMethod
+  }
+
+  public startTimer() {
+    this.continueTimer = true
+    if (isNil(this.timerId)) {
+      console.log("timerid is null starting timer")
+      this.timerId = setTimeout(this.processTime, this.tickSpeed)
+    }
+  }
+  public stopTimer() {
+    this.continueTimer = false
+    if (!isNil(this.timerId)) {
+      clearTimeout(this.timerId)
+      this.timerId = null
+    }
+  }
+  public processTime = () => {
+    this.spawnNewAnt(randomNum(0, this.spawnThreshold))
+    this.processTick()
+    if (this.continueTimer) {
+      setTimeout(this.processTime, this.tickSpeed)
+    }
+  }
+  public reachedExperimentGoal() {
+    if (this.maxTicks > 0 && this.currentTick >= this.maxTicks) {
+      return true
+    }
+    if (this.targetIsAmountOfAnts) {
+      return this.getTarget().currentVisitors.length >= this.pheromoneTarget
+    } else {
+      const relevantStreets = filter(this.streetList, ["relevantEvaluationTarget", true])
+      let satisifed = false
+      for (const street of relevantStreets) {
+        if (this.pheromoneTarget <= street.pheromoneLevel) {
+          satisifed = true
+        }
+      }
+      return satisifed
+    }
+  }
+}
+
+export default GameField
+export { experimentChoices }
+
+\end{lstlisting}
+
 
 \section{Source Code for Tile-Class}
 \label{src:logictile}
-UI-Ant-Code
+\begin{lstlisting}
+import { isNil, isObject } from "lodash"
+import GameField from "./map"
+
+const tileTypes = {
+  street: 3,
+  tower: 6
+}
+
+class Tile {
+  public xPos: number
+  public yPos: number
+  public tileType: number
+  public gameField: GameField
+  public constructor(xPos: number, yPos: number, tileType: number, gameField: GameField) {
+    this.xPos = xPos
+    this.yPos = yPos
+    this.tileType = tileType
+    this.gameField = gameField
+  }
+  public occupies: (x: number, y: number) => boolean =
+  (x: number, y: number) => {
+    return x === this.xPos && y === this.yPos
+  }
+  public sameTile: (compare?: Tile) => boolean = (compare) => {
+    if (isNil(compare) || !isObject(compare)) {
+      return false
+    }
+    return this.xPos === compare.xPos && this.yPos === compare.yPos
+  }
+}
+
+export default Tile
+export { tileTypes }
+
+\end{lstlisting}
 
 \section{Source Code for Street-Class}
 \label{src:logicstreet}
-UI-Ant-Code
+\begin{lstlisting}
+import { findIndex, remove } from "lodash"
+import Ant from "./ant"
+import GameField from "./map"
+import Tile, { tileTypes } from "./tile"
+
+const direction = {
+  up: 2, down: 3, left: 5, right: 6
+}
+
+const getDirFromNum: (dir: number) => number[] = (dir) => {
+  switch (dir) {
+    case direction.up: return [0, -1]
+    case direction.down: return [0, 1]
+    case direction.left: return [-1, 0]
+    case direction.right: return [1, 0]
+    default: return [0, 1]
+  }
+}
+
+class Street extends Tile {
+  public next: Street[]
+  public previous: Street[]
+  public currentVisitors: Ant[]
+  public pheromoneLevel: number
+  public relevantEvaluationTarget: boolean = false
+  constructor(xPos: number, yPos: number, gameField: GameField) {
+    super(xPos, yPos, tileTypes.street, gameField)
+    this.next = []
+    this.previous = []
+    this.currentVisitors = []
+    this.pheromoneLevel = 0
+  }
+  public isTarget: () => boolean = () => {
+    return this.next.length === 0
+  }
+  public isStart: () => boolean = () => {
+    return this.previous.length === 0
+  }
+  public multiExtend: (extendToDir: number, amountOfTimes: number) => Street = (extendToDir, amountOfTimes) => {
+    let endOfAdding: any = this
+    for (let i = 0; i < amountOfTimes; i++) {
+      endOfAdding = endOfAdding.extend(extendToDir)
+    }
+    return endOfAdding
+  }
+  public extend: (extendToDir: number) => Street = (extendToDir) =>  {
+    const directionHelper = getDirFromNum(extendToDir)
+    const nextStreet = new Street(
+      this.xPos + directionHelper[0],
+      this.yPos + directionHelper[1],
+      this.gameField
+    )
+    if (this.gameField.addTile(nextStreet)) {
+      this.next.push(nextStreet)
+      nextStreet.previous.push(this)
+      return nextStreet
+    }
+    return this
+  }
+  public addIntersection(intersec: Street) {
+    this.next.push(intersec)
+    intersec.previous.push(this)
+  }
+  public enter(ant: Ant) {
+    if (findIndex(this.currentVisitors, (e: Ant) => e.uniqueId === ant.uniqueId) !== -1) {
+      return false
+    }
+    return this.currentVisitors.push(ant)
+  }
+  public leave(ant: Ant) {
+    return remove(this.currentVisitors, (e: Ant) => e.uniqueId === ant.uniqueId)
+  }
+  public adjustPheromoneLevel(by: number) {
+    this.pheromoneLevel += by
+    if (this.pheromoneLevel < 0) {
+      this.pheromoneLevel = 0
+    }
+    if (this.pheromoneLevel > 1) {
+      this.pheromoneLevel = 1
+    }
+  }
+}
+
+export default Street
+export { direction }
+
+\end{lstlisting}
 
 \section{Source Code for Tower-Class}
 \label{src:logictower}
-UI-Ant-Code
+\begin{lstlisting}
+
+import { remove, sortBy, union } from "lodash"
+import randomNum from "../randomNum"
+import Ant from "./ant"
+import GameField from "./map"
+import Tile, { tileTypes } from "./tile"
+
+class Tower extends Tile {
+  public damagableAnts: number
+  public damageAmount: number
+  public towerRange: number
+  public towerType: string
+  constructor(xPos: number, yPos: number, gameField: GameField) {
+    super(xPos, yPos, tileTypes.tower, gameField)
+    this.damagableAnts = 7
+    this.towerRange = 1
+    this.damageAmount = 13
+  }
+  public makeRoundDamage: () => void = () => {
+    // find streets in range and damage ant
+    const possibleTargets = this.gameField.getNeighborStreets(this.xPos, this.yPos, this.towerRange)
+    let hittableAnts: Ant[] = []
+    for (const target of possibleTargets) {
+      hittableAnts = union<Ant>(hittableAnts, target.currentVisitors)
+    }
+    // console.log("hittableAnts are", hittableAnts)
+    let antsHit = 0
+    while (antsHit < this.damagableAnts && hittableAnts.length > 0) {
+      hittableAnts = sortBy(hittableAnts, ["hp", "uniqueId"])
+      const ant = hittableAnts[0]
+      ant.hurt(this.damageAmount)
+      this.gameField.totalDamageDealt += this.damageAmount
+      antsHit++
+      if (ant.hp <= 0) {
+        remove(hittableAnts, (antToCheck) => antToCheck.uniqueId === ant.uniqueId)
+      }
+    }
+  }
+}
+
+export default Tower
+
+\end{lstlisting}
 
 \section{Source Code for Ant-Class}
 \label{src:logicant}
-UI-Ant-Code
+\begin{lstlisting}
+import { each, filter, find, isArray, isEqual, map, union, uniq } from "lodash"
+import randomNum from "../randomNum"
+import { experimentChoices } from "./map"
+import Street from "./street"
+import Tile from "./tile"
+let currentmaxid = 1
+
+const makeWeightedChoice = (inputArr: Array<{choiceIndex: number, choiceWeight: number}>) => {
+  let sumOfWeights = 0
+  const validRanges: Array<{min: number, max: number, index: number}> = []
+  for (const item of inputArr) {
+    validRanges.push({index: item.choiceIndex, min: sumOfWeights, max: sumOfWeights + item.choiceWeight})
+    sumOfWeights += item.choiceWeight
+  }
+  const findInRange = randomNum(0, sumOfWeights)
+  const foundRange: any = find(validRanges,
+    (toCheck) => findInRange >= toCheck.min && findInRange <= Math.ceil(toCheck.max))
+  return foundRange.index
+}
+
+const containsStreet = (streetList: Tile[], street: Tile) => {
+  let contains = false
+  each(streetList,  (inspect) => {
+    if (street.sameTile(inspect)) {
+      contains = true
+      return false
+    }
+    return true
+  })
+  return contains
+}
+
+class Ant {
+  public currentlyOn: Street
+  public walkedPath: Street[]
+  public uniqueId: number
+  public hp: number
+  public constructor(currentTile: Street) {
+    this.currentlyOn = currentTile
+    this.uniqueId = currentmaxid
+    this.walkedPath = [currentTile]
+    this.hp = 50
+    currentmaxid++
+  }
+  public makeNextStep() {
+    if (this.currentlyOn.isTarget()) {
+      // Already done
+      return
+    }
+    // also consider going backwards at a crossing by unionizing next and previous and
+    // then filtering out the tile that would mean going backwards
+    const nextOptions = filter(union(this.currentlyOn.next, this.currentlyOn.previous), (street) => {
+      return !this.currentlyOn.sameTile(street) &&
+        !street.sameTile(this.walkedPath[Math.max(0, this.walkedPath.length - 1)])
+    })
+    if (isArray(nextOptions) && nextOptions.length > 0) {
+      let i = 0
+      const weightedOpts = map(nextOptions, (street) => {
+        const obj = {choiceIndex: i, choiceWeight: Math.max(1, street.pheromoneLevel * 100)}
+        i++
+        return obj
+      })
+      const nextTileIndex = makeWeightedChoice(weightedOpts)
+
+      const nextTile = nextOptions[nextTileIndex]
+      if (this.currentlyOn.gameField.experimentType === experimentChoices.continousVapor) {
+        if (!containsStreet(this.walkedPath, this.currentlyOn)) {
+          this.currentlyOn.adjustPheromoneLevel(this.currentlyOn.gameField.pheromoneIncreaseStrength)
+        }
+      }
+      this.walkedPath.push(this.currentlyOn)
+      this.currentlyOn.leave(this)
+      nextTile.enter(this)
+      this.currentlyOn = nextTile
+      if (nextTile.isTarget()) {
+        this.walkedPath.push(nextTile)
+        // Use uniq here so each crossed street tile only gets evaluated once
+        const streetsToEvaluate = uniq(this.walkedPath)
+        if (nextTile.gameField.experimentType === experimentChoices.onlyOnSuccess) {
+          for (const targetCrossed of this.walkedPath) {
+            targetCrossed.adjustPheromoneLevel(nextTile.gameField.pheromoneIncreaseStrength)
+          }
+        } else if (nextTile.gameField.experimentType === experimentChoices.shortestPathOnly) {
+          if (nextTile.gameField.shortestPathLength >= this.walkedPath.length) {
+            nextTile.gameField.shortestPathLength = this.walkedPath.length
+            for (const street of this.walkedPath) {
+              street.adjustPheromoneLevel(nextTile.gameField.pheromoneIncreaseStrength)
+            }
+          }
+        } else if (nextTile.gameField.experimentType === experimentChoices.shortestPathWeight) {
+          if (nextTile.gameField.shortestPathLength >= this.walkedPath.length) {
+            nextTile.gameField.shortestPathLength = this.walkedPath.length
+          }
+          const modifier =  nextTile.gameField.shortestPathLength / this.walkedPath.length
+          for (const street of this.walkedPath) {
+            street.adjustPheromoneLevel(nextTile.gameField.pheromoneIncreaseStrength * modifier)
+          }
+        }
+      }
+    }
+  }
+  public hurt(damageDealt: number) {
+    this.hp -= damageDealt
+    if (this.hp <= 0) {
+      this.currentlyOn.gameField.removeAnt(this)
+      this.currentlyOn.gameField.amountOfDeadAnts++
+      this.currentlyOn.leave(this)
+      if (this.currentlyOn.gameField.towersEnabled && this.currentlyOn.gameField.substractForDeath) {
+        for (const targetCrossed of this.walkedPath) {
+          targetCrossed.adjustPheromoneLevel(this.currentlyOn.gameField.decayStrength)
+        }
+      }
+    }
+  }
+}
+
+export default Ant
+
+\end{lstlisting}
 
 \section{Source Code for Ant-Displayment}
 \label{src:uiant}
-UI-Ant-Code
+\begin{lstlisting}
+import { findIndex } from "lodash"
+import * as React from "react"
+import { VelocityComponent } from "velocity-react"
+import Ant from "../logic/ant"
+import Map from "../logic/map"
+import { getPositionForTile } from "./positionUtil"
+
+class TowerDisplay extends React.Component<{
+  ant: Ant
+  gameField: Map
+}, any> {
+  public render() {
+    const classes = "ant"
+    const antStyle: any = getPositionForTile(this.props.ant.currentlyOn,
+      this.props.gameField, 10)
+    antStyle.opacity = this.props.ant.hp <= 0 || this.props.ant.currentlyOn.isStart() ||
+      this.props.ant.currentlyOn.isTarget() ? 0 : 1
+    return (
+      <VelocityComponent
+        animation={antStyle}
+        duration={this.props.gameField.tickSpeed * 1.3}
+      >
+        <div className={classes} />
+      </VelocityComponent>
+    )
+  }
+}
+
+export default TowerDisplay
+
+\end{lstlisting}
 
 \section{Source Code for Game-Simulation Test}
 \label{src:testgamesim}
-Test-Code Game-Simulation
+\begin{lstlisting}
+import * as fs from "fs"
+import { map, merge } from "lodash"
+import { mkdir } from "shelljs"
+import { experimentChoices } from "../logic/map"
+import { createMap as mirroredwithtower } from "../maps/experiment/mirroredWithTower"
+import { createMap } from "../maps/experiment/shortAndLong"
+import { createMap as shortTowersAndLongMap } from "../maps/experiment/shortTowersAndLong"
+import { createMap as squareMazeMap } from "../maps/experiment/squareMaze"
+import { GamefieldCreator } from "./experiment"
+import makePlot from "./makePlot"
+import makePlotScatter, { iterationTargets } from "./makePlotScatter"
+import tryoutAllSettings from "./tryoutAllSettings"
+
+const start = Date.now()
+
+const makeExperiment = async (name: string, mapCreator: GamefieldCreator,
+                              testWithAndWithoutDeath: boolean, settings: any) => {
+const res = await tryoutAllSettings(mapCreator, settings, 50)
+mkdir("results")
+fs.writeFileSync(`results/${name}.json`, JSON.stringify(res, null, 2))
+await makePlot(name, res, testWithAndWithoutDeath)
+}
+
+const makeExperimentScatter =
+async (name: string, mapCreator: GamefieldCreator, testWithAndWithoutDeath: boolean, settings: any) => {
+  const fullRes: any[] = []
+  for (const setting of settings) {
+    const settingsToUse = map(
+      iterationTargets, (pheromoneTarget: any) => {
+      return merge({}, setting, {pheromoneTarget, maxTicks: pheromoneTarget * 10})
+    })
+    console.log("got settings", settingsToUse)
+    const res = await tryoutAllSettings(mapCreator, settingsToUse, 10, false)
+    for (const a of res) {
+      fullRes.push(a)
+    }
+  }
+  mkdir("results")
+  fs.writeFileSync(`results/${name}-scatter.json`, JSON.stringify(fullRes, null, 2))
+  await makePlotScatter(name, fullRes, testWithAndWithoutDeath)
+  const res = await tryoutAllSettings(mapCreator, settings, 30)
+  fs.writeFileSync(`results/${name}.json`, JSON.stringify(res, null, 2))
+  await makePlot(name, res, testWithAndWithoutDeath)
+}
+
+const varyWithAllExperimentTypes = (baseSettings: any, nameAddon: string = "") => {
+  return [
+    merge({
+      name: nameAddon + "Continous Vapor",
+      experimentType: experimentChoices.continousVapor
+    }, baseSettings),
+    merge({
+      name: nameAddon + "Success only",
+      experimentType: experimentChoices.onlyOnSuccess
+    }, baseSettings),
+    merge({
+      name: nameAddon + "SP Only",
+      experimentType: experimentChoices.shortestPathOnly
+    }, baseSettings),
+    merge({
+      name: nameAddon + "SP Weight",
+      experimentType: experimentChoices.shortestPathWeight
+    }, baseSettings)
+  ]
+}
+
+const runSettingOnAllMaps = async (settings: any, name: string, testWithAndWithoutDeath: boolean) => {
+  const experimentStart = Date.now()
+  await makeExperimentScatter(name + "shortandlong", createMap, testWithAndWithoutDeath,
+  varyWithAllExperimentTypes(settings))
+  await makeExperimentScatter(name + "shortandlongwithtowers",
+    shortTowersAndLongMap, testWithAndWithoutDeath, varyWithAllExperimentTypes(settings))
+  await makeExperimentScatter(name + "mirroredwithtower",
+    mirroredwithtower, testWithAndWithoutDeath, varyWithAllExperimentTypes(settings))
+  await makeExperimentScatter(name + "squaremaze",
+    squareMazeMap, testWithAndWithoutDeath, varyWithAllExperimentTypes(settings))
+  console.log("finished running experiment after " + (Date.now() - experimentStart) + " ms")
+  console.log("current total runtime " + (Date.now() - start) + " ms")
+}
+
+const runAllExperiments = async () => {
+  await runSettingOnAllMaps({
+    maxTicks: 9999,
+    pheromoneTarget: 400,
+    targetIsAmountOfAnts: true,
+    decayStrength: -0.007,
+    spawnThreshold: 14
+  }, "normal", true)
+
+  await runSettingOnAllMaps({
+    maxTicks: 9999,
+    pheromoneTarget: 400,
+    targetIsAmountOfAnts: true,
+    decayStrength: -0.007,
+    spawnThreshold: 30
+  }, "high spawn normal decay", true)
+
+  await runSettingOnAllMaps({
+    maxTicks: 9999,
+    pheromoneTarget: 400,
+    targetIsAmountOfAnts: true,
+    decayStrength: -0.02,
+    spawnThreshold: 30
+  }, "high spawn high decay", true)
+
+  await runSettingOnAllMaps({
+    maxTicks: 9999,
+    pheromoneTarget: 400,
+    targetIsAmountOfAnts: true,
+    decayStrength: -0.02,
+    spawnThreshold: 4
+  }, "low spawn high decay", true)
+
+  await runSettingOnAllMaps({
+    maxTicks: 9999,
+    pheromoneTarget: 400,
+    targetIsAmountOfAnts: true,
+    decayStrength: -0.0001,
+    spawnThreshold: 4
+  }, "low spawn low decay", true)
+
+  await runSettingOnAllMaps({
+    maxTicks: 9999,
+    pheromoneTarget: 400,
+    targetIsAmountOfAnts: true,
+    decayStrength: -0,
+    spawnThreshold: 4
+  }, "low spawn no decay", true)
+
+  console.log("total runtime " + (Date.now() - start) + " ms")
+  return true
+}
+
+const makestuff = async () => {
+  const baseSettings = {
+    maxTicks: 9999,
+    pheromoneTarget: 400,
+    targetIsAmountOfAnts: true,
+    decayStrength: -0.007,
+    spawnThreshold: 14
+  }
+  await makeExperimentScatter("mirroredwithtower", mirroredwithtower, true,
+  [
+    merge({
+      name: "Normal",
+      experimentType: experimentChoices.shortestPathWeight
+    }, baseSettings),
+    merge({
+      name: "High Decay",
+      experimentType: experimentChoices.shortestPathWeight
+    }, baseSettings, {
+      decayStrength: -0.02
+    }),
+    merge({
+      name: "Low Decay",
+      experimentType: experimentChoices.shortestPathWeight
+    }, baseSettings, {
+      decayStrength: -0.0007
+    }),
+    merge({
+      name: "High Increase",
+      experimentType: experimentChoices.shortestPathWeight
+    }, baseSettings, {
+      pheromoneIncreaseStrength: 0.02
+    }),
+    merge({
+      name: "Low Increase",
+      experimentType: experimentChoices.shortestPathWeight
+    }, baseSettings, {
+      pheromoneIncreaseStrength: 0.0007
+    }),
+    merge({
+      name: "High Increase & Decay",
+      experimentType: experimentChoices.shortestPathWeight
+    }, baseSettings, {
+      pheromoneIncreaseStrength: 0.03,
+      decayStrength: -0.02
+    }),
+    merge({
+      name: "Low Increase & Decay",
+      experimentType: experimentChoices.shortestPathWeight
+    }, baseSettings, {
+      pheromoneIncreaseStrength: 0.001,
+      decayStrength: -0.0007
+    })
+  ])
+}
+
+export default makestuff
+
+\end{lstlisting}
