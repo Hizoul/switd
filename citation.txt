@@ -1,0 +1,286 @@
+@article{blum2005ant,
+  title={Ant colony optimization: Introduction and recent trends},
+  author={Blum, Christian},
+  journal={Physics of Life reviews},
+  volume={2},
+  number={4},
+  pages={353--373},
+  year={2005},
+  publisher={Elsevier}
+}
+
+
+@article{cordon2002review,
+  title={A review on the ant colony optimization metaheuristic: Basis, models and new trends},
+  author={Cord{\'o}n Garc{\'\i}a, Oscar and Herrera Triguero, Francisco and St{\"u}tzle, Thomas},
+  journal={Mathware \& soft computing. 2002 Vol. 9 N{\'u}m. 2 [-3]},
+  year={2002},
+  publisher={Universitat Polit{\`e}cnica de Catalunya. Secci{\'o} de Matem{\`a}tiques i Inform{\`a}tica}
+}
+
+
+@article{deneubourg1990self,
+  title={The self-organizing exploratory pattern of the argentine ant},
+  author={Deneubourg, J-L and Aron, Serge and Goss, Simon and Pasteels, Jacques Marie},
+  journal={Journal of insect behavior},
+  volume={3},
+  number={2},
+  pages={159--168},
+  year={1990},
+  publisher={Springer}
+}
+
+
+@misc{dorigo2006introduction,
+  title={An introduction to ant colony optimization},
+  author={Dorigo, Marco and Socha, Krzysztof},
+  journal={Handbook of Approximation Algorithms and Metaheuristics},
+  pages={26--1},
+  year={2006}
+}
+
+
+@article{gambardella1999macs,
+  title={MACS-VRPTW: A multiple ant colony system for vehicle routing problems with time windows},
+  author={Gambardella, Luca Maria and Taillard, {\'E}ric and Agazzi, Giovanni},
+  year={1999},
+  publisher={Istituto Dalle Molle Di Studi Sull Intelligenza Artificiale}
+}
+
+
+@incollection{dorigo2010ant,
+  title={Ant colony optimization: overview and recent advances},
+  author={Dorigo, Marco and St{\"u}tzle, Thomas},
+  booktitle={Handbook of metaheuristics},
+  pages={227--263},
+  year={2010},
+  publisher={Springer}
+}
+
+@inproceedings{dorigo2001experimental,
+  title={An experimental study of the simple ant colony optimization algorithm},
+  author={Dorigo, Marco and St{\"u}tzle, Thomas},
+  booktitle={2001 WSES International Conference on Evolutionary Computation (EC’01)},
+  pages={253--258},
+  year={2001}
+}
+
+
+@article{korb2007ant,
+  title={An ant colony optimization approach to flexible protein--ligand docking},
+  author={Korb, Oliver and St{\"u}tzle, Thomas and Exner, Thomas E},
+  journal={Swarm Intelligence},
+  volume={1},
+  number={2},
+  pages={115--134},
+  year={2007},
+  publisher={Springer}
+}
+
+@article{dorigo1997ant,
+  title={Ant colony system: a cooperative learning approach to the traveling salesman problem},
+  author={Dorigo, Marco and Gambardella, Luca Maria},
+  journal={IEEE Transactions on evolutionary computation},
+  volume={1},
+  number={1},
+  pages={53--66},
+  year={1997},
+  publisher={IEEE}
+}
+
+@incollection{stutzle1999max,
+  title={The max-min ant system and local search for combinatorial optimization problems},
+  author={St{\"u}tzle, Thomas and Hoos, Holger},
+  booktitle={Meta-heuristics},
+  pages={313--329},
+  year={1999},
+  publisher={Springer}
+}
+
+
+@article{laird2001human,
+  title={Human-level AI's killer application: Interactive computer games},
+  author={Laird, John and VanLent, Michael},
+  journal={AI magazine},
+  volume={22},
+  number={2},
+  pages={15},
+  year={2001}
+}
+
+@incollection{tan2013automated,
+  title={Automated evaluation for AI controllers in tower defense game using genetic algorithm},
+  author={Tan, Tse Guan and Yong, Yung Nan and Chin, Kim On and Teo, Jason and Alfred, Rayner},
+  booktitle={Soft Computing Applications and Intelligent Systems},
+  pages={135--146},
+  year={2013},
+  publisher={Springer}
+}
+
+@inproceedings{avery2011computational,
+  title={Computational intelligence and tower defence games},
+  author={Avery, Phillipa and Togelius, Julian and Alistar, Elvis and Van Leeuwen, Robert Pieter},
+  booktitle={Evolutionary Computation (CEC), 2011 IEEE Congress on},
+  pages={1084--1091},
+  year={2011},
+  organization={IEEE}
+}
+
+@inproceedings{huo2009application,
+  title={Application and comparison of particle swarm optimization and genetic algorithm in strategy defense game},
+  author={Huo, Peng and Shiu, Simon CK and Wang, Haibo and Niu, Ben},
+  booktitle={Natural Computation, 2009. ICNC'09. Fifth International Conference on},
+  volume={5},
+  pages={387--392},
+  year={2009},
+  organization={IEEE}
+}
+
+@article{ariyadicreep,
+  title={Creep Offenses Evolution in Tower Defense Games using NSGA-II},
+  author={Ariyadi, Supeno Mardi SN and Purnomo, Mauridhi H}
+}
+
+
+@inproceedings{guimarans2016multi,
+  title={A multi-start simheuristic for the stochastic two-dimensional vehicle routing problem},
+  author={Guimarans, Daniel and Dominguez, Oscar and Juan, Angel A and Martinez, Enoc},
+  booktitle={Proceedings of the 2016 Winter Simulation Conference},
+  pages={2326--2334},
+  year={2016},
+  organization={IEEE Press}
+}
+
+Abstract 
+
+
+
+Introduction and related work
+
+
+1Blum, C. (2005). Ant colony optimization: Introduction and recent trends. Physics of Life reviews, 2(4), 353-373.
+
+2Cordón García, O., Herrera Triguero, F., & Stützle, T. (2002). A review on the ant colony optimization metaheuristic: Basis, models and new trends. Mathware & soft computing. 2002 Vol. 9 Núm. 2 [-3].
+
+3Deneubourg, J. L., Aron, S., Goss, S., & Pasteels, J. M. (1990). The self-organizing exploratory pattern of the argentine ant. Journal of insect behavior, 3(2), 159-168.
+
+4Dorigo, M., & Socha, K. (2006). An introduction to ant colony optimization. Handbook of Approximation Algorithms and Metaheuristics, 26-1.
+
+5 Gambardella, L. M., Taillard, É., & Agazzi, G. (1999). MACS-VRPTW: A multiple ant colony system for vehicle routing problems with time windows.
+
+6 Dorigo, M., & Stützle, T. (2010). Ant colony optimization: overview and recent advances. In Handbook of metaheuristics (pp. 227-263). Springer US
+
+7 Dorigo, M., & Stützle, T. (2001). An experimental study of the simple ant colony optimization algorithm. In 2001 WSES International Conference on Evolutionary Computation (EC’01) (pp. 253-258).
+
+8 Korb, O., Stützle, T., & Exner, T. E. (2007). An ant colony optimization approach to flexible protein–ligand docking. Swarm Intelligence, 1(2), 115-134.
+
+9 Dorigo, M., & Gambardella, L. M. (1997). Ant colony system: a cooperative learning approach to the traveling salesman problem. IEEE Transactions on evolutionary computation, 1(1), 53-66.
+
+10 Stützle, T., & Hoos, H. (1999). The max-min ant system and local search for combinatorial optimization problems. In Meta-heuristics (pp. 313-329). Springer US.
+
+11Laird, J., & VanLent, M. (2001). Human-level AI's killer application: Interactive computer games. AI magazine, 22(2), 15.
+
+12 Tan, T. G., Yong, Y. N., Chin, K. O., Teo, J., & Alfred, R. (2013). Automated evaluation for AI controllers in tower defense game using genetic algorithm. In Soft Computing Applications and Intelligent Systems (pp. 135-146). Springer, Berlin, Heidelberg.
+
+13 Avery, P., Togelius, J., Alistar, E., & Van Leeuwen, R. P. (2011, June). Computational intelligence and tower defence games. In Evolutionary Computation (CEC), 2011 IEEE Congress on (pp. 1084-1091). IEEE.
+
+14 Huo, P., Shiu, S. C., Wang, H., & Niu, B. (2009, August). Application and comparison of particle swarm optimization and genetic algorithm in strategy defense game. In Natural Computation, 2009. ICNC'09. Fifth International Conference on (Vol. 5, pp. 387-392). IEEE.
+
+
+15 Ariyadi, S. M. S., & Purnomo, M. H. Creep Offenses Evolution in Tower Defense Games using NSGA-II.
+
+16 Guimarans, D., Dominguez, O., Juan, A. A., & Martinez, E. (2016, December). A multi-start simheuristic for the stochastic two-dimensional vehicle routing problem. In Proceedings of the 2016 Winter Simulation Conference (pp. 2326-2334). IEEE Press.
+
+
+
+
+
+
+
+1.1 Ant colony foraging behaviors
+
+
+Social insects like bees and ants that are not sophisticated by themselves can show complex behaviors when working as a colony. Ants organise themselves using pheromones. These are left by every single ant creating trails that connect food sources. The organisation of these trails are an emergent property of accumulating pheromones. \cite{blum2005ant} While exploring their surroundings there will be a bigger chance that he will choose the road that has more pheromones on it creating a positive feedback loop outside of the ants individual control, which is called stigmergy. These trails can stay for a long time in the same place while slowly evaporating. \cite{cordon2002review} 
+In the double bridge experiment by Deneubourg et. al. these features were used to find the shortest route on two bridges. Because the ants that chose the shorter route arrived at the destination earlier and had left pheromones they also tended to take the same route back, further reinforcing the trail. When the second ant arrived they had more chance to also take the short route back because of the two layers of pheromones already present creating more feedback.\cite{deneubourg1990self} Even when there is no shorter route the ants will eventually choose one of the two sides because of stochastic oscillations. When there is a pheromone trail established it will remain the preferred route even if a shorter one is introduced because the chance of enough ants taking the other route to shift the balance is very low.\cite{dorigo2006introduction}
+
+1.2 Simple Ant Colony Optimization for connected graphs
+
+The abilities of ant colonies can be simulated to find the shortest route in graph based problems. These artificial ants are adapted to function in the virtual world and to evade pitfalls in complicated graphs. \cite{gambardella1999macs} 
+Single artificial ants that act on their own are sent down the different paths making stochastic decisions at every node and construct solutions. The quality is measured by how much time was needed or nodes visited on a group level.\cite{dorigo2010ant} Artificial ants have a forward mode and a backward mode. During forward mode the ant makes probabilistic choices to get to the end of the graph which are stored in the memory of the ant. In backward mode loops are deleted from the trail by revisiting the nodes and looking for doubles.Only if the trail is shorter than existing trails there are pheromones added to the visited nodes. In addition this stops the ants from getting stuck in their own pheromone feedback loop. \cite{dorigo2001experimental}
+
+To avoid local optimums the concept of pheromone evaporation is used so that the ants do not get stuck in a sub optimal route. \cite{korb2007ant} These ant colony based algorithms that solve shortest path problems and problems like the TSP are versions simple ant colony optimization techniques or S-ACO, the most basic one shown below. \cite{dorigo1997ant}  Multiple versions of this algorithm exist like the ANT system, MAX/MIN ant system and the ACS system. These differ from the ant colony metaheuristic that can be used to solve any optimization problem.\cite{stutzle1999max}   
+
+1.3 Application of S-ACO’s to tower defense games
+
+Artificial Intelligence has been used in video games to make the game more challenging or more interactive. It has allowed enemies to be more adaptive and partners to be more interactive. Furthermore it can be used to make stories adaptive in for instance adventure games, let enemies change strategies or to have them interact with the environment in a natural way. \cite{laird2001human}  Tower defense games are a type of strategy game that involves a road on which enemies traverse and a human player that has to build towers along the way. The enemies or ‘creeps’ come in waves and try to reach the base of the player at the end of the path. The player gets points and resources for every enemy destroyed but when too much creeps reach the end the player loses. Most of the time there are creeps with varying speeds and armor ratings. Some tower defence games only have a single road to traverse while others have connected roads with multiple options for routing \cite{tan2013automated} 
+
+AI can be used in different ways to influence the gameplay of tower defence games. It can be used for map generation using randomly placed nodes that are connected by for instance a shortest path algorithm. \cite{avery2011computational} In research by \cite{huo2009application}  both Particle Swarm Optimization and Genetic Algorithm metaheuristics are used to test a map by placing towers in the best places. \cite{huo2009application}  In a different research the algorithm NSGA-II was used to vary the amount of creeps that are sent to react to the players abilities. \cite{ariyadicreep} 
+
+In the paper by \cite{guimarans2016multi}  not only lengths of a connected graph are given but also the risk factors of each path are used as an extra dimension. In this way there was a path calculated that is the shortest but has the highest risk, and a path that is longer but has less dangers along the way. This was used to calculate if a road that is shorter but has traffic problems would require less travel time than a road that was longer but where there are no traffic problems. \cite{guimarans2016multi}  This two dimensional approach could be used to both find the shortest route through a tower defense game and account for the towers along the way as a risk factor. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. Algorithm 
+Which variables are which variables in tower defense
+
+
+3. Implementation
+3.1 
+3.2 
+3.3
+
+
+4. Method
+
+Test 1
+
+Finding least deaths
+Map1, map2, map3 etc.
+
+
+Test 2:
+Finding least deaths+shortest path
+Map1, map2, map3 etc.
+
+Test 3: 
+Shortest path, least deaths, health
+Map1, map2, map3 etc.
+
+Test 4:
+Playing with variables
+
+Test 5:
+Different algorithms
+
+5 conclusion
+
+6 further work or something
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
