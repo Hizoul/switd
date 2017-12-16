@@ -1,6 +1,6 @@
 \subsection{Basic Math behind ACO}
 
-In ACO the most important move for us is in the tower defense game is the \textit{State Transition Rule}. This is the formula that an ant uses to decide where it goes to next as displayed here\cite{dorigo2006ant}:
+In ACO the most important move for us is in the tower defense game is the \textit{State Transition Rule}. This is the formula that a creep uses to decide where it goes to next as displayed here\cite{dorigo2006ant}:
 
 \begin{equation}
 p^k_{ij}=
@@ -10,10 +10,10 @@ p^k_{ij}=
 \end{cases}
 \end{equation}
 
-Looking at the formula in depth it is the probability that ant k, standing on node i will move to city j\cite{maniezzo2002ant}.
+Looking at the formula in depth it is the probability that creep k, standing on node i will move to city j\cite{maniezzo2002ant}.
 There are two factors that have an influence this probability.
 First we have the pheromone level on the trail called $\tau^\alpha_{i\psi}$ which may optionally be weighted using $\alpha$.
 Then there may also be an attractiveness parameter that uses a priori knowledge to influence the result called $n^\beta_{i\psi}$ which can optionally be weighted using $\beta$\cite{dorigo2006ant}.
 
 Put into simple words this says the higher the pheromone level the higher the probability a path is chosen, but in the end it is still random which path is chosen, it is merely a weight for the choice itself.
-The trail pheromone level $\tau^\alpha_{i\psi}$, will in our case be influenced based on the ants chosen behavior explained in section \ref{sec:behavior}. This chosen behavior also influences the weights and may introduce slight alterations to the formula above.
+The trail pheromone level $\tau^\alpha_{i\psi}$, will in our case be influenced based on the creeps chosen behavior explained in section \ref{sec:behavior}. This chosen behavior also influences the weights and may introduce slight alterations to the formula above.
