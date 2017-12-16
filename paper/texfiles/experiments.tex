@@ -1,4 +1,4 @@
-In this Section we will cover what kind of experiments we run as well as which data we collect and evaluate for these.
+In this section we will cover what kind of experiments we run as well as which data we collect and evaluate for these.
 
 \subsection{Target of Experiments}
 We do the experiments describe in the following sections with the following three goals in mind.
@@ -8,12 +8,12 @@ Third of all we wish to find the most efficient behaviour from the ones describe
 \subsection{Evaluated Data}
 \label{sec:experimentevdata}
 
-In order to evaluate how well the experiment worked, we need to think about what the actual target of our algorithm is. Revisiting the Introduction in Section \ref{sec:introduction}, reminds us that the goal is that the ants find an ideal way to our target. The second goal is minimizing the amount of deaths of creeps, because that means more spawned creeps have reached the target.
+In order to evaluate how well the experiment worked, we need to think about what the actual target of our algorithm is. Revisiting the introduction in section \ref{sec:introduction}, reminds us that the goal is that the ants find an ideal way to our target. The second goal is minimizing the amount of deaths of creeps, because that means more spawned creeps have reached the target.
 
 
 Since it has been proven that the distribution quickly converges\cite[P. 15]{maniezzo2002ant}, which is quite logical since stronger reinforced paths are more likely to attract new ants and get reinforced even more, we can say that one of our targets is that the pheromone-level on specific Street-Segments has reached at least a value of \textit{x}.
 Because we have a tick-based implementation we know the amount of ticks needed until the target pheromone value was reached. Additionally we can also involve the percentage of dead ants into the evaluation because on some maps it gives us an indication about how strongly the ants have wandered  the wrong hurtful paths. It is important to use the percentage of dead ants here, since the amount of ants spawned per tick is random for each tick!
-Because we cannot always guarantee that we reach the wanted pheromone-target, and might be calculating endlessly, we will also declare an abort criteria that after \textit{z} ticks we stop the test of this setup. Through various tests we found out that we can process an average of 6.6 ticks per second. So for the manual verification we opted for a value of 6000 because that means approximately a maximum of 15 minutes for an experiment\footnote{15 minutes = 900 sec  $\Rightarrow 900 * 6.6 = 5940$}. That runtime of course does vary heavily depending on amount of towers towers on the map and the amount of ants currently on the map since for each ant we have to do the next step decision. The amount of ants depends on the amount of ants spawned per tick described in Section \ref{sec:otherparamas}.
+Because we cannot always guarantee that we reach the wanted pheromone-target, and might be calculating endlessly, we will also declare an abort criteria that after \textit{z} ticks we stop the test of this setup. Through various tests we found out that we can process an average of 6.6 ticks per second. So for the manual verification we opted for a value of 6000 because that means approximately a maximum of 15 minutes for an experiment\footnote{15 minutes = 900 sec  $\Rightarrow 900 * 6.6 = 5940$}. That runtime of course does vary heavily depending on amount of towers towers on the map and the amount of ants currently on the map since for each ant we have to do the next step decision. The amount of ants depends on the amount of ants spawned per tick described in section \ref{sec:otherparamas}.
 For the automatic evaluation in section \ref{sec:autover} we set the maximum tick amount to ten times of the target ant amount, because that way all algorithms were able to finish even if they took quite long. 
 
 
@@ -21,7 +21,7 @@ For the automatic evaluation in section \ref{sec:autover} we set the maximum tic
 \label{sec:behaviour}
 We can set various behaviours / target searching algorithms for the ants. We will also give each of these behaviours a name that will be resurfacing in the results findable in section \ref{sec:results}.
 
-The first behavioral pattern tries to use the shortest possible path and is hence inspired by the $AS_{rank}$ Algorithm\cite{zecchin2007ant}.
+The first behavioural pattern tries to use the shortest possible path and is hence inspired by the $AS_{rank}$ Algorithm\cite{zecchin2007ant}.
 For this we have two alternatives: The first only updates the pheromone-level retrospectively when the path was actually the shortest path. The second one always adjusts the pheromone-level but weights the adjustment depending on how short the path was.
 We will be referring to these behaviours with \textit{SP only} and \textit{SP Weighted} in section .
 
@@ -52,7 +52,7 @@ We also can configure the following variables that impact the result as well:
 \label{sec:testmaps}
 Here we list the maps that we use for the evaluation. For each of these maps we can disable the towers, but in the screenshots the towers are always included.
 
-The first map we wish to test is a dead simple short and long path map displayed in Figure \ref{fig:mapshortlong} inspired by the classic ACO Experiment mentioned in the Introduction (Section \ref{sec:introduction}). When towers are enabled the cheaper route is the longer route.
+The first map we wish to test is a dead simple short and long path map displayed in Figure \ref{fig:mapshortlong} inspired by the classic ACO Experiment mentioned in the Introduction (section \ref{sec:introduction}). When towers are enabled the cheaper route is the longer route.
 
 \begin{figure}[H]
   \centering
@@ -72,7 +72,7 @@ The second map we created is a mirrored one. The base layout contains a short an
 \end{figure}
 
 
-The third map we created came out of the idea to create a stress test for our continuous vapour strategy mentioned in Section \ref{sec:behaviour}. As deducible from Figure \ref{fig:mapsmaze} it is not directly obvious which path is the shortest one. But the longer path that leads through the top also contains a tower which makes it less attractive. The shortest two paths are following the bottom way to the target.
+The third map we created came out of the idea to create a stress test for our continuous vapour strategy mentioned in section \ref{sec:behaviour}. As deducible from Figure \ref{fig:mapsmaze} it is not directly obvious which path is the shortest one. But the longer path that leads through the top also contains a tower which makes it less attractive. The shortest two paths are following the bottom way to the target.
 
 \begin{figure}[H]
   \centering
