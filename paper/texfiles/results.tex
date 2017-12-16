@@ -3,8 +3,13 @@ The second section \ref{sec:autover} contains results we obtained and evaluated 
 
 \subsection{Manual Verifications}
 \label{sec:manualver}
-insert here text we wrote on google docs on meeting day
+This experiment was used to prove that the setup we built could find the shortest path in the three mentioned maps. For each map we tested how much time or steps it took to find an optimized path, How much creeps were created to find the path and how much of them arrived at the end point before the shortest path was found. We did not only test this with the basic ACO algorithm but also with the weighted shortest path algorithm to see if the results would be different. For every map we ran the experiment five times to see what the average result would be so that one irregular result would not influence our end result. Every time we ran the experiment until a pheromone level of 0.8 was reached in a path. 
 
+Overall we found out that it was possible for our system to find the shortest path using the rules from the ACO algorithm. In the first map with an obvious shorter path about 30 iterations were needed to fully reinforce the optimized path. In this map the weighted shortest path algorithm had about the same results. In the second map where no obvious shortest path was present because there were twoo shortest path it took an average of 43 ticks to the point that one path was fully optimized. Here the weighted shortest path took much longer because the pheromones on both paths would keep getting increased by a little.  
+
+In the third, more complicated maze map there started to be instances where the optimal route would not be found or would be longer than the real shortest path. This had several reasons. The first reason we found is that the decay of pheromones would already take too much of the pheromones away before the next wave would reach the path. When we took this decay away waves started going in loops because they would start reinforcing themselves. This problem was the biggest while using the weighted ACO algorithm. Because of the bigger complexity of the map there would also be a chance that a wrong path would already get reinforced before all routes were tried. The time also took longer with an average of 79 ticks before an optimum was found. 
+
+After we added towers to the maps we noticed that the results were very similar with amounts of creeps it took to reach an optimum, depending on how the towers were placed. In the basic algorithm no pheromones were added when creeps did not reach the end of the path. This meant that creeps would find routes around the towers when the creeps would not be able to get through and even when they did there would be way more using the longer routes. When it was less obvious which path was the best because we placed multiple towers it would take longer to create an optimum.
 
 \subsection{Automatic Evaluation Results}
 \label{sec:autover}
