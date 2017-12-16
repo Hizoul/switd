@@ -15,7 +15,7 @@ In order to be able to easily implement the UI and add Animations merely based o
 \subsection{Actual Implementation}
 \label{sec:implementationactual}
 
-In order to Implement a tower defense game one has to identify the key-objects that play different roles in the game namely that is
+In order to Implement a tower defence game one has to identify the key-objects that play different roles in the game namely that is
 \begin{itemize}
 \item The walkable path with special start and target point
 \item Ants walking along this path
@@ -31,4 +31,4 @@ Each Game Instance also holds a variable that determines what algorithm the Ant'
 
 The Game itself is Tick-Based. In each tick we first spawn our new ants. The amount of that is always variable between 0 and a configurable maximum. Aft all tower's deal all their damage. After that all alive ants decide where they walk to next. After that has happened the general decay of pheromones is processed if enabled.
 
-This is already all the implementation. To sum it all up: We have an isolated GameField-Class that can instantiate a whole test-setup including map, ants and tick-progression. This GameField can either be visually rendered with results for manual verification as done in Section \ref{sec:manualver} or be run headless as in Section \ref{sec:autover} to collect large amounts of data which is necessary for meaningful conclusions given that ACO behaviour is stochastic.
+This is already all the implementation. To sum it all up: We have an isolated GameField-Class that can instantiate a whole test-setup including map, ants and tick-progression. This GameField can either be visually rendered with results for manual verification as done in Section \ref{sec:manualver} or be run headless as in section \ref{sec:autover} to collect large amounts of data which is necessary for meaningful conclusions given that ACO behaviour is stochastic.
