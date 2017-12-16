@@ -11,6 +11,67 @@ In the third, more complicated maze map there started to be instances where the 
 
 After we added towers to the maps we noticed that the results were very similar with amounts of time it took to reach an optimum, depending on how the towers were placed. As expected it did take more creeps because many of them died. In the basic algorithm no pheromones were added when creeps did not reach the end of the path. This meant that creeps would find routes around the towers when the creeps would not be able to get through and even when they did there would be way more using the longer routes. When it was less obvious which path was the best because we placed multiple towers it would take longer to create an optimum.
 
+\begin{table}
+	\begin{tabular}{llllll}
+		Simple 2 way path ACO    & test 1 & test 2 & test 3 & test 4 & test 5 \\
+		Time until optimized     & 30     & 25     & 33     & 29     & 30     \\
+		Amount of creeps spawned & 199    & 206    & 184    & 211    & 197    \\
+		Amount of creeps arrived & 111    & 111    & 106    & 107    & 112    \\
+	\end{tabular}
+\end{table}
+
+
+
+\begin{table}
+	\begin{tabular}{llllll}
+		Simple 2 way path ACO weighted & test 1 & test 2 & test 3 & test 4 & test 5 \\
+		Time until optimized           & 27     & 30     & 30     & 31     & 33     \\
+		Amount of creeps spawned       & 220    & 211    & 206    & 221    & 197    \\
+		Amount of creeps arrived       & 105    & 106    & 116    & 113    & 105    \\
+	\end{tabular}
+\end{table}
+
+
+
+\begin{table}
+	\begin{tabular}{llllll}
+		Intermediate 4 way path ACO & test 1 & test 2 & test 3 & test 4 & test 5 \\
+		Time until optimized        & 39     & 50     & 37     & 36     & 53     \\
+		Amount of creeps spawned    & 251    & 345    & 237    & 288    & 325    \\
+		Amount of creeps arrived    & 117    & 157    & 110    & 135    & 149    \\
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\begin{tabular}{llllll}
+		Intermediate 4 way path ACO weighted & test 1 & test 2 & test 3 & test 4 & test 5 \\
+		Time until optimized                 & 46     & 95     & 47     & 51     & 55     \\
+		Amount of creeps spawned             & 335    & 717    & 318    & 325    & 379    \\
+		Amount of creeps arrived             & 135    & 290    & 133    & 142    & 157    \\
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\begin{tabular}{llllll}
+		complicated maze path ACO & test 1 & test 2 & test 3 & test 4 & test 5 \\
+		Time until optimized      & 78     & 76     & 104    & 75     & 62     \\
+		Amount of creeps spawned  & 451    & 546    & 727    & 559    & 467    \\
+		Amount of creeps arrived  & 170    & 236    & 327    & 243    & 148    \\
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{llllll}
+		complicated maze path ACO weights & test 1 & test 2 & test 3 & test 4 & test 5 \\
+		Time until optimized              & 78     & 76     & 57     & 52     & 48     \\
+		Amount of creeps spawned          & 397    & 440    & 369    & 372    & 368    \\
+		Amount of creeps arrived          & 98     & 102    & 100    & 96     & 96     \\
+	\end{tabular}
+\end{table}
+
+
 \subsection{Automatic Evaluation Results}
 \label{sec:autover}
 For the automatic evaluation we tried varying settings and ran them across all maps. Because the amount of different parameters and the hence large amount of graphs to interpret we will here only mention and display the settings that we deemed relevant information. To be statistically relevant every experiment setting is run 50 times and we then take the mean value of that for the graph. We also always include Towers in the maps.
