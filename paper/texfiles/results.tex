@@ -1,4 +1,4 @@
-This Section is divided into two subsections. First we present the results of manual experiments that we evaluate by hand via the UI that we implemented in Section \ref{sec:manualver}.
+This Section is divided into two subsections. First we present the results of manual experiments that we obtained by hand via the UI that we implemented in Section \ref{sec:manualver}.
 The second Section \ref{sec:autover} contains results we obtained and evaluated automatically by running the simulations headlessly.
 
 \subsection{Manual Verifications}
@@ -6,13 +6,13 @@ The second Section \ref{sec:autover} contains results we obtained and evaluated 
 insert here text we wrote on google docs on meeting day
 
 
-\subsection{Automatic Verifications}
+\subsection{Automatic Evaluation Results}
 \label{sec:autover}
 For the automatic evaluation we tried varying settings and ran them across all maps. Because the amount of different parameters and the hence large amount of graphs to interpret we will here only mention and display the settings that we deemed relevant information. To be statistically relevant every experiment setting is run 50 times and we then take the mean value of that for the graph. We also always include Towers in the maps.
 
 Regarding the settings when we talk about normal settings, then these are the settings we found to work best using the manual mode. This consist of a spawn-amount of 14, a decay-threshold of -0.007 and a pheromone-increase threshold of 0.01.
 
-First of we will start out by excluding the continuous vapour in the future Figures because as Figure \ref{fig:mirrorvaptick} clearly shows, the runtime is much larger than for all other three behaviours for the mirrored map. This behaviour was visible across all maps and settings, another example that stresses the uselessness of the continuous vapour is the runtime graph portrayed in Figure \ref{fig:shortlongvaptick} for the short and long map, the very basic map that all of them should be able to easily master.
+First of we will start out by excluding the continuous vapor in the future Figures because as Figure \ref{fig:mirrorvaptick} clearly shows, the runtime is much larger than for all other three behaviours for the mirrored map. This behaviour was visible across all maps and settings, another example that stresses the uselessness of the continuous vapor is the runtime graph portrayed in Figure \ref{fig:shortlongvaptick} for the short and long map, the very basic map that all of them should be able to easily master.
 
 \begin{figure}[H]
   \centering
@@ -39,7 +39,7 @@ Also for the weighted shortest path leaving death-substraction out even slightly
   \label{fig:deathsubshitty}
 \end{figure}
 
-The following graph, depicted in Figure \ref{fig:threesame} which doesn't include the continuous vapour any more shows, shows that the remaining three behaviours perform similar not only regarding death amount but also regarding their runtime.
+The following graph, depicted in Figure \ref{fig:threesame} which doesn't include the continuous vapor any more shows, shows that the remaining three behaviours perform similar not only regarding death amount but also regarding their runtime.
 
 \begin{figure}[H]
   \centering

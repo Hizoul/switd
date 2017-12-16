@@ -24,7 +24,7 @@ The first behavioral pattern tries to use the shortest possible path and is henc
 For this we have two alternatives: The first only updates the pheromone-level retrospectively when the path was actually the shortest path. The second one always adjusts the pheromone-level but weights the adjustment depending on how short the path was.
 We will be referring to these behaviours with \textit{SP only} and \textit{SP Weighted} in section .
 
-The second behavioural pattern we try is the original Ant Colony System\cite{maniezzo2002ant}, where each step increases the pheromone level on the tile we just walked on. We will label this behaviour \textit{continuous vapour}.
+The second behavioural pattern we try is the original Ant Colony System\cite{maniezzo2002ant}, where each step increases the pheromone level on the tile we just walked on. We will label this behaviour \textit{continuous vapor}.
 
 The third behavioural pattern we thought up is just adding a constant amount of pheromone on the walked path as soon as the target is reached. No weighting based on shortness or anything else pure success orientation. That is why we will refer to this behaviour as \textit{success only}.
 
@@ -72,11 +72,11 @@ The second map we created is a mirrored one. The base layout contains a short an
 \end{figure}
 
 
-The third map we created came out of the idea to create a stress test for our continuous vapour strategy mentioned in Section \ref{sec:behaviour}. As deducible from Figure \ref{fig:mapsmaze} it is not directly obvious which path is the shortest one. But the longer path that leads through the top also contains a tower which makes it less attractive. The shortest two paths are following the bottom way to the target.
+The third map we created came out of the idea to create a stress test for our continuous vapor strategy mentioned in Section \ref{sec:behaviour}. As deducible from Figure \ref{fig:mapsmaze} it is not directly obvious which path is the shortest one. But the longer path that leads through the top also contains a tower which makes it less attractive. The shortest two paths are following the bottom way to the target.
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\linewidth]{images/map_maze}
-  \caption{Maze Map created as a stress test for the continuous vapour strategy}
+  \caption{Maze Map created as a stress test for the continuous vapor strategy}
   \label{fig:mapsmaze}
 \end{figure}
