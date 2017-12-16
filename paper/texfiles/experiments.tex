@@ -3,7 +3,7 @@ In this section we will cover what kind of experiments we run as well as which d
 \subsection{Target of Experiments}
 We do the experiments describe in the following sections with the following three goals in mind.
 First we wish to show that our solution works at all and is able to find the shortest path. Second of all we wish to reduce the risk of the way meaning the death of ants. These two points we will cover by means of manual verification in section \ref{sec:manualver}
-Third of all we wish to find the most efficient behaviour from the ones described in section \ref{sec:behaviour}. This we will be able to do by running the experiments many times with different settings and different behaviours in headless mode. These results will be portrayed in section \ref{sec:autover}.
+Third of all we wish to find the most efficient behavior from the ones described in section \ref{sec:behavior}. This we will be able to do by running the experiments many times with different settings and different behaviors in headless mode. These results will be portrayed in section \ref{sec:autover}.
 
 \subsection{Evaluated Data}
 \label{sec:experimentevdata}
@@ -18,16 +18,16 @@ For the automatic evaluation in section \ref{sec:autover} we set the maximum tic
 
 
 \subsection{Ant Behaviour Algorithms}
-\label{sec:behaviour}
-We can set various behaviours / target searching algorithms for the ants. We will also give each of these behaviours a name that will be resurfacing in the results findable in section \ref{sec:results}.
+\label{sec:behavior}
+We can set various behaviors / target searching algorithms for the ants. We will also give each of these behaviors a name that will be resurfacing in the results findable in section \ref{sec:results}.
 
-The first behavioural pattern tries to use the shortest possible path and is hence inspired by the $AS_{rank}$ Algorithm\cite{zecchin2007ant}.
+The first behavioral pattern tries to use the shortest possible path and is hence inspired by the $AS_{rank}$ Algorithm\cite{zecchin2007ant}.
 For this we have two alternatives: The first only updates the pheromone-level retrospectively when the path was actually the shortest path. The second one always adjusts the pheromone-level but weights the adjustment depending on how short the path was.
-We will be referring to these behaviours with \textit{SP only} and \textit{SP Weighted} in section .
+We will be referring to these behaviors with \textit{SP only} and \textit{SP Weighted} in section .
 
-The second behavioural pattern we try is the original Ant Colony System\cite{maniezzo2002ant}, where each step increases the pheromone level on the tile we just walked on. We will label this behaviour \textit{continuous vapour}.
+The second behavioral pattern we try is the original Ant Colony System\cite{maniezzo2002ant}, where each step increases the pheromone level on the tile we just walked on. We will label this behavior \textit{continuous vapour}.
 
-The third behavioural pattern we thought up is just adding a constant amount of pheromone on the walked path as soon as the target is reached. No weighting based on shortness or anything else pure success orientation. That is why we will refer to this behaviour as \textit{success only}.
+The third behavioral pattern we thought up is just adding a constant amount of pheromone on the walked path as soon as the target is reached. No weighting based on shortness or anything else pure success orientation. That is why we will refer to this behavior as \textit{success only}.
 
 Also important to notice is, that due to the small space of choices we allow ants to revisit an already visited node, because otherwise they could easily get stuck  and not be able to move any more as illustrated in the green example path in figure \ref{fig:gettingstuck}. That is an unusual for the common ant colony optimization where usually only "if j has  not  been  previously  visited,  it  can  be  selected"\cite{dorigo2006ant}.
 
@@ -72,7 +72,7 @@ The second map we created is a mirrored one. The base layout contains a short an
 \end{figure}
 
 
-The third map we created came out of the idea to create a stress test for our continuous vapour strategy mentioned in section \ref{sec:behaviour}. As deducible from Figure \ref{fig:mapsmaze} it is not directly obvious which path is the shortest one. But the longer path that leads through the top also contains a tower which makes it less attractive. The shortest two paths are following the bottom way to the target.
+The third map we created came out of the idea to create a stress test for our continuous vapour strategy mentioned in section \ref{sec:behavior}. As deducible from Figure \ref{fig:mapsmaze} it is not directly obvious which path is the shortest one. But the longer path that leads through the top also contains a tower which makes it less attractive. The shortest two paths are following the bottom way to the target.
 
 \begin{figure}[H]
   \centering

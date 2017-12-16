@@ -12,7 +12,7 @@ For the automatic evaluation we tried varying settings and ran them across all m
 
 Regarding the settings when we talk about normal settings, then these are the settings we found to work best using the manual mode. This consist of a spawn-amount of 14, a decay-threshold of -0.007 and a pheromone-increase threshold of 0.01.
 
-First of we will start out by excluding the continuous vapor in the future Figures because as Figure \ref{fig:mirrorvaptick} clearly shows, the runtime is much larger than for all other three behaviours for the mirrored map. This behaviour was visible across all maps and settings, another example that stresses the uselessness of the continuous vapor is the runtime graph portrayed in Figure \ref{fig:shortlongvaptick} for the short and long map, the very basic map that all of them should be able to easily master.
+First of we will start out by excluding the continuous vapor in the future Figures because as Figure \ref{fig:mirrorvaptick} clearly shows, the runtime is much larger than for all other three behaviors for the mirrored map. This behavior was visible across all maps and settings, another example that stresses the uselessness of the continuous vapor is the runtime graph portrayed in Figure \ref{fig:shortlongvaptick} for the short and long map, the very basic map that all of them should be able to easily master.
 
 \begin{figure}[H]
   \centering
@@ -29,17 +29,17 @@ First of we will start out by excluding the continuous vapor in the future Figur
 \end{figure}
 
 With the automatic evaluation we also further prove, that deducing pheromones upon death is rather counter-productive than helpful as visible in Figure \ref{fig:deathsubshitty}. But it does make sense given that any street-part an ant crossed on it's way to death will be deduced in pheromone. That means even a correct path like in the short and long map the longer one can lead to pheromone deduction and hence make the path unattractive again and future ants more likely to walk the even more dangerous path with more deaths.
-Also for the weighted shortest path leaving death-substraction out even slightly improves the result. As for the non continuous vapor behaviour, not only does substraction not matter as much, but also all three perform quite similar.
+Also for the weighted shortest path leaving death-substraction out even slightly improves the result. As for the non continuous vapor behavior, not only does substraction not matter as much, but also all three perform quite similar.
 
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=1\linewidth]{images/normalshortandlongwithtowers-deaths}
-  \caption{Comparing deaths for the different ant behaviours with and without substracting pheromones upon death on the short and long map with normal settings}
+  \caption{Comparing deaths for the different ant behaviors with and without substracting pheromones upon death on the short and long map with normal settings}
   \label{fig:deathsubshitty}
 \end{figure}
 
-The following graph, depicted in Figure \ref{fig:threesame} which doesn't include the continuous vapor any more shows, shows that the remaining three behaviours perform similar not only regarding death amount but also regarding their runtime.
+The following graph, depicted in Figure \ref{fig:threesame} which doesn't include the continuous vapor any more shows, shows that the remaining three behaviors perform similar not only regarding death amount but also regarding their runtime.
 
 \begin{figure}[H]
   \centering
